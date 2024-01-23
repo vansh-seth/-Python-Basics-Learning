@@ -189,4 +189,187 @@ We should use comments for the following reasons:
 - Comments make our code readable for future reference.
 - Comments are used for debugging purposes.
 - We can use comments for code collaboration as it helps peer developers to understand our code.
+
+
+## Python Variables, Constants, and Literals
+
+## Python Variables
+
+A variable is a container to hold data. For example,
+
+```python
+number = 10
 ```
+
+Here, `number` is the variable storing the value `10`.
+
+### Assigning Values to Variables in Python
+
+As seen in the above example, we use the assignment operator `=` to assign a value to a variable.
+
+```python
+# assign value to site_name variable
+site_name = 'vanish'
+
+print(site_name)
+
+# Output: vanish
+```
+
+Note: Python is a type-inferred language, so you don't have to explicitly define the variable type.
+
+### Changing the Value of a Variable in Python
+
+```python
+site_name = 'vansh'
+print(site_name)
+
+# assigning a new value to site_name
+site_name = 'apple'
+
+print(site_name)
+```
+
+**Output:**
+```
+vansh
+apple
+```
+
+Here, the value of `site_name` is changed from 'vansh' to 'apple'.
+
+### Example: Assigning multiple values to multiple variables
+
+```python
+a, b, c = 5, 3.2, 'Hello'
+
+print(a)  # prints 5
+print(b)  # prints 3.2
+print(c)  # prints Hello 
+```
+
+If we want to assign the same value to multiple variables at once, we can do this as:
+
+```python
+site1 = site2  = 'vansh'
+
+print(site1)  # prints vansh
+print(site2)  # prints vansh
+```
+
+Here, we have assigned the same string value 'vansh' to both the variables `site1` and `site2`.
+
+### Rules for Naming Python Variables
+
+- Constant and variable names should have a combination of letters in lowercase (a to z) or uppercase (A to Z) or digits (0 to 9) or an underscore (_).
+- Create a name that makes sense.
+- If you want to create a variable name having two words, use an underscore to separate them.
+- Python is case-sensitive.
+- Avoid using keywords like if, True, class, etc. as variable names.
+
+## Python Constants
+
+A constant is a special type of variable whose value cannot be changed.
+
+In Python, constants are usually declared and assigned in a module.
+
+```python
+# declare constants 
+PI = 3.14
+GRAVITY = 9.8
+```
+
+### Python Literals
+
+Literals are representations of fixed values in a program. They can be numbers, characters, or strings, etc.
+
+```python
+site_name = 'vansh'
+```
+
+Here, `site_name` is a variable, and 'vansh' is a literal.
+
+### Python Numeric Literals
+
+Numeric Literals are immutable (unchangeable) and can be of three different types: Integer, Float, and Complex.
+
+- Decimal: `5`, `10`, `-68`
+- Binary: `0b101`, `0b11`
+- Octal: `0o13`
+- Hexadecimal: `0x13`
+
+### Python Boolean Literals
+
+There are two boolean literals: `True` and `False`.
+
+```python
+result1 = True  
+```
+
+Here, `True` is a boolean literal assigned to `result1`.
+
+### String and Character Literals in Python
+
+Character literals are unicode characters enclosed in a quote.
+
+```python
+some_character = 'S'
+```
+
+Here, `S` is a character literal assigned to `some_character`.
+
+Similarly, String literals are sequences of Characters enclosed in quotation marks.
+
+```python
+some_string = 'Python is fun' 
+```
+
+Here, 'Python is fun' is a string literal assigned to `some_string`.
+
+### Special Literal in Python
+
+Python contains one special literal `None`. We use it to specify a null variable.
+
+```python
+value = None
+
+print(value)
+
+# Output: None
+```
+
+Here, we get `None` as an output as the `value` variable has no value assigned to it.
+
+### Literal Collections
+
+There are four different literal collections: List literals, Tuple literals, Dict literals, and Set literals.
+
+```python
+# list literal
+fruits = ["apple", "mango", "orange"] 
+print(fruits)
+
+# tuple literal
+numbers = (1, 2, 3) 
+print(numbers)
+
+# dictionary literal
+alphabets = {'a':'apple', 'b':'ball', 'c':'cat'} 
+print(alphabets)
+
+# set literal
+vowels = {'a', 'e', 'i' , 'o', 'u'} 
+print(vowels)
+```
+
+**Output:**
+```
+['apple', 'mango', 'orange']
+(1, 2, 3)
+{'a': 'apple', 'b': 'ball', 'c': 'cat'}
+{'e', 'a', 'o', 'i', 'u'}
+```
+
+In the above example, we created a list of fruits, a tuple of numbers, a dictionary of alphabets, and a set of vowels.
+
+
