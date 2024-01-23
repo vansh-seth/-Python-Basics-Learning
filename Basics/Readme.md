@@ -472,8 +472,6 @@ print(product[0])   # Microsoft
 print(product[1])   # Xbox
 ```
 
-To learn more about tuples, visit [Python Tuples](#).
-
 ## Python String Data Type
 
 A string is a sequence of characters represented by either single or double quotes. For example,
