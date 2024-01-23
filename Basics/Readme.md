@@ -370,6 +370,203 @@ print(vowels)
 {'e', 'a', 'o', 'i', 'u'}
 ```
 
-In the above example, we created a list of fruits, a tuple of numbers, a dictionary of alphabets, and a set of vowels.
+## Python Data Types
 
+In computer programming, data types specify the type of data that can be stored inside a variable. For example,
+
+```python
+num = 24
+```
+
+Here, `24` (an integer) is assigned to the `num` variable. So the data type of `num` is of the `int` class.
+
+## Python Data Types
+
+| Data Types | Classes        | Description                       |
+|------------|----------------|-----------------------------------|
+| Numeric    | int, float, complex | holds numeric values             |
+| String     | str            | holds a sequence of characters    |
+| Sequence   | list, tuple, range | holds a collection of items       |
+| Mapping    | dict           | holds data in key-value pair form |
+| Boolean    | bool           | holds either True or False        |
+| Set        | set, frozenset  | holds a collection of unique items|
+
+Since everything is an object in Python programming, data types are actually classes and variables are instances (objects) of these classes.
+
+## Python Numeric Data type
+
+In Python, the numeric data type is used to hold numeric values.
+
+- `int`: holds signed integers of non-limited length.
+- `float`: holds floating decimal points and is accurate up to 15 decimal places.
+- `complex`: holds complex numbers.
+
+Let's see an example,
+
+```python
+num1 = 5
+print(num1, 'is of type', type(num1))
+
+num2 = 2.0
+print(num2, 'is of type', type(num2))
+
+num3 = 1+2j
+print(num3, 'is of type', type(num3))
+```
+
+Output:
+
+```
+5 is of type <class 'int'>
+2.0 is of type <class 'float'>
+(1+2j) is of type <class 'complex'>
+```
+
+## Python List Data Type
+
+A list is an ordered collection of similar or different types of items separated by commas and enclosed within brackets [ ].
+
+For example,
+
+```python
+languages = ["Swift", "Java", "Python"]
+```
+
+Access List Items:
+
+To access items from a list, we use the index number (0, 1, 2 ...). For example,
+
+```python
+languages = ["Swift", "Java", "Python"]
+
+# access element at index 0
+print(languages[0])   # Swift
+
+# access element at index 2
+print(languages[2])   # Python
+```
+
+
+## Python Tuple Data Type
+
+A tuple is an ordered sequence of items, same as a list. The only difference is that tuples are immutable. Tuples, once created, cannot be modified.
+
+In Python, we use parentheses () to store items in a tuple. For example,
+
+```python
+product = ('Xbox', 499.99)
+```
+
+Access Tuple Items:
+
+Similar to lists, we use the index number to access tuple items in Python. For example,
+
+```python
+# create a tuple 
+product = ('Microsoft', 'Xbox', 499.99)
+
+# access element at index 0
+print(product[0])   # Microsoft
+
+# access element at index 1
+print(product[1])   # Xbox
+```
+
+To learn more about tuples, visit [Python Tuples](#).
+
+## Python String Data Type
+
+A string is a sequence of characters represented by either single or double quotes. For example,
+
+```python
+name = 'Python'
+print(name)  
+
+message = 'Python for beginners'
+print(message)
+```
+
+Output:
+
+```
+Python
+Python for beginners
+```
+
+In the above example, we have created string-type variables: `name` and `message` with values 'Python' and 'Python for beginners' respectively.
+
+
+## Python Set Data Type
+
+A set is an unordered collection of unique items. A set is defined by values separated by commas inside braces { }.
+
+For example,
+
+```python
+# create a set named student_id
+student_id = {112, 114, 116, 118, 115}
+
+# display student_id elements
+print(student_id)
+
+# display the type of student_id
+print(type(student_id))
+```
+
+Output:
+
+```
+{112, 114, 115, 116, 118}
+<class 'set'>
+```
+
+Here, we have created a set named `student_info` with 5 integer values.
+
+Since sets are unordered collections, indexing has no meaning. Hence, the slicing operator [] does not work.
+
+## Python Dictionary Data Type
+
+A Python dictionary is an ordered collection of items. It stores elements in key/value pairs.
+
+Here, keys are unique identifiers that are associated with each value.
+
+Let's see an example,
+
+```python
+# create a dictionary named capital_city
+capital_city = {'Nepal': 'Kathmandu', 'Italy': 'Rome', 'England': 'London'}
+
+print(capital_city)
+```
+
+Output:
+
+```
+{'Nepal': 'Kathmandu', 'Italy': 'Rome', 'England': 'London'}
+```
+
+In the above example, we have created a dictionary named `capital_city`. Here,
+
+- Keys are 'Nepal', 'Italy', 'England'
+- Values are 'Kathmandu', 'Rome', 'London'
+
+### Access Dictionary Values Using Keys
+
+We use keys to retrieve the respective value. But not the other way around. For example,
+
+```python
+# create a dictionary named capital_city
+capital_city = {'Nepal': 'Kathmandu', 'Italy': 'Rome', 'England': 'London'}
+
+print(capital_city['Nepal'])  # prints Kathmandu
+
+# throws an error message 
+print(capital_city['Kathmandu'])
+```
+
+Here, we have accessed values using keys from the `capital_city` dictionary.
+
+Since 'Nepal' is a key, `capital_city['Nepal']` accesses its respective value i.e., Kathmandu.
+
+However, 'Kathmandu' is the value for the 'Nepal' key, so `capital_city['Kathmandu']` throws an error message.
 
