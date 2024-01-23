@@ -568,3 +568,85 @@ Since 'Nepal' is a key, `capital_city['Nepal']` accesses its respective value i.
 
 However, 'Kathmandu' is the value for the 'Nepal' key, so `capital_city['Kathmandu']` throws an error message.
 
+## Python Type Conversion
+
+In programming, type conversion is the process of converting data of one type to another, such as converting int data to str.
+
+There are two types of type conversion in Python.
+
+1. **Implicit Conversion - automatic type conversion**
+2. **Explicit Conversion - manual type conversion**
+
+## Python Implicit Type Conversion
+
+In certain situations, Python automatically converts one data type to another. This is known as implicit type conversion.
+
+### Example 1: Converting integer to float
+
+Let's see an example where Python promotes the conversion of the lower data type (integer) to the higher data type (float) to avoid data loss.
+
+```python
+integer_number = 123
+float_number = 1.23
+
+new_number = integer_number + float_number
+
+# display new value and resulting data type
+print("Value:", new_number)
+print("Data Type:", type(new_number))
+```
+
+**Output:**
+```
+Value: 124.23
+Data Type: <class 'float'>
+```
+
+In the above example, Python converts the smaller data type (integer) to the larger data type (float) to avoid the loss of data.
+
+Note:
+- We get TypeError if we try to add str and int. For example, '12' + 23. Python is not able to use Implicit Conversion in such conditions.
+- Python has a solution for these types of situations known as Explicit Conversion.
+
+## Explicit Type Conversion
+
+In Explicit Type Conversion, users convert the data type of an object to the required data type using built-in functions like int(), float(), str(), etc.
+
+This type of conversion is also called typecasting because the user casts (changes) the data type of the objects.
+
+### Example 2: Addition of string and integer Using Explicit Conversion
+
+```python
+num_string = '12'
+num_integer = 23
+
+print("Data type of num_string before Type Casting:", type(num_string))
+
+# explicit type conversion
+num_string = int(num_string)
+
+print("Data type of num_string after Type Casting:", type(num_string))
+
+num_sum = num_integer + num_string
+
+print("Sum:", num_sum)
+print("Data type of num_sum:", type(num_sum))
+```
+
+**Output:**
+```
+Data type of num_string before Type Casting: <class 'str'>
+Data type of num_string after Type Casting: <class 'int'>
+Sum: 35
+Data type of num_sum: <class 'int'>
+```
+
+In the above example, we use `int()` to perform explicit type conversion of `num_string` to an integer type. After conversion, Python can add these two variables.
+
+## Key Points to Remember
+
+- Type Conversion is the conversion of an object from one data type to another data type.
+- Implicit Type Conversion is automatically performed by the Python interpreter.
+- Python avoids the loss of data in Implicit Type Conversion.
+- Explicit Type Conversion is also called Type Casting, and the data types of objects are converted using predefined functions by the user.
+- In Type Casting, loss of data may occur as we enforce the object to a specific data type.
