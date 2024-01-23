@@ -650,3 +650,134 @@ In the above example, we use `int()` to perform explicit type conversion of `num
 - Python avoids the loss of data in Implicit Type Conversion.
 - Explicit Type Conversion is also called Type Casting, and the data types of objects are converted using predefined functions by the user.
 - In Type Casting, loss of data may occur as we enforce the object to a specific data type.
+
+## Python Basic Input and Output
+
+## Python Output
+
+In Python, we use the `print()` function to display output. For example,
+
+```python
+print('Python is powerful')
+```
+
+**Output:**
+```
+Python is powerful
+```
+
+The `print()` function can take multiple parameters:
+
+```python
+print(object=, separator=, end=, file=, flush=)
+```
+
+- `object`: value(s) to be printed
+- `sep` (optional): separates multiple objects inside `print()`
+- `end` (optional): adds specific values like new line "\n" or tab "\t"
+- `file` (optional): where the values are printed (default is `sys.stdout` - screen)
+- `flush` (optional): boolean specifying if the output is flushed or buffered (default: False)
+
+### Example 1: Python Print Statement
+
+```python
+print('Good Morning!')
+print('It is rainy today')
+```
+
+**Output:**
+```
+Good Morning!
+It is rainy today
+```
+
+### Example 2: Python print() with end Parameter
+
+```python
+print('Good Morning!', end=' ')
+print('It is rainy today')
+```
+
+**Output:**
+```
+Good Morning! It is rainy today
+```
+
+### Example 3: Python print() with sep parameter
+
+```python
+print('New Year', 2023, 'See you soon!', sep='. ')
+```
+
+**Output:**
+```
+New Year. 2023. See you soon!
+```
+
+### Example: Print Python Variables and Literals
+
+```python
+number = -10.6
+name = "Programiz"
+
+# print literals
+print(5)
+
+# print variables
+print(number)
+print(name)
+```
+
+**Output:**
+```
+5
+-10.6
+Programiz
+```
+
+### Example: Print Concatenated Strings
+
+```python
+print('Programiz is ' + 'awesome.')
+```
+
+**Output:**
+```
+Programiz is awesome.
+```
+
+## Output formatting
+
+We can use the `str.format()` method for output formatting. For example,
+
+```python
+x = 5
+y = 10
+
+print('The value of x is {} and y is {}'.format(x, y))
+```
+
+## Python Input
+
+To take input from the user, we use the `input()` function.
+
+### Example: Python User Input
+
+```python
+# using input() to take user input
+num = input('Enter a number: ')
+
+print('You Entered:', num)
+print('Data type of num:', type(num))
+```
+
+**Output:**
+```
+Enter a number: 10
+You Entered: 10
+Data type of num: <class 'str'>
+```
+
+In this example, `input()` is used to take user input, and the entered value is stored in the `num` variable. It's important to note that the entered value is a string, and to convert it to a number, we can use `int()` or `float()` functions.
+
+
