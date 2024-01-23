@@ -8,16 +8,15 @@ Keywords are predefined, reserved words used in Python programming that have spe
 All the keywords except `True`, `False`, and `None` are in lowercase and must be written as they are. The list of all the keywords is given below:
 
 ```
-False   await   else    import  pass
-None    break   except  in      raise
-True    class   finally is      return
-and     continue    for     lambda  try
-as      def from    nonlocal    while
-assert  del global  not with
-async   elif    if  or  yield
+False   await     else     import     pass
+None    break     except   in         raise
+True    class     finally  is         return
+and     continue  for      lambda     try
+as      def       from     nonlocal   while
+assert  del       global   not        with
+async   elif      if       or         yield
 ```
 
-If you find it overwhelming to look at all the keywords at once, here is a complete list of all the keywords with examples.
 
 ## Python Identifiers
 
@@ -33,7 +32,7 @@ Here, `language` is a variable (an identifier) that holds the value 'Python'. We
 continue = 'Python'
 ```
 
-The above code is incorrect because we have used `continue` as a variable name. To learn more about variables, visit [Python Variables](#).
+The above code is incorrect because we have used `continue` as a variable name.
 
 ### Rules for Naming an Identifier
 
@@ -59,3 +58,5 @@ The above code is incorrect because we have used `continue` as a variable name. 
 - Python is a case-sensitive language. This means `Variable` and `variable` are not the same.
 - Always give identifiers a name that makes sense. While `c = 10` is a valid name, writing `count = 10` would make more sense and be easier to understand.
 - Multiple words can be separated using an underscore, like `this_is_a_long_variable`.
+
+
