@@ -157,7 +157,7 @@ In the above example, we have created a function named `find_square()`. The func
 
 ## How Functions Work in Python?
 
-![Working of Functions in Python](image_link)
+![image](https://github.com/vansh-seth/-Python-Basics-Learning/assets/111755254/b6439e52-5c20-4a83-abde-0e4675519c22)
 
 ### Example 3: Add Two Numbers
 
