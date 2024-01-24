@@ -282,3 +282,135 @@ This is how the above program works:
 | 3rd       | 2          | Prints 2  | No                      |
 | 4th       | 3          | Prints 3  | Yes                     |
 | The loop terminates. |
+
+
+# Python while Loop
+
+In Python, we use the while loop to repeat a block of code until a certain condition is met. For example,
+
+```python
+number = 1
+
+while number <= 3:
+    print(number)
+    number = number + 1
+```
+
+**Output:**
+
+```
+1
+2
+3
+```
+
+In the above example, we have used a while loop to print the numbers till the condition `number <= 3` is satisfied.
+
+## while Loop Syntax
+
+```python
+while condition:
+    # body of while loop
+```
+
+Here,
+
+- The while loop evaluates the condition.
+- If the condition is true, body of while loop is executed. The condition is evaluated again.
+- This process continues until the condition is False.
+- Once the condition evaluates to False, the loop terminates.
+
+## Flowchart of Python while Loop
+
+![image](https://github.com/vansh-seth/-Python-Basics-Learning/assets/111755254/fac6c8ae-7920-4ac4-bab5-1000506b3de8)
+
+## Example: Python while Loop
+
+```python
+# calculate the sum of five numbers entered by user
+sum = 0
+count = 0
+
+while count < 5:
+    input_value = int(input('Enter a number: '))
+    sum += input_value
+    count += 1
+
+print('The sum is:', sum)
+```
+
+**Output:**
+
+```
+Enter a number: 3
+Enter a number: 2
+Enter a number: 1
+Enter a number: 4
+Enter a number: 6
+The sum is: 16
+```
+
+Here is how the above program works in each iteration of the loop:
+
+| Variables | count < 5 | sum = sum + user_input |
+|-----------|-----------|-------------------------|
+| count = 0 | True      | sum = 0 + 3 = 3         |
+| count = 1 | True      | sum = 3 + 2 = 5         |
+| count = 2 | True      | sum = 5 + 1 = 6         |
+| count = 3 | True      | sum = 6 + 4 = 10        |
+| count = 4 | True      | sum = 10 + 6 = 16       |
+| count = 5 | False     | The loop is terminated. |
+
+## Example: while Loop to Display Game Level
+
+```python
+# variables to store game information
+current_level = 1
+final_level = 4
+game_completed = True
+
+# iterate until the final level is reached
+while current_level <= final_level:
+    if game_completed:
+        print(f'Welcome to Level {current_level}')
+        current_level += 1
+
+print('Game Over!')
+```
+
+**Output:**
+
+```
+Welcome to Level 1
+Welcome to Level 2
+Welcome to Level 3
+Welcome to Level 4
+Game Over!
+```
+
+In the above example, we have used a while loop to check the current level of the player and display it.
+
+
+## Infinite while Loop
+
+If the condition of a while loop is always True, the loop runs for infinite times, forming an infinite while loop. For example,
+
+```python
+age = 32
+
+# the test condition is always True
+while age > 18:
+    print('You can vote')
+```
+
+**Output:**
+
+```
+You can vote
+You can vote
+You can vote
+.
+.
+.
+```
+
