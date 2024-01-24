@@ -499,3 +499,58 @@ for i in range(5):
 In the above example, `if i == 3:` `continue` skips the current iteration when `i` is equal to 3 and continues the next iteration. Hence, the output has all the values except 3.
 
 **Note:** We can also use the `continue` statement with a `while` loop.
+
+# Python `pass` Statement
+
+In Python programming, the `pass` statement is a null statement which can be used as a placeholder for future code.
+
+Suppose we have a loop or a function that is not implemented yet, but we want to implement it in the future. In such cases, we can use the `pass` statement.
+
+## Syntax
+
+```python
+pass
+```
+
+## Using `pass` With Conditional Statement
+
+```python
+n = 10
+
+# use pass inside if statement
+if n > 10:
+    pass
+
+print('Hello')
+```
+
+Here, notice that we have used the `pass` statement inside the `if` statement.
+
+However, nothing happens when the `pass` is executed. It results in no operation (NOP).
+
+Suppose we didn't use `pass` or just put a comment as:
+
+```python
+n = 10
+
+if n > 10:
+    # write code later
+
+print('Hello')
+```
+
+Here, we will get an error message: `IndentationError: expected an indented block`.
+
+**Note:** The difference between a comment and a `pass` statement in Python is that while the interpreter ignores a comment entirely, `pass` is not ignored.
+
+## Use of `pass` Statement inside Function or Class
+
+We can do the same thing in an empty function or class as well. For example,
+
+```python
+def function(args):
+    pass
+
+class Example:
+    pass
+```
