@@ -484,3 +484,90 @@ RecursionError: maximum recursion depth exceeded
 - Sometimes the logic behind recursion is hard to follow through.
 - Recursive calls are expensive (inefficient) as they take up a lot of memory and time.
 - Recursive functions are hard to debug.
+
+
+## Python Lambda/Anonymous Function
+
+In Python, a lambda function is a special type of function without the function name. For example,
+
+```python
+lambda: print('Hello World')
+```
+
+Here, we have created a lambda function that prints 'Hello World'.
+
+## Python lambda Function Declaration
+
+We use the `lambda` keyword instead of `def` to create a lambda function. Here's the syntax to declare the lambda function:
+
+```python
+lambda argument(s): expression
+```
+
+Here,
+
+- `argument(s)` - any value passed to the lambda function
+- `expression` - expression is executed and returned
+
+Let's see an example,
+
+```python
+greet = lambda: print('Hello World')
+```
+
+Here, we have defined a lambda function and assigned it to the variable named `greet`.
+
+To execute this lambda function, we need to call it. Here's how we can call the lambda function:
+
+```python
+# call the lambda
+greet()
+```
+
+The lambda function above simply prints the text 'Hello World'.
+
+**Note**: This lambda function doesn't have any arguments.
+
+### Example: Python lambda Function
+
+```python
+# declare a lambda function
+greet = lambda: print('Hello World')
+
+# call lambda function
+greet()
+
+# Output: Hello World
+```
+
+In the above example, we have defined a lambda function and assigned it to the `greet` variable.
+
+When we call the lambda function, the `print()` statement inside the lambda function is executed.
+
+## Python lambda Function with an Argument
+
+Similar to normal functions, the lambda function can also accept arguments. For example,
+
+```python
+# lambda that accepts one argument
+greet_user = lambda name: print('Hey there,', name)
+
+# lambda call
+greet_user('Delilah')
+
+# Output: Hey there, Delilah
+```
+
+In the above example, we have assigned a lambda function to the `greet_user` variable.
+
+Here, `name` after the `lambda` keyword specifies that the lambda function accepts the argument named `name`.
+
+Notice the call of lambda function,
+
+```python
+greet_user('Delilah')
+```
+
+Here, we have passed a string value `'Delilah'` to our lambda function.
+
+And finally, the statement inside the lambda function is executed.
