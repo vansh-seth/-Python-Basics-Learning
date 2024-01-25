@@ -97,3 +97,76 @@ print(math.factorial(6))
 These functions enable operations like trigonometry, logarithms, and statistical calculations.
 
 Feel free to explore further and utilize these features in your Python projects.
+
+# Python Lists
+
+In Python, lists are used to store multiple data at once, allowing for the management of collections of items efficiently.
+
+## List Elements
+
+Lists can contain elements of different types and can store duplicate elements. We create a list by placing elements inside square brackets `[]`, separated by commas.
+
+```python
+# Creating a list
+ages = [19, 26, 23]
+print(ages)  # Output: [19, 26, 23]
+```
+
+## Accessing List Elements
+
+Python lists are ordered, and each item is associated with an index number. We use these index numbers to access list items. Indexing starts at 0.
+
+```python
+languages = ["Python", "Swift", "C++"]
+print(languages[0])   # Output: Python
+print(languages[-1])  # Output: C++
+```
+
+## Slicing Lists
+
+We can use slicing to access a portion of a list using the slicing operator `:`. Slicing allows us to extract elements based on their positions within the list.
+
+```python
+my_list = ['p','r','o','g','r','a','m','i','z']
+print(my_list[2:5])  # Output: ['o', 'g', 'r']
+print(my_list[5:])   # Output: ['a', 'm', 'i', 'z']
+```
+
+## Adding and Removing Elements
+
+Python lists are mutable, meaning we can add and remove elements. We can use methods like `append()`, `extend()`, `insert()`, `remove()`, and `del` to modify lists.
+
+```python
+numbers = [21, 34, 54, 12]
+numbers.append(32)  # Adds 32 to the end of the list
+print(numbers)      # Output: [21, 34, 54, 12, 32]
+
+languages.remove('Swift')  # Removes 'Swift' from the list
+print(languages)           # Output: ['Python', 'C++']
+```
+
+## List Methods
+
+Python lists offer a variety of methods for manipulation, including appending, extending, inserting, removing, sorting, and more.
+
+```python
+# Example methods:
+numbers.append(32)
+numbers.extend([40, 50])
+numbers.insert(2, 28)
+numbers.remove(34)
+del numbers[0]
+numbers.sort()
+```
+
+## List Comprehension
+
+List comprehension is a concise way to create lists in Python. It allows for the creation of lists based on existing iterables, such as range objects or other lists.
+
+```python
+# Creating a list using list comprehension
+squared_numbers = [n ** 2 for n in range(1, 6)]
+print(squared_numbers)  # Output: [1, 4, 9, 16, 25]
+```
+
+Lists are fundamental data structures in Python, offering flexibility and versatility for managing collections of data efficiently.
