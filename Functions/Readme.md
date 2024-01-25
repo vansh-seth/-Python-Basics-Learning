@@ -571,3 +571,81 @@ greet_user('Delilah')
 Here, we have passed a string value `'Delilah'` to our lambda function.
 
 And finally, the statement inside the lambda function is executed.
+
+
+You can include the following content in your `README.md` file to explain Python variable scopes:
+
+
+## Python Variable Scope
+
+In Python, we can declare variables in three different scopes: local scope, global scope, and nonlocal scope.
+
+A variable scope specifies the region where we can access a variable.
+
+## Local Variables
+
+When we declare variables inside a function, these variables will have a local scope (within the function). We cannot access them outside the function. These types of variables are called local variables.
+
+For example,
+
+```python
+def greet():
+    # local variable
+    message = 'Hello'
+    
+    print('Local', message)
+
+greet()
+
+# try to access message variable 
+# outside greet() function
+print(message)  # This will raise a NameError
+```
+
+Here, the `message` variable is local to the `greet()` function, so it can only be accessed within the function. That's why we get an error when we try to access it outside the `greet()` function.
+
+## Global Variables
+
+In Python, a variable declared outside of the function or in global scope is known as a global variable. This means that a global variable can be accessed inside or outside of the function.
+
+For example,
+
+```python
+# declare global variable
+message = 'Hello'
+
+def greet():
+    # accessing global variable
+    print('Local', message)
+
+greet()
+print('Global', message)
+```
+
+This time we can access the `message` variable from outside of the `greet()` function. This is because we have created the `message` variable as a global variable.
+
+## Nonlocal Variables
+
+In Python, nonlocal variables are used in nested functions whose local scope is not defined. This means that the variable can be neither in the local nor the global scope. We use the `nonlocal` keyword to create nonlocal variables.
+
+For example,
+
+```python
+def outer():
+    message = 'local'
+
+    def inner():
+        nonlocal message
+        message = 'nonlocal'
+        print("inner:", message)
+
+    inner()
+    print("outer:", message)
+
+outer()
+```
+
+In the above example, there is a nested `inner()` function. We have used the `nonlocal` keyword to create a nonlocal variable. The `inner()` function is defined in the scope of another function `outer()`.
+
+Note: If we change the value of a nonlocal variable, the changes appear in the local variable.
+
