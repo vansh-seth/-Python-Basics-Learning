@@ -846,3 +846,75 @@ Here, we can see a sorted list of names in the `example` module. All other names
 ## Conclusion
 
 Modules in Python allow us to organize our code effectively and reuse functionality across different parts of our program.
+
+# Python Packages
+
+A package is a container that contains various functions to perform specific tasks. For instance, the math package includes functions like `sqrt()` to calculate the square root of a number.
+
+When working on large projects, managing a considerable amount of code becomes challenging. Writing everything together in the same file can make the codebase messy. Instead, we can organize our code into multiple files by grouping related functionalities together in packages.
+
+## Package Model Structure in Python Programming
+
+Suppose we're developing a game. One possible organization of packages and modules could resemble the following structure:
+
+```
+Game Package Model Structure
+- Game
+  - __init__.py
+  - Level
+    - __init__.py
+    - start.py
+    - end.py
+  - Character
+    - __init__.py
+    - player.py
+    - enemy.py
+```
+
+Note: A directory must contain a file named `__init__.py` for Python to consider it as a package. This file can be left empty, but it typically contains initialization code for the package.
+
+## Importing Modules from a Package
+
+In Python, we can import modules from packages using the dot (`.`) operator. For example, to import the `start` module from the `Game.Level` package:
+
+```python
+import Game.Level.start
+```
+
+Now, if the `start` module contains a function named `select_difficulty()`, we must use the full name to reference it:
+
+```python
+Game.Level.start.select_difficulty(2)
+```
+
+### Import Without Package Prefix
+
+To shorten the import statement, we can import the module without the package prefix:
+
+```python
+from Game.Level import start
+```
+
+We can now call the function simply as follows:
+
+```python
+start.select_difficulty(2)
+```
+
+### Import Required Functionality Only
+
+Another way of importing functionality from a module within a package would be as follows:
+
+```python
+from Game.Level.start import select_difficulty
+```
+
+Now we can directly call this function:
+
+```python
+select_difficulty(2)
+```
+
+Although easier, this method is not recommended, as using the full namespace avoids confusion and prevents collisions between identifiers.
+
+While importing packages, Python looks in the list of directories defined in `sys.path`, similar to the module search path.
