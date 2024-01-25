@@ -1,6 +1,3 @@
-To document Python numbers, type conversion, number systems, random module, and mathematics in your README.md file, you can use the following content:
-
-```markdown
 # Python Numbers, Type Conversion, and Mathematics
 
 Python offers various data types to handle numeric values. These include integers, floating-point numbers, and complex numbers, each with its own characteristics and uses.
