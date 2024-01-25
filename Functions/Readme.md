@@ -573,9 +573,6 @@ Here, we have passed a string value `'Delilah'` to our lambda function.
 And finally, the statement inside the lambda function is executed.
 
 
-You can include the following content in your `README.md` file to explain Python variable scopes:
-
-
 ## Python Variable Scope
 
 In Python, we can declare variables in three different scopes: local scope, global scope, and nonlocal scope.
@@ -744,3 +741,108 @@ The basic rules for the `global` keyword in Python are:
 - When we define a variable outside of a function, it is global by default. You don't have to use the `global` keyword.
 - We use the `global` keyword to read and write a global variable inside a function.
 - Use of the `global` keyword outside a function has no effect.
+
+## Python Modules
+
+As our program grows bigger, it may contain many lines of code. Instead of putting everything in a single file, we can use modules to separate codes into separate files according to their functionality. This makes our code organized and easier to maintain.
+
+A module is a file that contains code to perform a specific task. A module may contain variables, functions, classes, etc.
+
+## Creating a Module
+
+Let's see an example:
+
+Suppose we want to create a module named `example.py` that contains a function to perform addition:
+
+```python
+# Python Module addition
+
+def add(a, b):
+    result = a + b
+    return result
+```
+
+Here, we have defined a function `add()` inside a module named `example`. The function takes in two numbers and returns their sum.
+
+## Importing Modules in Python
+
+We can import the definitions inside a module into another module or the interactive interpreter in Python using the `import` keyword. 
+
+For example, to import our previously defined module `example`, we type the following in the Python prompt:
+
+```python
+import example
+```
+
+This imports the module `example` into our current symbol table. Using the module name, we can access the function using the dot `.` operator. For example:
+
+```python
+example.add(4, 5) # returns 9
+```
+
+### Python Standard Library Modules
+
+The Python standard library contains well over 200 modules. We can import a module according to our needs. For example, to get the value of pi:
+
+```python
+# import standard math module 
+import math
+
+# use math.pi to get value of pi
+print("The value of pi is", math.pi)
+```
+
+### Python Import with Renaming
+
+We can import a module by renaming it. For example:
+
+```python
+# import module by renaming it
+import math as m
+
+print(m.pi)
+
+# Output: 3.141592653589793
+```
+
+### Python `from...import` Statement
+
+We can import specific names from a module without importing the module as a whole. For example:
+
+```python
+# import only pi from math module
+from math import pi
+
+print(pi)
+
+# Output: 3.141592653589793
+```
+
+### Importing Everything with the Asterisk (\*) Symbol
+
+In Python, we can import all names from a module using the following construct:
+
+```python
+# import all names from the standard module math
+from math import *
+
+print("The value of pi is", pi)
+```
+
+Importing everything with the asterisk (\*) symbol is not a good programming practice as it can lead to duplicate definitions and hampers code readability.
+
+### The `dir()` Built-in Function
+
+We can use the `dir()` function to list all the function names in a module. For example:
+
+```python
+import example
+
+dir(example)
+```
+
+Here, we can see a sorted list of names in the `example` module. All other names that begin with an underscore are default Python attributes associated with the module, not user-defined.
+
+## Conclusion
+
+Modules in Python allow us to organize our code effectively and reuse functionality across different parts of our program.
