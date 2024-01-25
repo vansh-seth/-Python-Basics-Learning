@@ -170,3 +170,73 @@ print(squared_numbers)  # Output: [1, 4, 9, 16, 25]
 ```
 
 Lists are fundamental data structures in Python, offering flexibility and versatility for managing collections of data efficiently.
+
+# Python Tuples
+
+In Python, a tuple is similar to a list, but the main difference is that tuples are immutable, meaning their elements cannot be changed after creation. Tuples are created by placing elements inside parentheses `()`, separated by commas.
+
+## Creating a Tuple
+
+Tuples can contain elements of different types and may be nested. Here are examples of different types of tuples:
+
+```python
+# Different types of tuples
+
+# Empty tuple
+my_tuple = ()
+print(my_tuple)  # Output: ()
+
+# Tuple with integers
+my_tuple = (1, 2, 3)
+print(my_tuple)  # Output: (1, 2, 3)
+
+# Tuple with mixed datatypes
+my_tuple = (1, "Hello", 3.4)
+print(my_tuple)  # Output: (1, 'Hello', 3.4)
+
+# Nested tuple
+my_tuple = ("mouse", [8, 4, 6], (1, 2, 3))
+print(my_tuple)  # Output: ('mouse', [8, 4, 6], (1, 2, 3))
+```
+
+## Accessing Tuple Elements
+
+Tuple elements are accessed using indexing and slicing, similar to lists.
+
+```python
+letters = ("p", "r", "o", "g", "r", "a", "m", "i", "z")
+
+print(letters[0])    # Accessing the first element: 'p'
+print(letters[-1])   # Accessing the last element using negative indexing: 'z'
+print(letters[1:4])  # Slicing to get elements from index 1 to 3: ('r', 'o', 'g')
+```
+
+## Tuple Methods
+
+Tuples have limited methods compared to lists due to their immutable nature. Some common tuple methods include `count()` and `index()`.
+
+```python
+my_tuple = ('a', 'p', 'p', 'l', 'e',)
+print(my_tuple.count('p'))  # Count occurrences of 'p': 2
+print(my_tuple.index('l'))  # Find the index of 'l': 3
+```
+
+## Iterating Through a Tuple
+
+We can iterate through a tuple using a `for` loop.
+
+```python
+languages = ('Python', 'Swift', 'C++')
+
+# Iterating through the tuple
+for language in languages:
+    print(language)
+```
+
+## Advantages of Tuples over Lists
+
+- Tuples are immutable, making them faster for iteration and write-protected.
+- Tuples with immutable elements can be used as dictionary keys.
+- Tuples are generally used for heterogeneous data types.
+
+Tuples are a useful data structure when you need to store data that shouldn't be changed after creation.
