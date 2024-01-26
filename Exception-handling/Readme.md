@@ -122,3 +122,66 @@ finally:
 
 In this example, regardless of whether an exception occurs or not, the code in the `finally` block is always executed.
 
+# Python Custom Exceptions
+
+In Python, we can define our own custom exceptions by creating a new class that inherits from the built-in `Exception` class. Custom exceptions allow us to define specific error conditions for our programs and handle them appropriately.
+
+## Defining Custom Exceptions
+
+Here's the syntax to define custom exceptions:
+
+```python
+class CustomError(Exception):
+    pass
+```
+
+Here, `CustomError` is a user-defined exception which inherits from the `Exception` class.
+
+## Example: Python User-Defined Exception
+
+```python
+class InvalidAgeException(Exception):
+    "Raised when the input value is less than 18"
+    pass
+
+number = 18
+
+try:
+    input_num = int(input("Enter a number: "))
+    if input_num < number:
+        raise InvalidAgeException
+    else:
+        print("Eligible to Vote")
+        
+except InvalidAgeException:
+    print("Exception occurred: Invalid Age")
+```
+
+In this example, `InvalidAgeException` is a custom exception raised when the input age is less than 18. We handle this exception appropriately using a `try...except` block.
+
+## Customizing Exception Classes
+
+We can further customize our custom exception classes to accept additional arguments as needed. This allows us to provide more context about the error.
+
+```python
+class SalaryNotInRangeError(Exception):
+    """Exception raised for errors in the input salary.
+
+    Attributes:
+        salary -- input salary which caused the error
+        message -- explanation of the error
+    """
+
+    def __init__(self, salary, message="Salary is not in (5000, 15000) range"):
+        self.salary = salary
+        self.message = message
+        super().__init__(self.message)
+
+salary = int(input("Enter salary amount: "))
+if not 5000 < salary < 15000:
+    raise SalaryNotInRangeError(salary)
+```
+
+In this example, `SalaryNotInRangeError` is a custom exception raised when the input salary is not within the specified range. We customize the exception to accept the salary and an optional message, providing more information about the error.
+
+Custom exceptions help make our code more robust and maintainable by handling specific error conditions effectively.
