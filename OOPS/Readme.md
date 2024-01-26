@@ -96,3 +96,87 @@ c1.render()
 
 Object-oriented programming provides a powerful way to organize code, promote reusability, and improve maintainability.
 
+
+```python
+# Python Objects and Classes
+
+# Define a class
+class Bike:
+    # Class attributes
+    name = ""
+    gear = 0
+
+# Create an object of the class
+bike1 = Bike()
+
+# Access attributes and assign values
+bike1.gear = 11
+bike1.name = "Mountain Bike"
+
+print(f"Name: {bike1.name}, Gears: {bike1.gear} ")
+
+# Create multiple objects of the class
+class Employee:
+    # Class attribute
+    employee_id = 0
+
+# Create two objects of the Employee class
+employee1 = Employee()
+employee2 = Employee()
+
+# Access attributes using employee1
+employee1.employeeID = 1001
+print(f"Employee ID: {employee1.employeeID}")
+
+# Access attributes using employee2
+employee2.employeeID = 1002
+print(f"Employee ID: {employee2.employeeID}")
+
+# Define a class with method
+class Room:
+    length = 0.0
+    breadth = 0.0
+    
+    # Method to calculate area
+    def calculate_area(self):
+        print("Area of Room =", self.length * self.breadth)
+
+# Create an object of Room class
+study_room = Room()
+
+# Assign values to attributes
+study_room.length = 42.5
+study_room.breadth = 30.8
+
+# Access method inside class
+study_room.calculate_area()
+
+# Constructors in Python
+class Car:
+    # Constructor function
+    def __init__(self, model=""):
+        self.model = model
+
+# Create object with default value
+car1 = Car()
+print(f"Car Model: {car1.model}")
+
+# Create object with specific value
+car2 = Car("Toyota")
+print(f"Car Model: {car2.model}")
+```
+
+Output:
+```
+Name: Mountain Bike, Gears: 11 
+Employee ID: 1001
+Employee ID: 1002
+Area of Room = 1309.0
+Car Model: 
+Car Model: Toyota
+```
+
+In the above code:
+- We define classes `Bike`, `Employee`, `Room`, and `Car`.
+- Create objects of these classes and access attributes and methods.
+- Demonstrates the use of constructors (`__init__()` method) to initialize attributes during object creation.
