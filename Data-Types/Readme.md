@@ -376,6 +376,104 @@ empty_set = set()
 print('Data type of empty_set:', type(empty_set))
 ```
 
+```python
+# Duplicate Items in a Set
+# Let's see what will happen if we try to include duplicate items in a set.
+
+numbers = {2, 4, 6, 6, 2, 8}
+print(numbers)   # {8, 2, 4, 6}
+```
+
+In the above code snippet, notice that even though we tried to include duplicate items in the set `numbers`, the set only retains unique elements. When you print `numbers`, you'll observe those duplicate elements are automatically removed by the set, and unique elements are preserved.
+
+```python
+# Add and Update Set Items in Python
+# Sets are mutable. However, since they are unordered, indexing has no meaning.
+# We cannot access or change an element of a set using indexing or slicing. Set data type does not support it.
+
+# Add Items to a Set in Python
+# In Python, we use the add() method to add an item to a set. For example,
+
+numbers = {21, 34, 54, 12}
+
+print('Initial Set:', numbers)
+
+# using add() method
+numbers.add(32)
+
+print('Updated Set:', numbers)
+```
+
+In the code above, we first create a set named `numbers`. Then, we use the `add()` method to add the element `32` to the set. Notice that sets are unordered, so the order of elements in the set may not match the order in which they were added.
+
+```python
+# Update Python Set
+# The update() method is used to update the set with items other collection types (lists, tuples, sets, etc). For example,
+
+companies = {'Lacoste', 'Ralph Lauren'}
+tech_companies = ['apple', 'google', 'apple']
+
+companies.update(tech_companies)
+
+print(companies)
+
+# Output: {'google', 'apple', 'Lacoste', 'Ralph Lauren'}
+```
+
+In the code above, the `update()` method adds all the unique elements from the `tech_companies` list to the `companies` set. Duplicates are automatically removed since sets only contain unique elements.
+
+```python
+# Remove an Element from a Set
+# We use the discard() method to remove the specified element from a set. For example,
+
+languages = {'Swift', 'Java', 'Python'}
+
+print('Initial Set:', languages)
+
+# remove 'Java' from a set
+removedValue = languages.discard('Java')
+
+print('Set after remove():', languages)
+```
+
+In the code above, the `discard()` method removes the element `'Java'` from the `languages` set if it exists. If the element is not present in the set, `discard()` does nothing.
+
+```python
+# Built-in Functions with Set
+# Built-in functions like all(), any(), enumerate(), len(), max(), min(), sorted(), sum() etc. are commonly used with sets to perform different tasks.
+
+# Iterate Over a Set in Python
+fruits = {"Apple", "Peach", "Mango"}
+
+# for loop to access each fruit
+for fruit in fruits: 
+    print(fruit)
+```
+
+In the code above, we iterate over the set `fruits` using a for loop and print each element.
+
+```python
+# Find Number of Set Elements
+# We can use the len() method to find the number of elements present in a Set. For example,
+
+even_numbers = {2, 4, 6, 8}
+print('Set:', even_numbers)
+
+# find number of elements
+print('Total Elements:', len(even_numbers))
+```
+
+In the code above, we use the `len()` method to determine the number of elements in the set `even_numbers` and print the result.
+
+```markdown
+Output:
+
+Set: {8, 2, 4, 6}
+Total Elements: 4
+```
+
+This shows that the set `even_numbers` contains 4 elements.
+
 ## Set Operations
 
 Python sets support various operations such as union, intersection, difference, and symmetric difference.
