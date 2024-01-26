@@ -342,3 +342,107 @@ print(f'{name} is from {country}')
 f-Strings make string formatting more concise and readable.
 
 Strings are fundamental data types in Python and are widely used in various applications.
+
+
+# Python Sets
+
+A set in Python is a collection of unique elements, meaning that each element in a set is distinct and there are no duplicates allowed.
+
+## Creating a Set in Python
+
+In Python, sets are created by placing elements inside curly braces `{}`. Here are some examples:
+
+```python
+# Create a set of integers
+student_id = {112, 114, 116, 118, 115}
+print('Student ID:', student_id)
+
+# Create a set of string type
+vowel_letters = {'a', 'e', 'i', 'o', 'u'}
+print('Vowel Letters:', vowel_letters)
+
+# Create a set of mixed data types
+mixed_set = {'Hello', 101, -2, 'Bye'}
+print('Set of mixed data types:', mixed_set)
+```
+
+## Handling Empty Sets
+
+To create an empty set in Python, you cannot use empty curly braces `{}` as it creates an empty dictionary. Instead, you use the `set()` function without any arguments:
+
+```python
+# Create an empty set
+empty_set = set()
+print('Data type of empty_set:', type(empty_set))
+```
+
+## Set Operations
+
+Python sets support various operations such as union, intersection, difference, and symmetric difference.
+
+### Union of Two Sets
+
+The union of two sets includes all elements from both sets, without duplicates.
+
+```python
+# Union of two sets
+A = {1, 3, 5}
+B = {0, 2, 4}
+
+print('Union using |:', A | B)
+print('Union using union():', A.union(B))
+```
+
+### Intersection of Two Sets
+
+The intersection of two sets includes only the elements that are common to both sets.
+
+```python
+# Intersection of two sets
+A = {1, 3, 5}
+B = {1, 2, 3}
+
+print('Intersection using &:', A & B)
+print('Intersection using intersection():', A.intersection(B))
+```
+
+### Difference between Two Sets
+
+The difference between two sets includes elements that are in the first set but not in the second set.
+
+```python
+# Difference between two sets
+A = {2, 3, 5}
+B = {1, 2, 6}
+
+print('Difference using -:', A - B)
+print('Difference using difference():', A.difference(B))
+```
+
+### Symmetric Difference
+
+The symmetric difference between two sets includes elements that are in either of the sets, but not in both.
+
+```python
+# Symmetric difference between two sets
+A = {2, 3, 5}
+B = {1, 2, 6}
+
+print('Using ^:', A ^ B)
+print('Using symmetric_difference():', A.symmetric_difference(B))
+```
+
+## Set Methods
+
+Python sets provide various built-in methods for performing operations like adding elements, removing elements, and more. Here are some commonly used set methods:
+
+- `add()`
+- `remove()`
+- `discard()`
+- `union()`
+- `intersection()`
+- `difference()`
+- `symmetric_difference()`
+- `update()`
+
+Sets are versatile data structures in Python, useful for tasks requiring unique elements and set operations.
