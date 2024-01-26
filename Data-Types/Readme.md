@@ -544,3 +544,224 @@ Python sets provide various built-in methods for performing operations like addi
 - `update()`
 
 Sets are versatile data structures in Python, useful for tasks requiring unique elements and set operations.
+
+
+# Python Dictionary
+
+A Python dictionary is a collection of items that allows us to store data in key: value pairs.
+
+## Create a Dictionary
+
+We create a dictionary by placing key: value pairs inside curly brackets `{}`, separated by commas. For example,
+
+```python
+# creating a dictionary
+country_capitals = {
+  "Germany": "Berlin", 
+  "Canada": "Ottawa", 
+  "England": "London"
+}
+
+# printing the dictionary
+print(country_capitals)
+```
+
+**Output**
+
+```
+{'Germany': 'Berlin', 'Canada': 'Ottawa', 'England': 'London'}
+```
+
+The `country_capitals` dictionary has three elements (key-value pairs), where Germany is the key and Berlin is the value assigned to it and so on.
+
+### Key Value Pairs in a Dictionary
+
+**Notes:**
+
+- Dictionary keys must be immutable, such as tuples, strings, integers, etc. We cannot use mutable (changeable) objects such as lists as keys.
+- We can also create a dictionary using a Python built-in function `dict()`.
+
+**Valid and Invalid Dictionaries:**
+
+- Keys of a dictionary must be immutable
+- Keys of a dictionary must be unique
+
+## Access Dictionary Items
+
+We can access the value of a dictionary item by placing the key inside square brackets.
+
+```python
+country_capitals = {
+  "Germany": "Berlin", 
+  "Canada": "Ottawa", 
+  "England": "London"
+}
+
+# access the value of keys
+print(country_capitals["Germany"])    # Output: Berlin
+print(country_capitals["England"])    # Output: London
+```
+
+**Note:** We can also use the `get()` method to access dictionary items.
+
+## Add Items to a Dictionary
+
+We can add an item to a dictionary by assigning a value to a new key. For example,
+
+```python
+country_capitals = {
+  "Germany": "Berlin", 
+  "Canada": "Ottawa", 
+}
+
+# add an item with "Italy" as key and "Rome" as its value
+country_capitals["Italy"] = "Rome"
+
+print(country_capitals)
+```
+
+**Output**
+
+```
+{'Germany': 'Berlin', 'Canada': 'Ottawa', 'Italy': 'Rome'}
+```
+
+## Remove Dictionary Items
+
+We can use the `del` statement to remove an element from a dictionary. For example,
+
+```python
+country_capitals = {
+  "Germany": "Berlin", 
+  "Canada": "Ottawa", 
+}
+
+# delete item having "Germany" key
+del country_capitals["Germany"]
+
+print(country_capitals)
+```
+
+**Output**
+
+```
+{'Canada': 'Ottawa'}
+```
+
+**Note:** We can also use the `pop()` method to remove an item from a dictionary.
+
+If we need to remove all items from a dictionary at once, we can use the `clear()` method.
+
+## Change Dictionary Items
+
+Python dictionaries are mutable (changeable). We can change the value of a dictionary element by referring to its key. For example,
+
+```python
+country_capitals = {
+  "Germany": "Berlin", 
+  "Italy": "Naples", 
+  "England": "London"
+}
+
+# change the value of "Italy" key to "Rome"
+country_capitals["Italy"] = "Rome"
+
+print(country_capitals)
+```
+
+**Output**
+
+```
+{'Germany': 'Berlin', 'Italy': 'Rome', 'England': 'London'}
+```
+
+**Note:** We can also use the `update()` method to add or change dictionary items.
+
+## Iterate Through a Dictionary
+
+A dictionary is an ordered collection of items (starting from Python 3.7), therefore it maintains the order of its items.
+
+We can iterate through dictionary keys one by one using a for loop.
+
+```python
+country_capitals = {
+  "United States": "Washington D.C.", 
+  "Italy": "Rome" 
+}
+
+# print dictionary keys one by one
+for country in country_capitals:
+    print(country)
+
+print()
+
+# print dictionary values one by one
+for country in country_capitals:
+    capital = country_capitals[country]
+    print(capital)
+```
+
+**Output**
+
+```
+United States
+Italy
+
+Washington D.C.
+Rome
+```
+
+## Find Dictionary Length
+
+We can find the length of a dictionary by using the `len()` function.
+
+```python
+country_capitals = {"England": "London", "Italy": "Rome"}
+
+# get dictionary's length
+print(len(country_capitals))   # Output: 2
+
+numbers = {10: "ten", 20: "twenty", 30: "thirty"}
+
+# get dictionary's length
+print(len(numbers))            # Output: 3
+
+countries = {}
+
+# get dictionary's length
+print(len(countries))          # Output: 0
+```
+
+## Python Dictionary Methods
+
+Here are some of the commonly used dictionary methods.
+
+| Function   | Description                                |
+|------------|--------------------------------------------|
+| pop()      | Removes the item with the specified key.   |
+| update()   | Adds or changes dictionary items.          |
+| clear()    | Remove all the items from the dictionary.  |
+| keys()     | Returns all the dictionary's keys.         |
+| values()   | Returns all the dictionary's values.       |
+| get()      | Returns the value of the specified key.    |
+| popitem()  | Returns the last inserted key and value as a tuple. |
+| copy()     | Returns a copy of the dictionary.          |
+
+## Dictionary Membership Test
+
+We can check whether a key exists in a dictionary by using the `in` and `not in` operators.
+
+```python
+file_types = {
+    ".txt": "Text File",
+    ".pdf": "PDF Document",
+    ".jpg": "JPEG Image",
+}
+
+# use of in and not in operators
+print(".pdf" in file_types)       # Output: True
+print(".mp3" in file_types)       # Output: False
+print(".mp3" not in file_types)   # Output: True
+```
+
+**Note:** The `in` operator checks whether a key exists; it doesn't check whether a value exists or not.
