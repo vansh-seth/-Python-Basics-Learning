@@ -353,3 +353,55 @@ d1.info()
 Here, when the `info()` method is called using the `d1` object of the `Derived` class, Python uses the MRO to determine which method to call. In this case, the method from `SuperClass1` is called because it appears first in the inheritance list.
 
 Multiple inheritance is a powerful feature of Python but should be used judiciously to avoid confusion and maintain code readability.
+
+# Python Multilevel Inheritance
+
+In Python, multilevel inheritance refers to the ability to derive a class from another derived class, forming a chain of inheritance. This allows attributes and methods to be inherited across multiple levels of the class hierarchy.
+
+## Multilevel Inheritance Syntax
+
+To implement multilevel inheritance in Python, you define classes that derive from other classes hierarchically. Here's the syntax:
+
+```python
+class SuperClass:
+    # Super class code here
+
+class DerivedClass1(SuperClass):
+    # Derived class 1 code here
+
+class DerivedClass2(DerivedClass1):
+    # Derived class 2 code here
+```
+
+In this syntax, `DerivedClass1` is derived from `SuperClass`, and `DerivedClass2` is derived from `DerivedClass1`.
+
+## Example: Python Multilevel Inheritance
+
+```python
+class SuperClass:
+    def super_method(self):
+        print("Super Class method called")
+
+# Define class derived from SuperClass
+class DerivedClass1(SuperClass):
+    def derived1_method(self):
+        print("Derived class 1 method called")
+
+# Define class derived from DerivedClass1
+class DerivedClass2(DerivedClass1):
+    def derived2_method(self):
+        print("Derived class 2 method called")
+
+# Create an object of DerivedClass2
+d2 = DerivedClass2()
+
+d2.super_method()         # Output: "Super Class method called"
+d2.derived1_method()      # Output: "Derived class 1 method called"
+d2.derived2_method()      # Output: "Derived class 2 method called"
+```
+
+In this example, `DerivedClass2` is derived from `DerivedClass1`, which in turn is derived from `SuperClass`. This creates a multilevel inheritance hierarchy where `DerivedClass2` inherits attributes and methods from both `DerivedClass1` and `SuperClass`.
+
+By creating an object `d2` of `DerivedClass2`, we can access methods from `SuperClass`, `DerivedClass1`, and `DerivedClass2`.
+
+Multilevel inheritance is a powerful feature of object-oriented programming in Python, allowing for code reuse and structuring of classes in a hierarchical manner.
