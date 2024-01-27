@@ -448,7 +448,6 @@ print(p1 + p2)  # Output: (3,5)
 
 In this example, `__add__()` is used to define the behavior of the + operator for the `Point` class.
 
-Here's a tabulated list of operators along with their corresponding expressions and internal special functions used for operator overloading in Python:
 
 | Operator              | Expression | Internally                          |
 |-----------------------|------------|-------------------------------------|
@@ -466,7 +465,6 @@ Here's a tabulated list of operators along with their corresponding expressions 
 | Bitwise XOR           | `p1 ^ p2`  | `p1.__xor__(p2)`                   |
 | Bitwise NOT           | `~p1`      | `p1.__invert__()`                  |
 
-These special functions allow us to define custom behavior for operators when working with user-defined classes in Python.
 
 ## Overloading Comparison Operators
 
@@ -489,6 +487,17 @@ print(p2 < p1)  # Output: False
 ```
 
 In this example, `__lt__()` overloads the < operator to compare `Person` objects based on their age.
+
+
+| Operator                  | Expression  | Internally                |
+|---------------------------|-------------|---------------------------|
+| Less than                 | `p1 < p2`   | `p1.__lt__(p2)`           |
+| Less than or equal to     | `p1 <= p2`  | `p1.__le__(p2)`           |
+| Equal to                  | `p1 == p2`  | `p1.__eq__(p2)`           |
+| Not equal to              | `p1 != p2`  | `p1.__ne__(p2)`           |
+| Greater than              | `p1 > p2`   | `p1.__gt__(p2)`           |
+| Greater than or equal to  | `p1 >= p2`  | `p1.__ge__(p2)`           |
+
 
 ## Advantages of Operator Overloading
 
