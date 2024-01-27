@@ -199,3 +199,89 @@ bike1 = Bike("Mountain Bike")
 In this example, `__init__()` is the constructor. It initializes the `name` attribute of the object.
 
 Constructors allow you to initialize object properties when creating objects.
+
+# Python Inheritance
+
+In Python, inheritance is a mechanism that allows a class to inherit properties and methods from another class. This promotes code reusability and helps in creating a logical hierarchy of classes.
+
+## Python Inheritance Syntax
+
+To implement inheritance in Python, you define a subclass that inherits from a superclass using the following syntax:
+
+```python
+# define a superclass
+class SuperClass:
+    # attributes and methods of the superclass
+
+# define a subclass inheriting from SuperClass
+class SubClass(SuperClass):
+    # attributes and methods of the subclass
+```
+
+Here, `SubClass` is the subclass, and `SuperClass` is the superclass that `SubClass` inherits from.
+
+## Example: Python Inheritance
+
+```python
+class Animal:
+    name = ""
+    
+    def eat(self):
+        print("I can eat")
+
+class Dog(Animal):
+    def display(self):
+        print("My name is ", self.name)
+
+labrador = Dog()
+labrador.name = "Rohu"
+labrador.eat()
+labrador.display()
+```
+
+In this example, `Dog` is a subclass of `Animal`. The `Dog` class inherits the `name` attribute and `eat()` method from the `Animal` class. The `display()` method is defined in the `Dog` class.
+
+## Method Overriding in Python Inheritance
+
+If a method is present in both the superclass and subclass, the method in the subclass overrides the method in the superclass. This is known as method overriding.
+
+```python
+class Animal:
+    name = ""
+    
+    def eat(self):
+        print("I can eat")
+
+class Dog(Animal):
+    def eat(self):
+        print("I like to eat bones")
+
+labrador = Dog()
+labrador.eat()
+```
+
+In this example, the `eat()` method in the `Dog` class overrides the `eat()` method in the `Animal` class.
+
+## The super() Function in Inheritance
+
+The `super()` function allows you to call methods from the superclass within the subclass.
+
+```python
+class Animal:
+    name = ""
+    
+    def eat(self):
+        print("I can eat")
+
+class Dog(Animal):
+    def eat(self):
+        super().eat()
+        print("I like to eat bones")
+
+labrador = Dog()
+labrador.eat()
+```
+
+Here, `super().eat()` calls the `eat()` method of the superclass (`Animal`) within the `eat()` method of the subclass (`Dog`).
+
+Inheritance is a powerful feature of object-oriented programming that promotes code reuse and helps in organizing classes effectively.
