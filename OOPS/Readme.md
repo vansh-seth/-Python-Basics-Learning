@@ -285,3 +285,71 @@ labrador.eat()
 Here, `super().eat()` calls the `eat()` method of the superclass (`Animal`) within the `eat()` method of the subclass (`Dog`).
 
 Inheritance is a powerful feature of object-oriented programming that promotes code reuse and helps in organizing classes effectively.
+
+# Python Multiple Inheritance
+
+In Python, a class can be derived from more than one superclass, a feature known as multiple inheritance. This allows a class to inherit attributes and methods from multiple parent classes.
+
+## Python Multiple Inheritance Syntax
+
+To implement multiple inheritance in Python, you define a class that inherits from multiple superclasses using the following syntax:
+
+```python
+class SuperClass1:
+    # features of SuperClass1
+
+class SuperClass2:
+    # features of SuperClass2
+
+class MultiDerived(SuperClass1, SuperClass2):
+    # features of SuperClass1 + SuperClass2 + MultiDerived class
+```
+
+Here, the `MultiDerived` class is derived from both `SuperClass1` and `SuperClass2` classes.
+
+## Example: Python Multiple Inheritance
+
+```python
+class Mammal:
+    def mammal_info(self):
+        print("Mammals can give direct birth.")
+
+class WingedAnimal:
+    def winged_animal_info(self):
+        print("Winged animals can flap.")
+
+class Bat(Mammal, WingedAnimal):
+    pass
+
+# create an object of Bat class
+b1 = Bat()
+
+b1.mammal_info()
+b1.winged_animal_info()
+```
+
+In this example, the `Bat` class is derived from both `Mammal` and `WingedAnimal` superclasses. The `Bat` class inherits the `mammal_info()` method from `Mammal` and the `winged_animal_info()` method from `WingedAnimal`.
+
+## Method Resolution Order (MRO) in Python
+
+When a class inherits from multiple superclasses with the same method name, Python uses the Method Resolution Order (MRO) to determine which method to call. The MRO specifies the order in which Python searches for methods in the inheritance hierarchy.
+
+```python
+class SuperClass1:
+    def info(self):
+        print("Super Class 1 method called")
+
+class SuperClass2:
+    def info(self):
+        print("Super Class 2 method called")
+
+class Derived(SuperClass1, SuperClass2):
+    pass
+
+d1 = Derived()
+d1.info()  
+```
+
+Here, when the `info()` method is called using the `d1` object of the `Derived` class, Python uses the MRO to determine which method to call. In this case, the method from `SuperClass1` is called because it appears first in the inheritance list.
+
+Multiple inheritance is a powerful feature of Python but should be used judiciously to avoid confusion and maintain code readability.
