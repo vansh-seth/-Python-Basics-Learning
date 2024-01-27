@@ -158,8 +158,6 @@ Output:
 8
 ```
 
-To learn more about object-oriented programming, visit Python OOP.
-
 ### Python Infinite Iterators
 
 An infinite iterator is an iterator that never ends, meaning that it will continue to produce elements indefinitely.
@@ -190,3 +188,137 @@ Output:
 Here, we have created an infinite iterator that starts at 1 and increments by 1 each time.
 
 And then we printed the first 5 elements of the infinite iterator using the `for` loop and the `next()` method.
+
+# Python Generators
+In Python, a generator is a function that returns an iterator that produces a sequence of values when iterated over.
+
+Generators are useful when we want to produce a large sequence of values, but we don't want to store all of them in memory at once.
+
+### Create Python Generator
+
+In Python, similar to defining a normal function, we can define a generator function using the `def` keyword, but instead of the `return` statement, we use the `yield` statement.
+
+```python
+def generator_name(arg):
+    # statements
+    yield something
+```
+
+Here, the `yield` keyword is used to produce a value from the generator.
+
+When the generator function is called, it does not execute the function body immediately. Instead, it returns a generator object that can be iterated over to produce the values.
+
+### Example: Python Generator
+
+Here's an example of a generator function that produces a sequence of numbers,
+
+```python
+def my_generator(n):
+    # initialize counter
+    value = 0
+    # loop until counter is less than n
+    while value < n:
+        # produce the current value of the counter
+        yield value
+        # increment the counter
+        value += 1
+
+# iterate over the generator object produced by my_generator
+for value in my_generator(3):
+    # print each value produced by generator
+    print(value)
+```
+
+Output:
+
+```
+0
+1
+2
+```
+
+In the above example, the `my_generator()` generator function takes an integer `n` as an argument and produces a sequence of numbers from 0 to `n-1`.
+
+The `yield` keyword is used to produce a value from the generator and pause the generator function's execution until the next value is requested.
+
+We can also create a generator object from the generator function by calling the function like we would any other function as,
+
+```python
+generator = my_range(3)
+print(next(generator))  # 0
+print(next(generator))  # 1
+print(next(generator))  # 2
+```
+
+### Python Generator Expression
+
+In Python, a generator expression is a concise way to create a generator object.
+
+It is similar to a list comprehension, but instead of creating a list, it creates a generator object that can be iterated over to produce the values in the generator.
+
+#### Generator Expression Syntax
+
+A generator expression has the following syntax,
+
+```
+(expression for item in iterable)
+```
+
+Here, `expression` is a value that will be returned for each item in the iterable.
+
+The generator expression creates a generator object that produces the values of `expression` for each item in the iterable, one at a time, when iterated over.
+
+#### Example 2: Python Generator Expression
+
+```python
+# create the generator object
+squares_generator = (i * i for i in range(5))
+
+# iterate over the generator and print the values
+for i in squares_generator:
+    print(i)
+```
+
+Output:
+
+```
+0
+1
+4
+9
+16
+```
+
+Here, we have created the generator object that will produce the squares of the numbers 0 through 4 when iterated over.
+
+And then, to iterate over the generator and get the values, we have used the `for` loop.
+
+### Use of Python Generators
+
+There are several reasons that make generators a powerful implementation.
+
+1. **Easy to Implement**: Generators can be implemented in a clear and concise way as compared to their iterator class counterpart. 
+
+2. **Memory Efficient**: A normal function to return a sequence will create the entire sequence in memory before returning the result. Generator implementation of such sequences is memory-friendly and is preferred since it only produces one item at a time.
+
+3. **Represent Infinite Stream**: Generators are excellent mediums to represent an infinite stream of data. 
+
+4. **Pipelining Generators**: Multiple generators can be used to pipeline a series of operations.
+
+```python
+# Example for pipelining generators
+def fibonacci_numbers(nums):
+    x, y = 0, 1
+    for _ in range(nums):
+        x, y = y, x+y
+        yield x
+
+def square(nums):
+    for num in nums:
+        yield num**2
+
+print(sum(square(fibonacci_numbers(10))))
+# Output: 4895
+```
+
+This pipelining is efficient and easy to read.
