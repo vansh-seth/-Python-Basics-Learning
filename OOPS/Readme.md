@@ -405,3 +405,76 @@ In this example, `DerivedClass2` is derived from `DerivedClass1`, which in turn 
 By creating an object `d2` of `DerivedClass2`, we can access methods from `SuperClass`, `DerivedClass1`, and `DerivedClass2`.
 
 Multilevel inheritance is a powerful feature of object-oriented programming in Python, allowing for code reuse and structuring of classes in a hierarchical manner.
+
+# Python Operator Overloading
+
+In Python, operator overloading allows us to define the behavior of operators like +, -, *, /, etc., for user-defined classes. This enables the same operator to perform different operations based on the operands' types and context.
+
+## Python Special Functions
+
+Special functions in Python, starting and ending with double underscores (__), are used for operator overloading and implementing specific features in classes.
+
+Here are some commonly used special functions:
+
+- `__init__()`: Initializes the object's attributes.
+- `__str__()`: Returns a string representation of the object.
+- `__len__()`: Returns the length of the object.
+- `__add__()`: Overloads the + operator to add two objects.
+- `__call__()`: Allows instances of the class to be called as functions.
+
+## Example: + Operator Overloading in Python
+
+To overload the + operator, we implement the `__add__()` method in the class. Here's an example:
+
+```python
+class Point:
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return "({0},{1})".format(self.x, self.y)
+
+    def __add__(self, other):
+        x = self.x + other.x
+        y = self.y + other.y
+        return Point(x, y)
+
+p1 = Point(1, 2)
+p2 = Point(2, 3)
+
+print(p1 + p2)  # Output: (3,5)
+```
+
+In this example, `__add__()` is used to define the behavior of the + operator for the `Point` class.
+
+## Overloading Comparison Operators
+
+Python allows overloading of comparison operators like <, >, ==, etc. Here's an example:
+
+```python
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def __lt__(self, other):
+        return self.age < other.age
+
+p1 = Person("Alice", 20)
+p2 = Person("Bob", 30)
+
+print(p1 < p2)  # Output: True
+print(p2 < p1)  # Output: False
+```
+
+In this example, `__lt__()` overloads the < operator to compare `Person` objects based on their age.
+
+## Advantages of Operator Overloading
+
+- Improves code readability by using familiar operators.
+- Ensures consistent behavior across different data types and classes.
+- Simplifies code, especially for complex operations.
+- Promotes code reuse by implementing operator methods once and using them across multiple operators.
+
+Operator overloading is a powerful feature of Python that enables concise and expressive code, especially when working with custom data types and classes.
