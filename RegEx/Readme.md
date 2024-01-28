@@ -172,7 +172,7 @@ The vertical bar | is used for alternation (or operator).
 
 | Expression | String  | Matched? |
 |------------|---------|----------|
-| a|b        | cde     | No match |
+| `a|b`        | cde     | No match |
 |            | ade     | 1 match  |
 |            | acdbea  | 3 matches (at acdbea) |
 
@@ -183,7 +183,7 @@ Parentheses () is used to group sub-patterns. For example, (a|b|c)xz match any s
 
 | Expression      | String      | Matched? |
 |-----------------|-------------|----------|
-| (a|b|c)xz       | ab xz       | No match |
+| `(a|b|c)xz`     | ab xz       | No match |
 |                 | abxz        | 1 match  |
 |                 | axz cabxz   | 2 matches (at axz and cabxz) |
 ```
