@@ -37,8 +37,6 @@ Here, we used `re.match()` function to search the pattern within the `test_strin
 
 There are other several functions defined in the `re` module to work with RegEx. Before we explore that, let's learn about regular expressions themselves.
 
-If you already know the basics of RegEx, jump to Python RegEx.
-
 ### Specify Pattern Using RegEx
 
 To specify regular expressions, metacharacters are used. In the above example, `^` and `$` are metacharacters.
@@ -46,6 +44,10 @@ To specify regular expressions, metacharacters are used. In the above example, `
 #### MetaCharacters
 
 Metacharacters are characters that are interpreted in a special way by a RegEx engine. Here's a list of metacharacters:
+
+```
+[] . ^ $ * + ? {} () \ |
+```
 
 - `[]` - Square brackets
 
