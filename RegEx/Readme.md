@@ -84,12 +84,10 @@ A period matches any single character (except newline '\n').
 |            | acd    | 1 match  |
 |            | acde   | 2 matches|
 
-```
 
-```python
-# Python RegEx Metacharacters
+- `^` - Caret
 
-The caret symbol ^ is used to check if a string starts with a certain character.
+Used to check if a string starts with a certain character.
 
 | Expression | String | Matched? |
 |------------|--------|----------|
@@ -99,7 +97,10 @@ The caret symbol ^ is used to check if a string starts with a certain character.
 | ^ab        | abc    | 1 match  |
 |            | acb    | No match (starts with a but not followed by b) |
 
-The dollar symbol $ is used to check if a string ends with a certain character.
+
+- `$` - Dollar
+
+Used to check if a string ends with a certain character.
 
 | Expression | String  | Matched? |
 |------------|---------|----------|
@@ -107,7 +108,9 @@ The dollar symbol $ is used to check if a string ends with a certain character.
 |            | formula | 1 match  |
 |            | cab     | No match |
 
-The star symbol * matches zero or more occurrences of the pattern left to it.
+- `*` - Star
+
+Matches zero or more occurrences of the pattern left to it.
 
 | Expression | String | Matched? |
 |------------|--------|----------|
@@ -117,7 +120,9 @@ The star symbol * matches zero or more occurrences of the pattern left to it.
 |            | main   | No match (a is not followed by n) |
 |            | woman  | 1 match  |
 
-The plus symbol + matches one or more occurrences of the pattern left to it.
+- `+` - Plus
+
+Matches one or more occurrences of the pattern left to it.
 
 | Expression | String | Matched? |
 |------------|--------|----------|
@@ -127,7 +132,9 @@ The plus symbol + matches one or more occurrences of the pattern left to it.
 |            | main   | No match (a is not followed by n) |
 |            | woman  | 1 match  |
 
-The question mark symbol ? matches zero or one occurrence of the pattern left to it.
+- `?` - Question Mark
+
+Matches zero or one occurrence of the pattern left to it.
 
 | Expression | String | Matched? |
 |------------|--------|----------|
@@ -137,7 +144,12 @@ The question mark symbol ? matches zero or one occurrence of the pattern left to
 |            | main   | No match (a is not followed by n) |
 |            | woman  | 1 match  |
 
-Braces {} specify the number of repetitions of a pattern.
+
+- `{}` - Braces
+
+Consider this code: {n,m}. This means at least n, and at most m repetitions of the pattern left to it.
+
+
 
 | Expression | String     | Matched? |
 |------------|------------|----------|
@@ -154,6 +166,8 @@ The RegEx [0-9]{2, 4} matches at least 2 digits but not more than 4 digits.
 |            | 12 and 345673 | 3 matches (12, 3456, 73) |
 |            | 1 and 2       | No match |
 
+- `|` - Alternation
+
 The vertical bar | is used for alternation (or operator).
 
 | Expression | String  | Matched? |
@@ -162,7 +176,10 @@ The vertical bar | is used for alternation (or operator).
 |            | ade     | 1 match  |
 |            | acdbea  | 3 matches (at acdbea) |
 
-Parentheses () is used to group sub-patterns.
+- `()` - Group
+
+Parentheses () is used to group sub-patterns. For example, (a|b|c)xz match any string that matches either a or b or c followed by xz
+
 
 | Expression      | String      | Matched? |
 |-----------------|-------------|----------|
