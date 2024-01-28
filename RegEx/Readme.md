@@ -187,3 +187,94 @@ Parentheses () is used to group sub-patterns. For example, (a|b|c)xz match any s
 |              | abxz        | 1 match                           |
 |              | axz cabxz   | 2 matches (at axz and cabxz)     |
 
+
+- `\` - Backslash
+
+Backlash `\` is used to escape various characters including all metacharacters. For example,
+
+`\$a` match if a string contains `$` followed by a. Here, `$` is not specially interpreted by a RegEx engine.
+
+If you are unsure if a character has a special meaning or not, you can put `\` in front of it. This makes sure the character is not treated badly.
+
+## Special Sequences
+
+Special sequences make commonly used patterns easier to write. Here's a list of special sequences:
+
+ `\A` - Matches if the specified characters are at the start of a string.
+
+| Expression | String  | Matched? |
+|------------|---------|----------|
+| \Athe      | the sun | Match    |
+|            | In the sun | No match |
+
+`\b` - Matches if the specified characters are at the beginning or end of a word.
+
+| Expression | String       | Matched? |
+|------------|--------------|----------|
+| \bfoo      | football     | Match    |
+|            | a football   | Match    |
+|            | afootball    | No match |
+| foo\b      | the foo      | Match    |
+|            | the afoo test| Match    |
+|            | the afootest | No match |
+
+`\B` - Opposite of \b. Matches if the specified characters are not at the beginning or end of a word.
+
+| Expression | String       | Matched? |
+|------------|--------------|----------|
+| \Bfoo      | football     | No match |
+|            | a football   | No match |
+|            | afootball    | Match    |
+| foo\B      | the foo      | No match |
+|            | the afoo test| No match |
+|            | the afootest | Match    |
+
+`\d` - Matches any decimal digit. Equivalent to [0-9]
+
+| Expression | String  | Matched?          |
+|------------|---------|-------------------|
+| \d         | 12abc3  | 3 matches (at 12abc3) |
+|            | Python  | No match          |
+
+`\D` - Matches any non-decimal digit. Equivalent to [^0-9]
+
+| Expression | String    | Matched?          |
+|------------|-----------|-------------------|
+| \D         | 1ab34"50 | 3 matches (at 1ab34"50) |
+|            | 1345      | No match          |
+
+`\s` - Matches where a string contains any whitespace character. Equivalent to [ \t\n\r\f\v].
+
+| Expression | String      | Matched? |
+|------------|-------------|----------|
+| \s         | Python RegEx| 1 match  |
+|            | PythonRegEx | No match |
+
+`\S` - Matches where a string contains any non-whitespace character. Equivalent to [^ \t\n\r\f\v].
+
+| Expression | String      | Matched? |
+|------------|-------------|----------|
+| \S         | a b         | 2 matches (at  a b) |
+|            |             | No match |
+
+`\w` - Matches any alphanumeric character (digits and alphabets). Equivalent to [a-zA-Z0-9_]. By the way, underscore _ is also considered an alphanumeric character.
+
+| Expression | String     | Matched? |
+|------------|------------|----------|
+| \w         | 12&": ;c   | 3 matches (at 12&": ;c) |
+|            | "%"> !     | No match |
+
+`\W` - Matches any non-alphanumeric character. Equivalent to [^a-zA-Z0-9_]
+
+| Expression | String  | Matched?          |
+|------------|---------|-------------------|
+| \W         | 1a2%c   | 1 match (at 1a2%c) |
+|            | Python  | No match          |
+
+\Z - Matches if the specified characters are at the end of a string.
+
+| Expression  | String                  | Matched? |
+|-------------|-------------------------|----------|
+| Python\Z    | I like Python           | 1 match  |
+|             | I like Python Programming | No match |
+|             | Python is fun.          | No match |
