@@ -278,3 +278,141 @@ Special sequences make commonly used patterns easier to write. Here's a list of 
 | Python\Z    | I like Python           | 1 match  |
 |             | I like Python Programming | No match |
 |             | Python is fun.          | No match |
+
+# Python RegEx
+
+Python offers a module named `re` for working with regular expressions. To utilize it, we need to import the module:
+
+```python
+import re
+```
+
+The `re` module provides various functions and constants to manipulate RegEx patterns.
+
+### re.findall()
+
+The `re.findall()` method returns a list of strings containing all matches.
+
+#### Example 1: `re.findall()`
+
+```python
+# Program to extract numbers from a string
+
+import re
+
+string = 'hello 12 hi 89. Howdy 34'
+pattern = '\d+'
+
+result = re.findall(pattern, string) 
+print(result)
+
+# Output: ['12', '89', '34']
+```
+
+If the pattern is not found, `re.findall()` returns an empty list.
+
+### re.split()
+
+The `re.split()` method splits the string where there is a match and returns a list of strings where the splits have occurred.
+
+#### Example 2: `re.split()`
+
+```python
+import re
+
+string = 'Twelve:12 Eighty nine:89.'
+pattern = '\d+'
+
+result = re.split(pattern, string) 
+print(result)
+
+# Output: ['Twelve:', ' Eighty nine:', '.']
+```
+
+If the pattern is not found, `re.split()` returns a list containing the original string.
+
+You can specify `maxsplit` argument to limit the number of splits.
+
+### re.sub()
+
+The syntax of `re.sub()` is:
+
+```python
+re.sub(pattern, replace, string)
+```
+
+The method returns a string where matched occurrences are replaced with the content of `replace` variable.
+
+#### Example 3: `re.sub()`
+
+```python
+# Program to remove all whitespaces
+import re
+
+# multiline string
+string = 'abc 12\
+de 23 \n f45 6'
+
+# matches all whitespace characters
+pattern = '\s+'
+
+# empty string
+replace = ''
+
+new_string = re.sub(pattern, replace, string) 
+print(new_string)
+
+# Output: abc12de23f456
+```
+
+You can pass `count` as a fourth parameter to limit the number of replacements.
+
+### re.subn()
+
+`re.subn()` is similar to `re.sub()` but returns a tuple of 2 items containing the new string and the number of substitutions made.
+
+#### Example 4: `re.subn()`
+
+```python
+# Program to remove all whitespaces
+import re
+
+# multiline string
+string = 'abc 12\
+de 23 \n f45 6'
+
+# matches all whitespace characters
+pattern = '\s+'
+
+# empty string
+replace = ''
+
+new_string = re.subn(pattern, replace, string) 
+print(new_string)
+
+# Output: ('abc12de23f456', 4)
+```
+
+### re.search()
+
+The `re.search()` method looks for the first location where the RegEx pattern produces a match with the string. It returns a match object if found, else `None`.
+
+#### Example 5: `re.search()`
+
+```python
+import re
+
+string = "Python is fun"
+
+# check if 'Python' is at the beginning
+match = re.search('\APython', string)
+
+if match:
+  print("pattern found inside the string")
+else:
+  print("pattern not found")  
+
+# Output: pattern found inside the string
+```
+
+Here, `match` contains a match object.
