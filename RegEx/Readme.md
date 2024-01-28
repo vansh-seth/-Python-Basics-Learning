@@ -271,7 +271,7 @@ Special sequences make commonly used patterns easier to write. Here's a list of 
 | \W         | 1a2%c   | 1 match (at 1a2%c) |
 |            | Python  | No match          |
 
-\Z - Matches if the specified characters are at the end of a string.
+`\Z` - Matches if the specified characters are at the end of a string.
 
 | Expression  | String                  | Matched? |
 |-------------|-------------------------|----------|
