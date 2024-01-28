@@ -85,3 +85,88 @@ A period matches any single character (except newline '\n').
 |            | acde   | 2 matches|
 
 ```
+
+```python
+# Python RegEx Metacharacters
+
+The caret symbol ^ is used to check if a string starts with a certain character.
+
+| Expression | String | Matched? |
+|------------|--------|----------|
+| ^a         | a      | 1 match  |
+|            | abc    | 1 match  |
+|            | bac    | No match |
+| ^ab        | abc    | 1 match  |
+|            | acb    | No match (starts with a but not followed by b) |
+
+The dollar symbol $ is used to check if a string ends with a certain character.
+
+| Expression | String  | Matched? |
+|------------|---------|----------|
+| a$         | a       | 1 match  |
+|            | formula | 1 match  |
+|            | cab     | No match |
+
+The star symbol * matches zero or more occurrences of the pattern left to it.
+
+| Expression | String | Matched? |
+|------------|--------|----------|
+| ma*n       | mn     | 1 match  |
+|            | man    | 1 match  |
+|            | maaan  | 1 match  |
+|            | main   | No match (a is not followed by n) |
+|            | woman  | 1 match  |
+
+The plus symbol + matches one or more occurrences of the pattern left to it.
+
+| Expression | String | Matched? |
+|------------|--------|----------|
+| ma+n       | mn     | No match (no 'a' character) |
+|            | man    | 1 match  |
+|            | maaan  | 1 match  |
+|            | main   | No match (a is not followed by n) |
+|            | woman  | 1 match  |
+
+The question mark symbol ? matches zero or one occurrence of the pattern left to it.
+
+| Expression | String | Matched? |
+|------------|--------|----------|
+| ma?n       | mn     | 1 match  |
+|            | man    | 1 match  |
+|            | maaan  | No match (more than one 'a' character) |
+|            | main   | No match (a is not followed by n) |
+|            | woman  | 1 match  |
+
+Braces {} specify the number of repetitions of a pattern.
+
+| Expression | String     | Matched? |
+|------------|------------|----------|
+| a{2,3}     | abc dat    | No match |
+|            | abc daat   | 1 match  |
+|            | aabc daaat | 2 matches (at aabc and daaat) |
+|            | aabc daaaat| 2 matches (at aabc and daaaat) |
+
+The RegEx [0-9]{2, 4} matches at least 2 digits but not more than 4 digits.
+
+| Expression | String        | Matched? |
+|------------|---------------|----------|
+| [0-9]{2,4} | ab123csde     | 1 match  |
+|            | 12 and 345673 | 3 matches (12, 3456, 73) |
+|            | 1 and 2       | No match |
+
+The vertical bar | is used for alternation (or operator).
+
+| Expression | String  | Matched? |
+|------------|---------|----------|
+| a|b        | cde     | No match |
+|            | ade     | 1 match  |
+|            | acdbea  | 3 matches (at acdbea) |
+
+Parentheses () is used to group sub-patterns.
+
+| Expression      | String      | Matched? |
+|-----------------|-------------|----------|
+| (a|b|c)xz       | ab xz       | No match |
+|                 | abxz        | 1 match  |
+|                 | axz cabxz   | 2 matches (at axz and cabxz) |
+```
