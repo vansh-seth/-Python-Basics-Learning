@@ -416,3 +416,98 @@ else:
 ```
 
 Here, `match` contains a match object.
+
+## Match object
+
+You can explore methods and attributes of a match object using the `dir()` function.
+
+Some commonly used methods and attributes of match objects include:
+
+### match.group()
+
+The `group()` method returns the part of the string where there is a match.
+
+#### Example 6: Match object
+
+```python
+import re
+
+string = '39801 356, 2102 1111'
+
+# Three digit number followed by space followed by two digit number
+pattern = '(\d{3}) (\d{2})'
+
+# match variable contains a Match object.
+match = re.search(pattern, string) 
+
+if match:
+  print(match.group())
+else:
+  print("pattern not found")
+
+# Output: 801 35
+```
+
+Our pattern `(\d{3}) (\d{2})` has two subgroups `(\d{3})` and `(\d{2})`. You can access the part of the string using these parenthesized subgroups:
+
+```python
+>>> match.group(1)
+'801'
+
+>>> match.group(2)
+'35'
+>>> match.group(1, 2)
+('801', '35')
+
+>>> match.groups()
+('801', '35')
+```
+
+### match.start(), match.end() and match.span()
+
+The `start()` function returns the index of the start of the matched substring. Similarly, `end()` returns the end index of the matched substring.
+
+```python
+>>> match.start()
+2
+>>> match.end()
+8
+```
+
+The `span()` function returns a tuple containing start and end index of the matched part.
+
+```python
+>>> match.span()
+(2, 8)
+```
+
+### match.re and match.string
+
+The `re` attribute of a match object returns a regular expression object. Similarly, `string` attribute returns the passed string.
+
+```python
+>>> match.re
+re.compile('(\\d{3}) (\\d{2})')
+
+>>> match.string
+'39801 356, 2102 1111'
+```
+
+### Using r prefix before RegEx
+
+When `r` or `R` prefix is used before a regular expression, it denotes a raw string. For example, `\n` is a new line whereas `r'\n'` means two characters: a backslash `\` followed by `n`.
+
+Backlash `\` is used to escape various characters including all metacharacters. However, using `r` prefix makes `\` treat as a normal character.
+
+#### Example 7: Raw string using r prefix
+
+```python
+import re
+
+string = '\n and \r are escape sequences.'
+
+result = re.findall(r'[\n\r]', string) 
+print(result)
+
+# Output: ['\n', '\r']
+```
