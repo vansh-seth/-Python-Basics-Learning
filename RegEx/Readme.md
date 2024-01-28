@@ -187,4 +187,3 @@ Parentheses () is used to group sub-patterns. For example, (a|b|c)xz match any s
 |              | abxz        | 1 match                           |
 |              | axz cabxz   | 2 matches (at axz and cabxz)     |
 
-Thank you for your patience!
