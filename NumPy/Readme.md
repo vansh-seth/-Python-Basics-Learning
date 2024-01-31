@@ -95,3 +95,41 @@ array([[ 2.4 , 3. ],
 In the conversion process, integers like 3, 7, 0, and -1 are promoted to floats.
 
 
+## Attributes of NumPy Array
+
+Here are some important attributes of a NumPy ndarray object:
+
+i) **ndarray.ndim**: This attribute gives the number of dimensions of the array as an integer value. Arrays can be 1-D, 2-D, or n-D. In this context, we'll focus on 1-D and 2-D arrays. NumPy refers to dimensions as axes, where a 2-D array has two axes: axis-0 (rows) and axis-1 (columns). The number of axes is also called the array's rank.
+
+    Example:
+    - `array1.ndim` outputs `1`
+    - `array3.ndim` outputs `2`
+
+ii) **ndarray.shape**: This attribute returns a sequence of integers indicating the size of the array for each dimension. For instance, a 1-D array's shape has nothing after the comma, while a 2-D array's shape is represented as (rows, columns).
+
+    Example:
+    - `array1.shape` outputs `(3,)`
+    - `array2.shape` outputs `(4,)`
+    - `array3.shape` outputs `(3, 2)`, meaning 3 rows and 2 columns.
+
+iii) **ndarray.size**: It provides the total number of elements in the array, which equals the product of the elements of the shape.
+
+    Example:
+    - `array1.size` outputs `3`
+    - `array3.size` outputs `6`
+
+iv) **ndarray.dtype**: This attribute indicates the data type of the elements in the array. All elements in an array share the same data type, such as int32, int64, float32, float64, U32, etc.
+
+    Example:
+    - `array1.dtype` outputs `dtype('int32')`
+    - `array2.dtype` outputs `dtype('<U32')`
+    - `array3.dtype` outputs `dtype('float64')`
+
+v) **ndarray.itemsize**: It specifies the size in bytes of each element in the array. For instance, int32 and float32 types allocate 32 bits (or 4 bytes) of memory per element, while int64 and float64 allocate 64 bits (or 8 bytes) per element.
+
+    Example:
+    - `array1.itemsize` outputs `4` (memory allocated to integer)
+    - `array2.itemsize` outputs `128` (memory allocated to string)
+    - `array3.itemsize` outputs `8` (memory allocated to float type)
+
+These attributes provide crucial information about the structure and composition of NumPy arrays, aiding in array manipulation and analysis.
