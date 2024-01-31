@@ -199,4 +199,55 @@ Here are various methods to create NumPy arrays:
     array([-2,  2,  6, 10, 14, 18, 22])
     ```
 
-These methods offer flexibility in creating NumPy arrays with specified data types, initialization values, and custom sequences.
+## Indexing and Slicing
+
+NumPy arrays are versatile structures that support indexing, slicing, and iteration, offering flexibility in accessing and manipulating array elements.
+
+### Indexing
+
+In 2-D arrays, indexing starts from 0 for both dimensions. Each element is referenced using two indexes: `i` for the row number and `j` for the column number.
+
+Consider a table displaying student marks in three subjects:
+
+| Name   | Maths | English | Science |
+|--------|-------|---------|---------|
+| Vansh  | 78    | 67      | 56      |
+| Saksham| 76    | 75      | 47      |
+| Adarsh | 84    | 59      | 60      |
+| Aastha | 67    | 72      | 54      |
+
+Let's create an array named `marks` to store the marks for these subjects. As there are 4 students (rows) and 3 subjects (columns), the array will be `marks[4][3]`.
+
+Here, `marks[i, j]` denotes the element at (i+1)th row and (j+1)th column. For instance, `marks[3, 1]` refers to Aasths's marks in English, which is 72.
+
+### Slicing
+
+Slicing enables extracting portions of an array by specifying start and end index values using `[start : end]` along with the array name.
+
+For example:
+
+```python
+array8 = np.array([-2, 2, 6, 10, 14, 18, 22])
+array8[3:5]   # returns array([10, 14])
+array8[::-1]  # returns array([22, 18, 14, 10, 6, 2, -2])
+```
+
+Let's observe how slicing works for a 2-D array `array9` with 3 rows and 4 columns:
+
+```python
+array9 = np.array([[-7, 0, 10, 20],
+                   [-5, 1, 40, 200],
+                   [-1, 1, 4, 30]])
+```
+
+To retrieve all elements in the 3rd column:
+
+```python
+array9[0:3, 2]  # returns array([10, 40, 4])
+```
+
+If row indices are unspecified, all rows are considered. Similarly, if column indices are unspecified, all columns are considered. Therefore, accessing all elements in the 3rd column can also be written as:
+
+```python
+array9[:, 2]  # returns array([10, 40, 4])
+```
