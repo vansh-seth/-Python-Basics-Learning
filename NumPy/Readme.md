@@ -211,10 +211,10 @@ Consider a table displaying student marks in three subjects:
 
 | Name   | Maths | English | Science |
 |--------|-------|---------|---------|
-| Vansh  | 78    | 67      | 56      |
-| Saksham| 76    | 75      | 47      |
-| Adarsh | 84    | 59      | 60      |
-| Aastha | 67    | 72      | 54      |
+| Vansh  | 97    | 87      | 56      |
+| Saksham| 99    | 90      | 98      |
+| Adarsh | 84    | 59      | 40      |
+| Aastha | 87    | 72      | 74      |
 
 Let's create an array named `marks` to store the marks for these subjects. As there are 4 students (rows) and 3 subjects (columns), the array will be `marks[4][3]`.
 
@@ -227,27 +227,27 @@ Slicing enables extracting portions of an array by specifying start and end inde
 For example:
 
 ```python
-array8 = np.array([-2, 2, 6, 10, 14, 18, 22])
+array8 = np.array([5, 7, 45, 10, 14, 79, 56])
 array8[3:5]   # returns array([10, 14])
-array8[::-1]  # returns array([22, 18, 14, 10, 6, 2, -2])
+array8[::-1]  # returns array([56, 79, 14, 10, 45, 7, 5])
 ```
 
 Let's observe how slicing works for a 2-D array `array9` with 3 rows and 4 columns:
 
 ```python
-array9 = np.array([[-7, 0, 10, 20],
-                   [-5, 1, 40, 200],
-                   [-1, 1, 4, 30]])
+array9 = np.array([[-1, 0, 11, 45],
+                   [-8, 15, 47, 560],
+                   [-5, 17, 45, 70]])
 ```
 
 To retrieve all elements in the 3rd column:
 
 ```python
-array9[0:3, 2]  # returns array([10, 40, 4])
+array9[0:3, 2]  # returns array([11, 47, 45])
 ```
 
 If row indices are unspecified, all rows are considered. Similarly, if column indices are unspecified, all columns are considered. Therefore, accessing all elements in the 3rd column can also be written as:
 
 ```python
-array9[:, 2]  # returns array([10, 40, 4])
+array9[:, 2]  # returns array([11, 47, 45])
 ```
