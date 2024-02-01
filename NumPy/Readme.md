@@ -309,3 +309,73 @@ print(array2 % array1)
 ```
 
 It's essential to note that for element-wise operations, the size of both arrays must be the same, meaning that `array1.shape` must be equal to `array2.shape`. This ensures that the operations are applied correctly across corresponding elements in the arrays.
+
+
+### Transpose
+Transposing an array in NumPy involves converting its rows into columns and vice versa, similar to matrix operations in mathematics.
+
+Consider the following example:
+
+```python
+import numpy as np
+
+array3 = np.array([[10, -7, 0, 20],
+                   [-5, 1, 200, 40],
+                   [30, 1, -1, 4]])
+
+# Original array
+print(array3)
+# Output:
+# array([[ 10, -7, 0, 20],
+#        [ -5, 1, 200, 40],
+#        [ 30, 1, -1, 4]])
+
+# Transposing the array does not change the original array
+print(array3.transpose())
+# Output:
+# array([[ 10, -5, 30],
+#        [ -7, 1, 1],
+#        [ 0, 200, -1],
+#        [ 20, 40, 4]])
+```
+
+### Sorting
+
+Sorting in NumPy involves arranging the elements of an array in ascending or descending order. By default, NumPy performs sorting in ascending order.
+
+Consider the following sorting examples:
+
+```python
+array4 = np.array([1, 0, 2, -3, 6, 8, 4, 7])
+
+# Sorting in ascending order
+array4.sort()
+print(array4)
+# Output: array([-3, 0, 1, 2, 4, 6, 7, 8])
+
+# Sorting a 2-D array row-wise by default
+array4 = np.array([[10, -7, 0, 20],
+                    [-5, 1, 200, 40],
+                    [30, 1, -1, 4]])
+
+# Sorting row-wise
+array4.sort()
+print(array4)
+# Output:
+# array([[ -7,  0, 10, 20],
+#        [ -5,  1, 40, 200],
+#        [ -1,  1,  4, 30]])
+
+# Sorting column-wise by specifying axis=0
+array5 = np.array([[10, -7, 0, 20],
+                   [-5, 1, 200, 40],
+                   [30, 1, -1, 4]])
+
+# Sorting column-wise
+array5.sort(axis=0)
+print(array5)
+# Output:
+# array([[ -5, -7, -1,  4],
+#        [ 10,  1,  0, 20],
+#        [ 30,  1, 200, 40]])
+```
