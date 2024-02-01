@@ -533,3 +533,61 @@ print(secondhalf)
 #        [  0,  2]])
 ```
 
+##  Statistical Operations on Arrays
+
+NumPy provides a variety of functions to perform statistical operations on arrays. These operations are fundamental techniques in descriptive statistics. Let's consider two arrays, `arrayA` and `arrayB`:
+
+```python
+import numpy as np
+
+arrayA = np.array([1, 0, 2, -3, 6, 8, 4, 7])
+arrayB = np.array([[3, 6], [4, 2]])
+```
+
+1. The `max()` function finds the maximum element from an array.
+```python
+# Maximum element from the whole 1-D array
+arrayA.max()  # Output: 8
+
+# Maximum element from the whole 2-D array
+arrayB.max()  # Output: 6
+
+# If axis=1, it gives column-wise maximum
+arrayB.max(axis=1)  # Output: array([6, 4])
+
+# If axis=0, it gives row-wise maximum
+arrayB.max(axis=0)  # Output: array([4, 6])
+```
+
+2. The `min()` function finds the minimum element from an array.
+```python
+arrayA.min()  # Output: -3
+arrayB.min()  # Output: 2
+arrayB.min(axis=0)  # Output: array([3, 2])
+```
+
+3. The `sum()` function finds the sum of all elements of an array.
+```python
+arrayA.sum()  # Output: 25
+arrayB.sum()  # Output: 15
+
+# Axis is used to specify the dimension on which the sum is to be made.
+# Here axis=1 means the sum of elements on the first row
+arrayB.sum(axis=1)  # Output: array([9, 6])
+```
+
+4. The `mean()` function finds the average of elements of the array.
+```python
+arrayA.mean()  # Output: 3.125
+arrayB.mean()  # Output: 3.75
+arrayB.mean(axis=0)  # Output: array([3.5, 4.])
+arrayB.mean(axis=1)  # Output: array([4.5, 3.])
+```
+
+5. The `std()` function is used to find the standard deviation of an array of elements.
+```python
+arrayA.std()  # Output: 3.550968177835448
+arrayB.std()  # Output: 1.479019945774904
+arrayB.std(axis=0)  # Output: array([0.5, 2.])
+arrayB.std(axis=1)  # Output: array([1.5, 1.])
+```
