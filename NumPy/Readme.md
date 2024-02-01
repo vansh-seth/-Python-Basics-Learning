@@ -251,3 +251,61 @@ If row indices are unspecified, all rows are considered. Similarly, if column in
 ```python
 array9[:, 2]  # returns array([11, 47, 45])
 ```
+
+## Operations on Arrays
+
+### Arithmetic Operations
+Arithmetic operations on NumPy arrays are efficient and straightforward. When performing basic arithmetic operations such as addition, subtraction, multiplication, and division on two arrays, the operations are executed on corresponding pairs of elements. 
+
+For example, when adding two arrays together, each element in the first array will be added to the corresponding element in the second array, and so forth. Let's consider the following element-wise operations on two arrays:
+
+```python
+import numpy as np
+
+array1 = np.array([[3, 6], [4, 2]])
+array2 = np.array([[10, 20], [15, 12]])
+
+# Element-wise addition of two matrices
+print(array1 + array2)
+# Output: 
+# array([[13, 26],
+#        [19, 14]])
+
+# Subtraction
+print(array1 - array2)
+# Output: 
+# array([[ -7, -14],
+#        [-11, -10]])
+
+# Multiplication
+print(array1 * array2)
+# Output: 
+# array([[ 30, 120],
+#        [ 60,  24]])
+
+# Matrix Multiplication
+print(array1 @ array2)
+# Output: 
+# array([[120, 132],
+#        [ 70, 104]])
+
+# Exponentiation
+print(array1 ** 3)
+# Output: 
+# array([[ 27, 216],
+#        [ 64,   8]], dtype=int32)
+
+# Division
+print(array2 / array1)
+# Output: 
+# array([[3.33333333, 3.33333333],
+#        [3.75      , 6.        ]])
+
+# Element-wise Remainder of Division (Modulo)
+print(array2 % array1)
+# Output: 
+# array([[1, 2],
+#        [3, 0]], dtype=int32)
+```
+
+It's essential to note that for element-wise operations, the size of both arrays must be the same, meaning that `array1.shape` must be equal to `array2.shape`. This ensures that the operations are applied correctly across corresponding elements in the arrays.
