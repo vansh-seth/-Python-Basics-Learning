@@ -419,3 +419,34 @@ print(np.concatenate((array1, array2), axis=1))
 print(np.concatenate((array1, array2)))
 # Output:
 # ValueError: all the input array dimensions except for the concatenation axis must match exactly
+```
+
+##  Reshaping Arrays
+
+Reshaping arrays in NumPy involves modifying the arrangement of elements within the array using the `reshape()` function. However, it's crucial to note that reshaping an array cannot alter the total number of elements it contains. Attempting to change the number of elements using `reshape()` will result in an error.
+
+Consider the following example:
+
+```python
+import numpy as np
+
+array3 = np.arange(10, 22)
+
+# Displaying the original array
+print(array3)
+# Output:
+# array([10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21])
+
+# Reshaping the array into a 3x4 matrix
+print(array3.reshape(3, 4))
+# Output:
+# array([[10, 11, 12, 13],
+#        [14, 15, 16, 17],
+#        [18, 19, 20, 21]])
+
+# Reshaping the array into a 2x6 matrix
+print(array3.reshape(2, 6))
+# Output:
+# array([[10, 11, 12, 13, 14, 15],
+#        [16, 17, 18, 19, 20, 21]])
+
