@@ -591,3 +591,69 @@ arrayB.std()  # Output: 1.479019945774904
 arrayB.std(axis=0)  # Output: array([0.5, 2.])
 arrayB.std(axis=1)  # Output: array([1.5, 1.])
 ```
+
+## Loading Arrays from Files
+
+Sometimes, we may need to load data from files into arrays for processing. NumPy provides two primary functions for this purpose: `loadtxt()` and `genfromtxt()`. These functions are particularly useful for handling CSV (Comma Separated Values) files, which are commonly used for storing large datasets.
+
+Let's consider an example where we have a text file named `marks.txt` stored in the folder `C:/vansh`. This file contains data in a CSV format:
+
+```
+RollNo, Marks1, Marks2, Marks3
+1, 36, 18, 57
+2, 22, 23, 45
+3, 43, 51, 37
+4, 41, 40, 60
+5, 13, 18, 37
+```
+
+#### Using `numpy.loadtxt()`
+
+We can load data from the `marks.txt` file into an array called `studentdata` using the `loadtxt()` function:
+
+```python
+import numpy as np
+
+studentdata = np.loadtxt('C:/vansh/marks.txt', skiprows=1, delimiter=',', dtype=int)
+print(studentdata)
+```
+
+In the above code:
+
+- `skiprows=1` skips the header row.
+- `delimiter=','` specifies that the values are separated by commas.
+- `dtype=int` specifies the data type of the array to be integer.
+
+#### Using `numpy.genfromtxt()`
+
+Another function, `genfromtxt()`, can also be used to load data from files. This function can handle missing values in the data file. Let's consider a file named `Missing.txt` with missing and non-numeric values:
+
+```
+RollNo, Marks1, Marks2, Marks3
+1, 36, 18, 57
+2, ab, 23, 45
+3, 43, 51, 37
+4, 41, 40, 60
+5, 13, 18, 27
+```
+
+We can load this data into an array named `dataarray` as follows:
+
+```python
+dataarray = np.genfromtxt('C:/vansh/Missing.txt', skip_header=1, delimiter=',')
+print(dataarray)
+```
+
+In the above code:
+
+- `skip_header=1` skips the header row.
+- `delimiter=','` specifies that the values are separated by commas.
+
+If there are missing or non-numeric values, `genfromtxt()` converts them to `nan` (not a number). We can specify a filling value for missing or non-numeric data using the `filling_values` parameter. For example, to set missing or non-numeric values to `-999`, we can use:
+
+```python
+dataarray = np.genfromtxt('C:/vansh/Missing.txt', skip_header=1, delimiter=',', filling_values=-999, dtype=int)
+print(dataarray)
+```
+
+This code replaces missing or non-numeric values with `-999`.
