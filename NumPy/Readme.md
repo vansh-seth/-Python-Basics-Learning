@@ -657,3 +657,12 @@ print(dataarray)
 ```
 
 This code replaces missing or non-numeric values with `-999`.
+
+
+## Saving NumPy Arrays in Files on Disk
+The savetxt() function is used to save a NumPy array to a text file.
+Example:
+```python
+>>> np.savetxt('C:/vansh/test.txt',studentdata, delimiter=',', fmt='%i')
+```
+**Note:** We have used parameter fmt to specify the format in which data are to be saved. The default is float.
