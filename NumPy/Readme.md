@@ -449,4 +449,87 @@ print(array3.reshape(2, 6))
 # Output:
 # array([[10, 11, 12, 13, 14, 15],
 #        [16, 17, 18, 19, 20, 21]])
+```
+
+## Splitting Arrays
+
+Splitting arrays in NumPy involves dividing an array into two or more subarrays using the `numpy.split()` function. This function splits an array along the specified axis. We can either specify a sequence of index values where an array is to be split, or we can specify an integer N, indicating the number of equal parts in which the array is to be split.
+
+By default, `numpy.split()` splits along `axis=0`. 
+
+Consider the following example array:
+
+```python
+array4 = np.array([[ 10, -7, 0, 20],
+                   [ -5, 1, 200, 40],
+                   [ 30, 1, -1, 4],
+                   [ 1, 2, 0, 4],
+                   [ 0, 1, 0, 2]])
+
+# [1,3] indicate the row indices at which to split the array
+first, second, third = np.split(array4, [1, 3])
+
+# array4 is split on the first row and stored in the sub-array first
+print(first)
+# Output:
+# array([[10, -7,  0, 20]])
+
+# array4 is split after the first row and up to the third row, stored in the sub-array second
+print(second)
+# Output:
+# array([[-5,  1, 200,  40],
+#        [30,  1,  -1,   4]])
+
+# the remaining rows of array4 are stored in the sub-array third
+print(third)
+# Output:
+# array([[1, 2, 0, 4],
+#        [0, 1, 0, 2]])
+
+# [1, 2], axis=1 specify the column indices along which to split
+firstc, secondc, thirdc = np.split(array4, [1, 2], axis=1)
+
+print(firstc)
+# Output:
+# array([[10],
+#        [-5],
+#        [30],
+#        [ 1],
+#        [ 0]])
+
+print(secondc)
+# Output:
+# array([[-7],
+#        [ 1],
+#        [ 1],
+#        [ 2],
+#        [ 1]])
+
+print(thirdc)
+# Output:
+# array([[ 0, 20],
+#        [200, 40],
+#        [ -1,  4],
+#        [  0,  4],
+#        [  0,  2]])
+
+# 2nd parameter 2 implies the array is split into 2 equal parts along axis=1, the column axis
+firsthalf, secondhalf = np.split(array4, 2, axis=1)
+
+print(firsthalf)
+# Output:
+# array([[10, -7],
+#        [-5,  1],
+#        [30,  1],
+#        [ 1,  2],
+#        [ 0,  1]])
+
+print(secondhalf)
+# Output:
+# array([[ 0, 20],
+#        [200, 40],
+#        [ -1,  4],
+#        [  0,  4],
+#        [  0,  2]])
+```
 
