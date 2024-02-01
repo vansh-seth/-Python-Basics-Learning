@@ -379,3 +379,43 @@ print(array5)
 #        [ 10,  1,  0, 20],
 #        [ 30,  1, 200, 40]])
 ```
+
+## Concatenating Arrays
+
+Concatenating arrays in NumPy involves joining two or more arrays together. When concatenating 1-D arrays, it means appending the sequences one after another. The `numpy.concatenate()` function is used to concatenate two or more 2-D arrays either row-wise or column-wise.
+
+It's essential to note that all dimensions of the arrays to be concatenated must match exactly, except for the dimension or axis along which they need to be joined. Any mismatch in the dimensions will result in an error. By default, the concatenation of the arrays happens along `axis=0`, meaning rows are stacked one after another.
+
+Consider the following example:
+
+```python
+import numpy as np
+
+array1 = np.array([[10, 20], [-30, 40]])
+array2 = np.zeros((2, 3), dtype=array1.dtype)
+
+# Displaying arrays
+print(array1)
+# Output:
+# array([[ 10, 20],
+#        [-30, 40]])
+
+print(array2)
+# Output:
+# array([[0, 0, 0],
+#        [0, 0, 0]])
+
+# Checking shapes
+print(array1.shape)  # (2, 2)
+print(array2.shape)  # (2, 3)
+
+# Concatenating along axis=1 (column-wise)
+print(np.concatenate((array1, array2), axis=1))
+# Output:
+# array([[ 10, 20,  0,  0,  0],
+#        [-30, 40,  0,  0,  0]])
+
+# Attempting to concatenate along axis=0 (row-wise) with mismatched dimensions
+print(np.concatenate((array1, array2)))
+# Output:
+# ValueError: all the input array dimensions except for the concatenation axis must match exactly
