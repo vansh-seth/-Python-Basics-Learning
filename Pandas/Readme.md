@@ -29,3 +29,14 @@ pip install pandas
 
 Remember, the presence of Python in the system is a prerequisite for installing Pandas (or NumPy), as well as other Python libraries.
 
+## Data Structure in Pandas
+
+Within the realm of programming, a data structure stands as a foundational framework housing both data values and the operations applicable to them. It serves as a cornerstone, facilitating the efficient storage, retrieval, and modification of data. Think back to our introduction to the ndarray data structure in NumPy during Class XI; consider the seamless experience of storing, accessing, and updating data facilitated by NumPy arrays.
+
+In the domain of Pandas, two pivotal data structures take the spotlight:
+
+- **Series**: A Pandas Series represents a one-dimensional array that can accommodate diverse data types. Acting as a labeled index array, it enables swift access and manipulation of data elements.
+
+- **DataFrame**: The DataFrame structure serves as the bedrock of tabular data representation in Pandas. Mimicking a two-dimensional table, it encompasses rows and columns, facilitating intuitive organization, exploration, and analysis of datasets.
+
+
