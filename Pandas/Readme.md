@@ -16,3 +16,16 @@ You might wonder about the necessity of Pandas when NumPy suffices for data anal
 2. **Interface Complexity**: Pandas offers a more straightforward interface for tasks like file loading, plotting, selection, joining, GROUP BY, which prove invaluable in data processing applications.
 3. **Columnar Structure**: Pandas DataFrames, with their column names, simplify data tracking considerably.
 4. **Data Format**: Pandas is preferred for tabular data formats, while NumPy excels in numeric array-based data manipulation.
+
+## Installing Pandas
+
+Bringing Pandas into your Python toolkit follows a similar path to integrating NumPy. It's a straightforward process:
+
+To introduce Pandas, execute the following command in your command line interface:
+
+``` python
+pip install pandas
+```
+
+Remember, the presence of Python in the system is a prerequisite for installing Pandas (or NumPy), as well as other Python libraries.
+
