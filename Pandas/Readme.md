@@ -40,3 +40,18 @@ In the domain of Pandas, two pivotal data structures take the spotlight:
 - **DataFrame**: The DataFrame structure serves as the bedrock of tabular data representation in Pandas. Mimicking a two-dimensional table, it encompasses rows and columns, facilitating intuitive organization, exploration, and analysis of datasets.
 
 
+## Series
+
+In the realm of Pandas, a Series serves as a unidimensional array housing a sequence of values spanning across diverse data types, including integers, floats, lists, and strings. By default, these values are allocated numeric indices commencing from zero. These numeric labels, serving as identifiers for each value, are termed as indices. Moreover, Pandas affords the flexibility of assigning values of various data types as indices, broadening its utility. Conceptually, envisioning a Pandas Series mirrors visualizing a column within a spreadsheet, where each value is meticulously associated with a specific index.
+
+Consider the following depiction of a Pandas Series comprising names of students:
+
+| Index | Value    |
+|-------|----------|
+| 0     | Arnab    |
+| 1     | Samridhi |
+| 2     | Ramit    |
+| 3     | Divyam   |
+| 4     | Kritika  |
+
+
