@@ -301,8 +301,12 @@ When using labeled indexes for slicing, the value at the end index label is incl
 ```python
 print(seriesCapCntry['USA':'France'])
 ```
-
+### Output
 ```
+USA     WashingtonDC
+UK            London
+France         Paris
+dtype: object
 
 ```
 ## Reversing a Series
@@ -311,6 +315,16 @@ A Series can also be displayed in reverse order using slicing:
 
 ```python
 print(seriesCapCntry[::-1])
+```
+
+### Output
+```
+France        Paris
+UK           London
+USA    WashingtonDC
+India      NewDelhi
+dtype: object
+
 ```
 
 ## Modifying Series Values using Slicing
@@ -322,14 +336,40 @@ import numpy as np
 
 seriesAlph = pd.Series(np.arange(10, 16, 1), index=['a', 'b', 'c', 'd', 'e', 'f'])
 print(seriesAlph)
+# OUTPUT:
+a 10
+b 11
+c 12
+d 13
+e 14
+f 15
+dtype: int32
 
 # Update values using positional index slicing
 seriesAlph[1:3] = 50
 print(seriesAlph)
 
+#OUTPUT:
+a 10
+b 50
+c 50
+d 13
+e 14
+f 15
+dtype: int32
+
 # Update values using labeled index slicing
 seriesAlph['c':'e'] = 500
 print(seriesAlph)
+
+# OUTPUT:
+a 10
+b 50
+c 500
+d 500
+e 500
+f 15
+dtype: int32
 ```
 
 Notice that updating values using slicing excludes the value at the end index position. However, it changes the value at the end index label when slicing is done using labels.
