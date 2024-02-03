@@ -266,3 +266,70 @@ print(seriesCapCntry)
 ```
 
 This changes the index values to [10, 20, 30, 40], respectively.
+
+
+## Series Slicing
+
+In Pandas, slicing allows us to extract specific portions of a Series, similar to slicing in NumPy arrays.
+
+## Basic Slicing
+
+Slicing is performed by specifying the start and end parameters `[start:end]` with the Series name. With positional indices, the value at the `end` index position is excluded.
+
+### Positional Index Slicing
+
+```python
+import pandas as pd
+
+# Example of positional index slicing
+seriesCapCntry = pd.Series(['NewDelhi', 'WashingtonDC', 'London', 'Paris'],
+                           index=['India', 'USA', 'UK', 'France'])
+print(seriesCapCntry[1:3])  # Excludes the value at index position 3
+```
+### Output
+```
+USA     WashingtonDC
+UK            London
+dtype: object
+```
+In this example, only data values at indices 1 and 2 are displayed.
+
+### Labeled Index Slicing
+
+When using labeled indexes for slicing, the value at the end index label is included in the output.
+
+```python
+print(seriesCapCntry['USA':'France'])
+```
+
+```
+
+```
+## Reversing a Series
+
+A Series can also be displayed in reverse order using slicing:
+
+```python
+print(seriesCapCntry[::-1])
+```
+
+## Modifying Series Values using Slicing
+
+Slicing can also be used to modify the values of series elements.
+
+```python
+import numpy as np
+
+seriesAlph = pd.Series(np.arange(10, 16, 1), index=['a', 'b', 'c', 'd', 'e', 'f'])
+print(seriesAlph)
+
+# Update values using positional index slicing
+seriesAlph[1:3] = 50
+print(seriesAlph)
+
+# Update values using labeled index slicing
+seriesAlph['c':'e'] = 500
+print(seriesAlph)
+```
+
+Notice that updating values using slicing excludes the value at the end index position. However, it changes the value at the end index label when slicing is done using labels.
