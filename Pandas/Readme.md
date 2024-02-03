@@ -459,15 +459,14 @@ Table 2.1 lists attributes of Pandas Series along with their purposes and exampl
 
 | Attribute Name | Purpose                                       | Example                                                         |
 |----------------|-----------------------------------------------|-----------------------------------------------------------------|
-| `name`         | Assigns a name to the Series.                 | `seriesCapCntry.name = 'Capitals'`                              |
-|                |                                               | `print(seriesCapCntry)`                                         |
-|                |                                               | Outputs:                                                         |
-|                |                                               | ```                                                             |
-|                |                                               | India        NewDelhi                                          |
-|                |                                               | USA      WashingtonDC                                          |
-|                |                                               | UK             London                                           |
-|                |                                               | France           Paris                                         |
-|                |                                               | Name: Capitals, dtype: object                                  |
+| `name`         | Assigns a name to the Series.                 | `seriesCapCntry.name = 'Capitals'` `print(seriesCapCntry)`                                         
+                                                               Outputs:                                                         
+                                                                                                                             
+                                                                India        NewDelhi                                          
+                                                                USA      WashingtonDC                                          
+                                                                UK             London                                           
+                                                                France           Paris                                         
+                                                                Name: Capitals, dtype: object                                                             
 | `index.name`   | Assigns a name to the index of the series.    | `seriesCapCntry.index.name = 'Countries'`                       |
 |                |                                               | `print(seriesCapCntry)`                                         |
 |                |                                               | Outputs:                                                         |
