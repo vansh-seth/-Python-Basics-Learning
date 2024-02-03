@@ -373,3 +373,81 @@ dtype: int32
 ```
 
 Notice that updating values using slicing excludes the value at the end index position. However, it changes the value at the end index label when slicing is done using labels.
+
+
+## Series Attributes
+
+In Pandas, certain properties called attributes of a Series can be accessed using the Series name.
+
+## Example: Attributes of a Series
+
+Consider a Series named `seriesCapCntry`:
+
+```python
+import pandas as pd
+
+# Example Series
+seriesCapCntry = pd.Series(['NewDelhi', 'WashingtonDC', 'London', 'Paris'],
+                            index=['India', 'USA', 'UK', 'France'])
+print(seriesCapCntry)
+```
+
+The output displays:
+
+```
+India        NewDelhi
+USA      WashingtonDC
+UK             London
+France           Paris
+dtype: object
+```
+
+## Attributes of a Series
+
+### `dtype`
+
+The `dtype` attribute represents the data type of the elements in the Series.
+
+```python
+print(seriesCapCntry.dtype)
+```
+
+Output:
+
+```
+object
+```
+
+The dtype of the Series is `object`.
+
+### `index`
+
+The `index` attribute returns the index labels of the Series.
+
+```python
+print(seriesCapCntry.index)
+```
+
+Output:
+
+```
+Index(['India', 'USA', 'UK', 'France'], dtype='object')
+```
+
+The index labels are `India`, `USA`, `UK`, and `France`.
+
+### `values`
+
+The `values` attribute returns the actual data values of the Series.
+
+```python
+print(seriesCapCntry.values)
+```
+
+Output:
+
+```
+['NewDelhi' 'WashingtonDC' 'London' 'Paris']
+```
+
+These are the values contained in the Series.
