@@ -457,37 +457,33 @@ These are the values contained in the Series.
 
 Table 2.1 lists attributes of Pandas Series along with their purposes and examples using `seriesCapCntry` as a reference.
 
-| Attribute Name | Purpose                                       | Example                                                         |
-|----------------|-----------------------------------------------|-----------------------------------------------------------------|
-| `name`         | Assigns a name to the Series.                 | `seriesCapCntry.name = 'Capitals'` `print(seriesCapCntry)` Outputs:                                                         
-                                                                                                                             
-                                                                India        NewDelhi                                          
-                                                                USA      WashingtonDC                                          
-                                                                UK             London                                           
-                                                                France           Paris                                         
-                                                                Name: Capitals, dtype: object |                                         
-                                                                                                                           
-| `index.name`   | Assigns a name to the index of the series.    | `seriesCapCntry.index.name = 'Countries'`                       |
-|                |                                               | `print(seriesCapCntry)`                                         |
-|                |                                               | Outputs:                                                         |
-|                |                                               | ```                                                             |
-|                |                                               | Countries                                                        |
-|                |                                               | India        NewDelhi                                          |
-|                |                                               | USA      WashingtonDC                                          |
-|                |                                               | UK             London                                           |
-|                |                                               | France           Paris                                         |
-|                |                                               | Name: Capitals, dtype: object                                  |
-| `values`       | Prints a list of the values in the series.    | `print(seriesCapCntry.values)`                                  |
-|                |                                               | Outputs:                                                         |
-|                |                                               | `['NewDelhi' 'WashingtonDC' 'London' 'Paris']`                  |
-| `size`         | Prints the number of values in the Series.    | `print(seriesCapCntry.size)`                                    |
-|                |                                               | Outputs: `4`                                                    |
-| `empty`        | Prints `True` if the series is empty, and    | `print(seriesCapCntry.empty)`                                   |
-|                | `False` otherwise.                            | Outputs: `False`                                                |
-|                |                                               |                                                               |
-|                | Create an empty series                        |                                                               |
-|                | `seriesEmpt = pd.Series()`                    |                                                               |
-|                | `print(seriesEmpt.empty)`                     |                                                               |
-|                | Outputs: `True`                                |                                                               |
+| Attribute Name | Purpose                                      | Example                                                         |
+|----------------|----------------------------------------------|-----------------------------------------------------------------|
+| `name`         | Assigns a name to the Series                | `seriesCapCntry.name = 'Capitals'`                              |
+|                |                                              | `print(seriesCapCntry)`                                          |
+|                |                                              | <pre>India        NewDelhi                                       |
+|                |                                              | USA      WashingtonDC                                           |
+|                |                                              | UK             London                                            |
+|                |                                              | France           Paris                                          |
+|                |                                              | Name: Capitals, dtype: object                                   </pre> |
+| `index.name`   | Assigns a name to the index of the series   | `seriesCapCntry.index.name = 'Countries'`                        |
+|                |                                              | `print(seriesCapCntry)`                                          |
+|                |                                              | <pre>Countries                                                    |
+|                |                                              | India        NewDelhi                                           |
+|                |                                              | USA      WashingtonDC                                           |
+|                |                                              | UK             London                                            |
+|                |                                              | France           Paris                                          |
+|                |                                              | Name: Capitals, dtype: object                                   </pre> |
+| `values`       | Prints a list of the values in the series   | `print(seriesCapCntry.values)`                                   |
+|                |                                              | Outputs: `[‘NewDelhi’ ‘WashingtonDC’ ‘London’ ‘Paris’]`          |
+| `size`         | Prints the number of values in the Series   | `print(seriesCapCntry.size)`                                     |
+|                |                                              | Outputs: `4`                                                     |
+| `empty`        | Prints `True` if the series is empty, and  | `print(seriesCapCntry.empty)`                                    |
+|                | `False` otherwise                           | Outputs: `False`                                                 |
+|                |                                              |                                                                 |
+|                | Create an empty series                      |                                                                 |
+|                | `seriesEmpt=pd.Series()`                    |                                                                 |
+|                | `print(seriesEmpt.empty)`                   |                                                                 |
+|                | Outputs: `True`                             |                                                                 |
 
 These attributes help in managing and understanding the structure and contents of Pandas Series objects.
