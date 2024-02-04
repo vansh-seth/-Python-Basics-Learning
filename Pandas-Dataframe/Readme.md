@@ -125,3 +125,55 @@ In this DataFrame:
 - The number of rows in the DataFrame is equal to the number of dictionaries in the list.
 - The number of columns in the DataFrame is equal to the maximum number of keys in any dictionary of the list.
 - If a corresponding value for a column is missing in any dictionary, `NaN` (Not a Number) is inserted in the DataFrame.
+
+## Creation of DataFrame from Dictionary of Lists
+
+DataFrames can also be created from a dictionary of lists in Pandas. Each key-value pair in the dictionary represents a column label and the corresponding list of values, respectively.
+
+Here's how to create a DataFrame from a dictionary of lists:
+
+```python
+import pandas as pd
+
+# Dictionary of lists
+dictForest = {
+    'State': ['Assam', 'Delhi', 'Kerala'],
+    'GArea': [78438, 1483, 38852],
+    'VDF': [2797, 6.72, 1663]
+}
+
+# Create DataFrame from the dictionary
+dFrameForest = pd.DataFrame(dictForest)
+print(dFrameForest)
+```
+
+Output:
+```
+    State  GArea      VDF
+0   Assam  78438  2797.00
+1   Delhi   1483     6.72
+2  Kerala  38852  1663.00
+```
+
+In this DataFrame:
+- The dictionary keys become column labels (`'State', 'GArea', 'VDF'`).
+- The lists become the rows in the DataFrame.
+- Each key in the dictionary corresponds to a column in the DataFrame.
+
+We can also change the sequence of columns in a DataFrame by specifying the desired sequence in the `columns` parameter:
+
+```python
+# Creating DataFrame with custom column sequence
+dFrameForest1 = pd.DataFrame(dictForest, columns=['State', 'VDF', 'GArea'])
+print(dFrameForest1)
+```
+
+Output:
+```
+    State      VDF  GArea
+0   Assam  2797.00  78438
+1   Delhi     6.72   1483
+2  Kerala  1663.00  38852
+```
+
+In the output, the 'VDF' column is displayed in the middle instead of being the last column as in the original DataFrame.
