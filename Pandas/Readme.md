@@ -811,3 +811,63 @@ dtype: float64
 | z     | 0                  | 10                 | 10.0              |
 
 Note that the second method using `add()` replaces missing values with 0, resulting in a different output compared to the direct addition method. Similarly, subtraction, multiplication, and division operations can also be performed using corresponding mathematical operators or explicit method calls.
+
+## Subtraction of Two Series
+
+Subtracting one Series from another in Pandas can be accomplished in two ways. Similar to addition, subtraction can be done directly or by using the `sub()` method with a specified fill value for missing elements.
+
+### Method 1: Direct Subtraction
+
+Performing subtraction using the subtraction operator `-` directly between the two Series:
+
+```python
+result_direct_subtraction = seriesA - seriesB
+print(result_direct_subtraction)
+```
+
+Output:
+```
+a     11.0
+b      NaN
+c     53.0
+d      NaN
+e    -95.0
+y      NaN
+z      NaN
+dtype: float64
+```
+
+### Method 2: Using `sub()` Method with Fill Value
+
+Subtracting one Series from another using the `sub()` method with a specified fill value for missing elements:
+
+```python
+result_filled_subtraction = seriesA.sub(seriesB, fill_value=1000)
+print(result_filled_subtraction)
+```
+
+Output:
+```
+a      11.0
+b    -998.0
+c      53.0
+d    -996.0
+e     -95.0
+y     980.0
+z     990.0
+dtype: float64
+```
+
+### Details of Subtraction
+
+| Index | Value from seriesA | Value from seriesB | seriesA - seriesB |
+|-------|--------------------|--------------------|-------------------|
+| a     | 1                  | -10                | 11.0              |
+| b     | 2                  | NaN                | NaN               |
+| c     | 3                  | -50                | 53.0              |
+| d     | 4                  | NaN                | NaN               |
+| e     | 5                  | 100                | -95.0             |
+| y     | NaN                | 20                 | NaN               |
+| z     | NaN                | 10                 | NaN               |
+
+The second method using `sub()` replaces missing values with 1000, resulting in a different output compared to the direct subtraction method. Similarly, other mathematical operations like multiplication and division can also be performed using corresponding operators or explicit method calls.
