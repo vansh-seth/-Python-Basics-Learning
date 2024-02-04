@@ -871,3 +871,63 @@ dtype: float64
 | z     | NaN                | 10                 | NaN               |
 
 The second method using `sub()` replaces missing values with 1000, resulting in a different output compared to the direct subtraction method. Similarly, other mathematical operations like multiplication and division can also be performed using corresponding operators or explicit method calls.
+
+## Multiplication of Two Series
+
+Multiplying two Series in Pandas can be achieved in two different ways, similarly to addition and subtraction. The first method involves using the multiplication operator `*` directly between the two Series. The second method utilizes the `mul()` method with a specified fill value for missing elements.
+
+### Method 1: Direct Multiplication
+
+Performing multiplication using the multiplication operator `*` directly between the two Series:
+
+```python
+result_direct_multiplication = seriesA * seriesB
+print(result_direct_multiplication)
+```
+
+Output:
+```
+a    -10.0
+b      NaN
+c   -150.0
+d      NaN
+e    500.0
+y      NaN
+z      NaN
+dtype: float64
+```
+
+### Method 2: Using `mul()` Method with Fill Value
+
+Multiplying one Series by another using the `mul()` method with a specified fill value for missing elements:
+
+```python
+result_filled_multiplication = seriesA.mul(seriesB, fill_value=0)
+print(result_filled_multiplication)
+```
+
+Output:
+```
+a    -10.0
+b      0.0
+c   -150.0
+d      0.0
+e    500.0
+y      0.0
+z      0.0
+dtype: float64
+```
+
+### Details of Multiplication
+
+| Index | Value from seriesA | Value from seriesB | seriesA * seriesB |
+|-------|--------------------|--------------------|-------------------|
+| a     | 1                  | -10                | -10.0             |
+| b     | 2                  | NaN                | 0.0               |
+| c     | 3                  | -50                | -150.0            |
+| d     | 4                  | NaN                | 0.0               |
+| e     | 5                  | 100                | 500.0             |
+| y     | NaN                | 20                 | 0.0               |
+| z     | NaN                | 10                 | 0.0               |
+
+The second method using `mul()` replaces missing values with 0, resulting in a different output compared to the direct multiplication method. Similarly, other mathematical operations like addition, subtraction, and division can also be performed using corresponding operators or explicit method calls.
