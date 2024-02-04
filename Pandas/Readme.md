@@ -639,3 +639,175 @@ dtype: int32
   ```
   14.5
   ```
+
+## Mathematical Operations on Series
+
+In Pandas, we can perform basic mathematical operations on two Series objects. Similar to NumPy arrays, these operations are conducted on each corresponding pair of elements, taking into account index matching. Any missing values are filled with `NaN` by default.
+
+Consider the following series: `seriesA` and `seriesB` for understanding mathematical operations on Series in Pandas:
+
+```python
+import pandas as pd
+
+seriesA = pd.Series([1, 2, 3, 4, 5], index=['a', 'b', 'c', 'd', 'e'])
+print(seriesA)
+```
+
+Output:
+```
+a    1
+b    2
+c    3
+d    4
+e    5
+dtype: int64
+```
+
+```python
+seriesB = pd.Series([10, 20, -10, -50, 100], index=['z', 'y', 'a', 'c', 'e'])
+print(seriesB)
+```
+
+Output:
+```
+z     10
+y     20
+a    -10
+c    -50
+e    100
+dtype: int64
+```
+
+### Addition Operation
+
+```python
+addition_result = seriesA + seriesB
+print(addition_result)
+```
+
+Output:
+```
+a     -9.0
+b      NaN
+c    -47.0
+d      NaN
+e    105.0
+y      NaN
+z      NaN
+dtype: float64
+```
+
+### Subtraction Operation
+
+```python
+subtraction_result = seriesA - seriesB
+print(subtraction_result)
+```
+
+Output:
+```
+a     11.0
+b      NaN
+c     53.0
+d      NaN
+e    -95.0
+y      NaN
+z      NaN
+dtype: float64
+```
+
+### Multiplication Operation
+
+```python
+multiplication_result = seriesA * seriesB
+print(multiplication_result)
+```
+
+Output:
+```
+a    -10.0
+b      NaN
+c   -150.0
+d      NaN
+e    500.0
+y      NaN
+z      NaN
+dtype: float64
+```
+
+### Division Operation
+
+```python
+division_result = seriesA / seriesB
+print(division_result)
+```
+
+Output:
+```
+a   -0.100000
+b         NaN
+c   -0.060000
+d         NaN
+e    0.050000
+y         NaN
+z         NaN
+dtype: float64
+```
+
+These examples illustrate how mathematical operations between two Series objects in Pandas work, considering index matching and handling missing values gracefully with `NaN`.
+
+## Addition of Two Series
+
+Adding two Series in Pandas can be done in two ways. The first method simply adds the two series together, where the operation results in `NaN` if one or both elements have no value.
+
+### Method 1: Direct Addition
+```python
+result_direct_addition = seriesA + seriesB
+print(result_direct_addition)
+```
+
+Output:
+```
+a     -9.0
+b      NaN
+c    -47.0
+d      NaN
+e    105.0
+y      NaN
+z      NaN
+dtype: float64
+```
+
+### Method 2: Using `add()` Method with `fill_value`
+
+The `add()` method allows explicit specification of a fill value for any missing element in either series. This method replaces missing values with the specified value during addition.
+
+```python
+result_filled_addition = seriesA.add(seriesB, fill_value=0)
+print(result_filled_addition)
+```
+
+Output:
+```
+a     -9.0
+b      2.0
+c    -47.0
+d      4.0
+e    105.0
+y     20.0
+z     10.0
+dtype: float64
+```
+
+### Details of Addition Using `add()` Method
+| Index | Value from seriesA | Value from seriesB | seriesA + seriesB |
+|-------|--------------------|--------------------|-------------------|
+| a     | 1                  | -10                | -9.0              |
+| b     | 2                  | 0                  | 2.0               |
+| c     | 3                  | -50                | -47.0             |
+| d     | 4                  | 0                  | 4.0               |
+| e     | 5                  | 100                | 105.0             |
+| y     | 0                  | 20                 | 20.0              |
+| z     | 0                  | 10                 | 10.0              |
+
+Note that the second method using `add()` replaces missing values with 0, resulting in a different output compared to the direct addition method. Similarly, subtraction, multiplication, and division operations can also be performed using corresponding mathematical operators or explicit method calls.
