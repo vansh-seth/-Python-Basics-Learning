@@ -537,3 +537,105 @@ Attributes in Pandas Series provide valuable information about the Series object
     ```
     True
     ```
+
+
+## Methods of Series
+
+This section discusses some of the methods available for Pandas Series. Consider the following series named `seriesTenTwenty`:
+
+```python
+import numpy as np
+import pandas as pd
+
+seriesTenTwenty = pd.Series(np.arange(10, 20, 1))
+print(seriesTenTwenty)
+```
+
+Output:
+```
+0    10
+1    11
+2    12
+3    13
+4    14
+5    15
+6    16
+7    17
+8    18
+9    19
+dtype: int32
+```
+
+### 1. `head()`
+
+- **Purpose**: Returns the first n rows of the series.
+- **Example**:
+  ```python
+  print(seriesTenTwenty.head(3))
+  ```
+  Output:
+  ```
+  0    10
+  1    11
+  2    12
+  dtype: int32
+  ```
+
+### 2. `tail()`
+
+- **Purpose**: Returns the last n rows of the series.
+- **Example**:
+  ```python
+  print(seriesTenTwenty.tail(3))
+  ```
+  Output:
+  ```
+  7    17
+  8    18
+  9    19
+  dtype: int32
+  ```
+
+### 3. `describe()`
+
+- **Purpose**: Generates descriptive statistics of the series.
+- **Example**:
+  ```python
+  print(seriesTenTwenty.describe())
+  ```
+  Output:
+  ```
+  count    10.000000
+  mean     14.500000
+  std       2.872281
+  min      10.000000
+  25%      12.250000
+  50%      14.500000
+  75%      16.750000
+  max      19.000000
+  dtype: float64
+  ```
+
+### 4. `sum()`
+
+- **Purpose**: Computes the sum of the values in the series.
+- **Example**:
+  ```python
+  print(seriesTenTwenty.sum())
+  ```
+  Output:
+  ```
+  145
+  ```
+
+### 5. `mean()`
+
+- **Purpose**: Computes the mean of the values in the series.
+- **Example**:
+  ```python
+  print(seriesTenTwenty.mean())
+  ```
+  Output:
+  ```
+  14.5
+  ```
