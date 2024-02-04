@@ -931,3 +931,63 @@ dtype: float64
 | z     | NaN                | 10                 | 0.0               |
 
 The second method using `mul()` replaces missing values with 0, resulting in a different output compared to the direct multiplication method. Similarly, other mathematical operations like addition, subtraction, and division can also be performed using corresponding operators or explicit method calls.
+
+## Division of Two Series
+
+Dividing one Series by another in Pandas can be done in two different ways, similar to addition, subtraction, and multiplication. The first method involves using the division operator `/` directly between the two Series. The second method utilizes the `div()` method with a specified fill value for missing elements.
+
+### Method 1: Direct Division
+
+Performing division using the division operator `/` directly between the two Series:
+
+```python
+result_direct_division = seriesA / seriesB
+print(result_direct_division)
+```
+
+Output:
+```
+a   -0.10
+b     NaN
+c   -0.06
+d     NaN
+e    0.05
+y     NaN
+z     NaN
+dtype: float64
+```
+
+### Method 2: Using `div()` Method with Fill Value
+
+Dividing one Series by another using the `div()` method with a specified fill value for missing elements:
+
+```python
+result_filled_division = seriesA.div(seriesB, fill_value=0)
+print(result_filled_division)
+```
+
+Output:
+```
+a   -0.10
+b    inf
+c   -0.06
+d    inf
+e    0.05
+y    0.00
+z    0.00
+dtype: float64
+```
+
+### Details of Division
+
+| Index | Value from seriesA | Value from seriesB | seriesA / seriesB |
+|-------|--------------------|--------------------|-------------------|
+| a     | 1                  | -10                | -0.10             |
+| b     | 2                  | NaN                | NaN               |
+| c     | 3                  | -50                | -0.06             |
+| d     | 4                  | NaN                | NaN               |
+| e     | 5                  | 100                | 0.05              |
+| y     | NaN                | 20                 | 0.00              |
+| z     | NaN                | 10                 | 0.00              |
+
+The second method using `div()` replaces missing values with 0, resulting in a different output compared to the direct division method. Notably, division by zero results in `inf` (infinity) in Pandas. Similarly, other mathematical operations like addition, subtraction, and multiplication can also be performed using corresponding operators or explicit method calls.
