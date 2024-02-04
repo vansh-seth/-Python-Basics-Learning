@@ -23,7 +23,7 @@ DataFrames provide powerful functionalities for data manipulation, analysis, and
 
 There are several methods to create a DataFrame in Pandas. Let's explore some of them:
 
-### (A) Creation of an Empty DataFrame
+### Creation of an Empty DataFrame
 
 An empty DataFrame can be created using the following steps:
 
@@ -95,7 +95,7 @@ Output:
 
 In the second example, we specified column labels (`'A', 'B', 'C', 'D'`) for the DataFrame created from multiple ndarrays. Note that if the arrays have different lengths, missing values (`NaN`) are automatically inserted to maintain the DataFrame structure.
 
-## Creation of DataFrame from List of Dictionaries
+### Creation of DataFrame from List of Dictionaries
 
 We can create a DataFrame from a list of dictionaries in Pandas. Each dictionary in the list represents a row in the DataFrame, where the keys become the column labels and the values become the row values.
 
@@ -126,7 +126,7 @@ In this DataFrame:
 - The number of columns in the DataFrame is equal to the maximum number of keys in any dictionary of the list.
 - If a corresponding value for a column is missing in any dictionary, `NaN` (Not a Number) is inserted in the DataFrame.
 
-## Creation of DataFrame from Dictionary of Lists
+### Creation of DataFrame from Dictionary of Lists
 
 DataFrames can also be created from a dictionary of lists in Pandas. Each key-value pair in the dictionary represents a column label and the corresponding list of values, respectively.
 
