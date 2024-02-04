@@ -94,3 +94,34 @@ Output:
 ```
 
 In the second example, we specified column labels (`'A', 'B', 'C', 'D'`) for the DataFrame created from multiple ndarrays. Note that if the arrays have different lengths, missing values (`NaN`) are automatically inserted to maintain the DataFrame structure.
+
+## Creation of DataFrame from List of Dictionaries
+
+We can create a DataFrame from a list of dictionaries in Pandas. Each dictionary in the list represents a row in the DataFrame, where the keys become the column labels and the values become the row values.
+
+Here's how to create a DataFrame from a list of dictionaries:
+
+```python
+import pandas as pd
+
+# Create a list of dictionaries
+listDict = [{'a': 10, 'b': 20}, {'a': 5, 'b': 10, 'c': 20}]
+
+# Create DataFrame from the list of dictionaries
+dFrameListDict = pd.DataFrame(listDict)
+print(dFrameListDict)
+```
+
+Output:
+```
+    a   b     c
+0  10  20   NaN
+1   5  10  20.0
+```
+
+In this DataFrame:
+- The dictionary keys are taken as column labels (`'a', 'b', 'c'`).
+- The values corresponding to each key in the dictionaries become the row values.
+- The number of rows in the DataFrame is equal to the number of dictionaries in the list.
+- The number of columns in the DataFrame is equal to the maximum number of keys in any dictionary of the list.
+- If a corresponding value for a column is missing in any dictionary, `NaN` (Not a Number) is inserted in the DataFrame.
