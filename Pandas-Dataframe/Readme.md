@@ -17,3 +17,31 @@ In this DataFrame:
 - **Data Types**: Columns can contain different types of data, such as integers, floats, strings, etc.
 
 DataFrames provide powerful functionalities for data manipulation, analysis, and exploration. They offer methods for indexing, slicing, merging, aggregating, and filtering data, making them a versatile tool for handling structured data in Python.
+
+
+## Creation of DataFrame
+
+There are several methods to create a DataFrame in Pandas. Let's explore some of them:
+
+### (A) Creation of an Empty DataFrame
+
+An empty DataFrame can be created using the following steps:
+
+```python
+import pandas as pd
+
+# Creating an empty DataFrame
+dFrameEmt = pd.DataFrame()
+
+# Displaying the empty DataFrame
+print(dFrameEmt)
+```
+
+Output:
+```
+Empty DataFrame
+Columns: []
+Index: []
+```
+
+This empty DataFrame has no columns or rows. It serves as a starting point for data population or as a placeholder for future data.
