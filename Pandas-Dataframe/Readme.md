@@ -536,3 +536,64 @@ Sub4           97        89        78    60        45
 ```
 
 Note that the column 'Riya' remains unchanged since we did not pass any new label for it.
+
+
+### Accessing DataFrame Elements through Indexing
+
+Data elements in a DataFrame can be accessed using indexing. There are two ways of indexing DataFrames: Label-based indexing and Boolean Indexing.
+
+#### (A) Label-Based Indexing
+
+There are several methods in Pandas to implement label-based indexing. `DataFrame.loc[]` is an important method that is used for label-based indexing with DataFrames. Let's continue to use the `ResultDF` created earlier.
+
+As shown in the following example, a single row label returns the row as a Series:
+
+```python
+>>> ResultDF.loc['Science']
+Arnab       91
+Ramit       81
+Samridhi    91
+Riya        71
+Mallika     95
+Name: Science, dtype: int64
+```
+
+Also, note that when the row label is passed as an integer value, it is interpreted as a label of the index and not as an integer position along the index:
+
+```python
+>>> dFrame10Multiples = pd.DataFrame([10, 20, 30, 40, 50])
+>>> dFrame10Multiples.loc[2]
+0    30
+Name: 2, dtype: int64
+```
+
+When a single column label is passed, it returns the column as a Series:
+
+```python
+>>> ResultDF.loc[:, 'Arnab']
+Maths      90
+Science    91
+Hindi      97
+Name: Arnab, dtype: int64
+```
+
+Also, we can obtain the same result, i.e., the marks of 'Arnab' in all the subjects by using the command:
+
+```python
+>>> print(df['Arnab'])
+Maths      56
+Science    91
+English    97
+Hindi      97
+Name: Arnab, dtype: int64
+```
+
+To read more than one row from a DataFrame, a list of row labels is used as shown below. Note that using `[]` returns a DataFrame:
+
+```python
+>>> ResultDF.loc[['Science', 'Hindi']]
+          Arnab  Ramit  Samridhi  Riya  Mallika
+Science       91     81        91    71       95
+Hindi         97     96        88    67       99
+```
+
