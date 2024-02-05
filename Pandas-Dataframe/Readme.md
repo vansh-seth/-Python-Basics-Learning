@@ -247,3 +247,51 @@ Output:
 ```
 
 In this DataFrame, the columns correspond to all distinct labels present in the Series objects. If a particular Series does not have a corresponding value for a label, NaN is inserted in the DataFrame column.
+
+
+### Creation of DataFrame from Dictionary of Series
+
+We can create a DataFrame from a dictionary of Pandas Series. Each key-value pair in the dictionary represents a column label and the corresponding Series, where the index values of the Series become the row labels of the DataFrame.
+
+Consider the following example where `ResultSheet` is a dictionary of Series containing marks of 5 students in three subjects:
+
+```python
+import pandas as pd
+
+ResultSheet = {
+    'Arnab': pd.Series([90, 91, 97], index=['Maths', 'Science', 'Hindi']),
+    'Ramit': pd.Series([92, 81, 96], index=['Maths', 'Science', 'Hindi']),
+    'Samridhi': pd.Series([89, 91, 88], index=['Maths', 'Science', 'Hindi']),
+    'Riya': pd.Series([81, 71, 67], index=['Maths', 'Science', 'Hindi']),
+    'Mallika': pd.Series([94, 95, 99], index=['Maths', 'Science', 'Hindi'])
+}
+
+ResultDF = pd.DataFrame(ResultSheet)
+print(ResultDF)
+```
+
+Output:
+```
+         Arnab  Ramit  Samridhi  Riya  Mallika
+Maths       90     92        89    81       94
+Science     91     81        91    71       95
+Hindi       97     96        88    67       99
+```
+
+In this DataFrame:
+- Each key in the dictionary (`'Arnab', 'Ramit', 'Samridhi', 'Riya', 'Mallika'`) becomes a column label.
+- Each Series becomes a column in the DataFrame, where the index values of the Series become the row labels.
+- The resulting index or row labels are the union of all series indexes used to create the DataFrame.
+
+We can also see that every column in the DataFrame is indeed a Series:
+
+```python
+print(type(ResultDF['Arnab']))
+```
+
+Output:
+```
+<class 'pandas.core.series.Series'>
+```
+
+Additionally, if the Series have different indexes, the resulting DataFrame accommodates all unique indexes as row labels and inserts NaN for missing values, as shown in the example with `dictForUnion`.
