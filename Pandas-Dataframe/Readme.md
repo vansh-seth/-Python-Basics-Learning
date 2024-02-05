@@ -597,3 +597,28 @@ Science       91     81        91    71       95
 Hindi         97     96        88    67       99
 ```
 
+### Boolean Indexing
+
+Boolean indexing allows us to select subsets of data based on the actual values in the DataFrame rather than their row/column labels. We can use conditions on column names to filter data values. Consider the DataFrame `ResultDF`, the following statement displays True or False depending on whether the data value satisfies the given condition or not.
+
+```python
+>>> ResultDF.loc['Maths'] > 90
+Arnab      False
+Ramit       True
+Samridhi   False
+Riya       False
+Mallika     True
+Name: Maths, dtype: bool
+```
+
+To check in which subjects 'Arnab' has scored more than 90, we can write:
+
+```python
+>>> ResultDF.loc[:, 'Arnab'] > 90
+Maths      False
+Science     True
+Hindi       True
+Name: Arnab, dtype: bool
+```
+
+Boolean indexing is a powerful tool for filtering data based on specific conditions, allowing us to extract relevant information from our DataFrame.
