@@ -295,3 +295,192 @@ Output:
 ```
 
 Additionally, if the Series have different indexes, the resulting DataFrame accommodates all unique indexes as row labels and inserts NaN for missing values, as shown in the example with `dictForUnion`.
+
+
+### Operations on Rows and Columns in DataFrames
+
+In Pandas, we can perform various operations on rows and columns of a DataFrame, including selection, deletion, addition, and renaming.
+
+#### (A) Adding a New Column to a DataFrame
+
+We can easily add a new column to a DataFrame. Let's consider the DataFrame `ResultDF` defined earlier containing students' marks in different subjects.
+
+```python
+# Adding a new column for student 'Preeti'
+ResultDF['Preeti'] = [89, 78, 76]
+print(ResultDF)
+```
+
+Output:
+```
+         Arnab  Ramit  Samridhi  Riya  Mallika  Preeti
+Maths       90     99        89    81       94      89
+Science     91     98        91    71       95      78
+Hindi       97     78        88    67       99      76
+```
+
+Assigning values to a new column label that does not exist will create a new column at the end of the DataFrame.
+
+If the column already exists in the DataFrame, the assignment statement will update the values of the existing column:
+
+```python
+# Updating values for the existing column 'Ramit'
+ResultDF['Ramit'] = [99, 98, 78]
+print(ResultDF)
+```
+
+Output:
+```
+         Arnab  Ramit  Samridhi  Riya  Mallika  Preeti
+Maths       90     99        89    81       94      89
+Science     91     98        91    71       95      78
+Hindi       97     78        88    67       99      76
+```
+
+We can also change the data of an entire column to a particular value in a DataFrame:
+
+```python
+# Setting marks=90 for all subjects for the column name 'Arnab'
+ResultDF['Arnab'] = 90
+print(ResultDF)
+```
+
+Output:
+```
+         Arnab  Ramit  Samridhi  Riya  Mallika  Preeti
+Maths       90     99        89    81       94      89
+Science     90     98        91    71       95      78
+Hindi       90     78        88    67       99      76
+```
+
+In this way, we can manipulate the columns in a DataFrame by adding new columns, updating existing ones, or setting values for entire columns.
+
+### (B) Adding a New Row to a DataFrame
+
+We can add a new row to a DataFrame using the `DataFrame.loc[]` method. Let's consider the DataFrame `ResultDF` that contains marks for three subjects: Maths, Science, and Hindi.
+
+```python
+# Adding marks for the English subject to ResultDF
+ResultDF.loc['English'] = [85, 86, 83, 80, 90, 89]
+print(ResultDF)
+```
+
+Output:
+```
+         Arnab  Ramit  Samridhi  Riya  Mallika  Preeti
+Maths       90     92        89    81       94      89
+Science     91     81        91    71       95      78
+Hindi       97     96        88    67       99      76
+English     85     86        83    80       90      89
+```
+
+We cannot use this method to add a row with an already existing (duplicate) index value (label). In such cases, the row with the specified index label will be updated.
+
+```python
+# Updating marks for the English subject in ResultDF
+ResultDF.loc['English'] = [95, 86, 95, 80, 95, 99]
+print(ResultDF)
+```
+
+Output:
+```
+         Arnab  Ramit  Samridhi  Riya  Mallika  Preeti
+Maths       90     92        89    81       94      89
+Science     91     81        91    71       95      78
+Hindi       97     96        88    67       99      76
+English     95     86        95    80       95      99
+```
+
+We can also use the `DataFrame.loc[]` method to change the data values of a row to a particular value. For example, the following statement sets marks in 'Maths' for all columns to 0:
+
+```python
+# Setting marks in 'Maths' for all columns to 0
+ResultDF.loc['Maths'] = 0
+print(ResultDF)
+```
+
+Output:
+```
+         Arnab  Ramit  Samridhi  Riya  Mallika  Preeti
+Maths        0      0         0     0        0       0
+Science     91     81        91    71       95      78
+Hindi       97     96        88    67       99      76
+English     95     86        95    80       95      99
+```
+
+Attempting to add a row with fewer values than the number of columns in the DataFrame results in a `ValueError`. Similarly, if we try to add a column with fewer values than the number of rows in the DataFrame, it results in a `ValueError`. 
+
+We can also set all values of a DataFrame to a particular value:
+
+```python
+# Set all values in ResultDF to 0
+ResultDF[:] = 0
+print(ResultDF)
+```
+
+Output:
+```
+         Arnab  Ramit  Samridhi  Riya  Mallika  Preeti
+Maths        0      0         0     0        0       0
+Science      0      0         0     0        0       0
+Hindi        0      0         0     0        0       0
+English      0      0         0     0        0       0
+```
+
+### (C) Deleting Rows or Columns from a DataFrame
+
+We can use the `DataFrame.drop()` method to delete rows and columns from a DataFrame. We specify the names of the labels to be dropped and the axis from which they need to be dropped. To delete a row, the parameter `axis` is assigned the value 0, and for deleting a column, the parameter `axis` is assigned the value 1.
+
+Consider the following DataFrame:
+
+```python
+>>> ResultDF
+         Arnab  Ramit  Samridhi  Riya  Mallika
+Maths       90     92        89    81       94
+Science     91     81        91    71       95
+Hindi       97     96        88    67       99
+English     95     86        95    80       95
+```
+
+The following example shows how to delete the row with label 'Science':
+
+```python
+>>> ResultDF = ResultDF.drop('Science', axis=0)
+>>> ResultDF
+         Arnab  Ramit  Samridhi  Riya  Mallika
+Maths       90     92        89    81       94
+Hindi       97     96        88    67       99
+English     95     86        95    80       95
+```
+
+To delete the columns having labels 'Samridhi', 'Ramit', and 'Riya':
+
+```python
+>>> ResultDF = ResultDF.drop(['Samridhi','Ramit','Riya'], axis=1)
+>>> ResultDF
+         Arnab  Mallika
+Maths       90       94
+Hindi       97       99
+English     95       95
+```
+
+If the DataFrame has more than one row with the same label, the `DataFrame.drop()` method will delete all the matching rows. For example:
+
+```python
+>>> ResultDF
+         Arnab  Ramit  Samridhi  Riya  Mallika
+Maths       90     92        89    81       94
+Science     91     81        91    71       95
+Hindi       97     96        88    67       99
+Hindi       97     89        78    60       45
+```
+
+To remove the duplicate rows labeled ‘Hindi’, we write the following statement:
+
+```python
+>>> ResultDF = ResultDF.drop('Hindi', axis=0)
+>>> ResultDF
+         Arnab  Ramit  Samridhi  Riya  Mallika
+Maths       90     92        89    81       94
+Science     91     81        91    71       95
+```
