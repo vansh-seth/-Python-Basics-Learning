@@ -484,3 +484,39 @@ To remove the duplicate rows labeled ‘Hindi’, we write the following stateme
 Maths       90     92        89    81       94
 Science     91     81        91    71       95
 ```
+
+### (D) Renaming Row Labels of a DataFrame
+
+We can change the labels of rows and columns in a DataFrame using the `DataFrame.rename()` method. To rename the row indices from 'Maths' to 'Sub1', 'Science' to 'Sub2', 'Hindi' to 'Sub3', and 'English' to 'Sub4', we can use the following statement:
+
+```python
+>>> ResultDF
+         Arnab  Ramit  Samridhi  Riya  Mallika
+Maths       90     92        89    81       94
+Science     91     81        91    71       95
+English     97     96        88    67       99
+Hindi       97     89        78    60       45
+
+>>> ResultDF = ResultDF.rename({'Maths':'Sub1', 'Science':'Sub2', 'English':'Sub3', 'Hindi':'Sub4'}, axis='index')
+>>> print(ResultDF)
+         Arnab  Ramit  Samridhi  Riya  Mallika
+Sub1        90     92        89    81       94
+Sub2        91     81        91    71       95
+Sub3        97     96        88    67       99
+Sub4        97     89        78    60       45
+```
+
+The parameter `axis='index'` is used to specify that the row label is to be changed. If no new label is passed corresponding to an existing label, the existing row label is left as it is. For example:
+
+```python
+>>> ResultDF = ResultDF.rename({'Maths':'Sub1', 'Science':'Sub2', 'Hindi':'Sub4'}, axis='index')
+>>> print(ResultDF)
+         Arnab  Ramit  Samridhi  Riya  Mallika
+Sub1        90     92        89    81       94
+Sub2        91     81        91    71       95
+English     97     96        88    67       99
+Sub4        97     89        78    60       45
+```
+
+In this case, the label 'English' remains unchanged because it was not included in the renaming dictionary.
+
