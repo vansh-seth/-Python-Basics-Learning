@@ -177,3 +177,73 @@ Output:
 ```
 
 In the output, the 'VDF' column is displayed in the middle instead of being the last column as in the original DataFrame.
+
+### Creation of DataFrame from Series
+
+We can create a DataFrame from one or more Pandas Series. Each Series becomes a column in the DataFrame, and the index labels of the Series become the row labels of the DataFrame.
+
+Consider the following three Series:
+
+```python
+import pandas as pd
+
+seriesA = pd.Series([1, 2, 3, 4, 5], index=['a', 'b', 'c', 'd', 'e'])
+seriesB = pd.Series([1000, 2000, -1000, -5000, 1000], index=['a', 'b', 'c', 'd', 'e'])
+seriesC = pd.Series([10, 20, -10, -50, 100], index=['z', 'y', 'a', 'c', 'e'])
+```
+
+### Creating DataFrame from a Single Series
+
+We can create a DataFrame from a single Series:
+
+```python
+# Create DataFrame from a single Series
+dFrame6 = pd.DataFrame(seriesA)
+print(dFrame6)
+```
+
+Output:
+```
+   0
+a  1
+b  2
+c  3
+d  4
+e  5
+```
+
+### Creating DataFrame from Multiple Series
+
+To create a DataFrame from multiple Series, we pass the Series objects in a list:
+
+```python
+# Create DataFrame from multiple Series
+dFrame7 = pd.DataFrame([seriesA, seriesB])
+print(dFrame7)
+```
+
+Output:
+```
+      a     b     c     d     e
+0   1.0   2.0   3.0   4.0   5.0
+1  1000  2000 -1000 -5000  1000
+```
+
+### Handling Different Series Labels
+
+If the Series objects have different labels, the DataFrame will accommodate all unique labels as columns and insert NaN for missing values:
+
+```python
+# Create DataFrame with different Series labels
+dFrame8 = pd.DataFrame([seriesA, seriesC])
+print(dFrame8)
+```
+
+Output:
+```
+      a    b     c    d      e     z     y
+0   1.0  2.0   3.0  4.0    5.0   NaN   NaN
+1 -10.0  NaN -50.0  NaN  100.0  10.0  20.0
+```
+
+In this DataFrame, the columns correspond to all distinct labels present in the Series objects. If a particular Series does not have a corresponding value for a label, NaN is inserted in the DataFrame column.
