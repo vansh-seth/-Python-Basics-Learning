@@ -520,3 +520,19 @@ Sub4        97     89        78    60       45
 
 In this case, the label 'English' remains unchanged because it was not included in the renaming dictionary.
 
+
+### Renaming Column Labels of a DataFrame
+
+To alter the column names of `ResultDF`, we can again use the `rename()` method, as shown below. The parameter `axis='columns'` implies that we want to change the column labels:
+
+```python
+>>> ResultDF = ResultDF.rename({'Arnab':'Student1', 'Ramit':'Student2', 'Samridhi':'Student3', 'Mallika':'Student4'}, axis='columns')
+>>> print(ResultDF)
+         Student1  Student2  Student3  Riya  Student4
+Sub1           90        92        89    81        94
+Sub2           91        81        91    71        95
+Sub3           97        96        88    67        99
+Sub4           97        89        78    60        45
+```
+
+Note that the column 'Riya' remains unchanged since we did not pass any new label for it.
