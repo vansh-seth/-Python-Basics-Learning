@@ -894,3 +894,41 @@ In this example, the CSV file `ResultData1.csv` is loaded into a DataFrame named
 
 This method allows you to easily import data from CSV files into DataFrames for further analysis and manipulation.
 
+### Exporting a DataFrame to a CSV file
+
+You can use the `to_csv()` function in Pandas to save a DataFrame to a CSV file. Here's how you can do it:
+
+Assuming you have a DataFrame named `ResultDF`:
+
+```python
+import pandas as pd
+
+# Assuming ResultDF is your DataFrame
+ResultDF = pd.DataFrame({
+    'Arnab': [90, 91, 97],
+    'Ramit': [92, 81, 96],
+    'Samridhi': [89, 91, 88],
+    'Riya': [81, 71, 67],
+    'Mallika': [94, 95, 99]
+}, index=['Maths', 'Science', 'Hindi'])
+```
+
+You can save the DataFrame `ResultDF` to a CSV file using the following code:
+
+```python
+# Save DataFrame to a CSV file
+ResultDF.to_csv(path_or_buf='C:/NCERT/resultout.csv', sep=',')
+```
+
+This statement creates a file named `resultout.csv` in the folder `C:/NCERT` on your hard disk. The data, along with the row labels and column headers, will be separated by commas.
+
+If you don't want the column names to be saved to the file, you can use the `header=False` parameter. If you also don't want the row labels to be written to the file, you can use the `index=False` parameter. For example:
+
+```python
+# Save DataFrame to a text file without headers and row labels
+ResultDF.to_csv('C:/NCERT/resultonly.txt', sep='@', header=False, index=False)
+```
+
+This code saves the DataFrame `ResultDF` to a file named `resultonly.txt` in the folder `C:/NCERT`, with data separated by '@' symbols and without column names or row labels written to the file.
+
+These methods provide flexibility in exporting DataFrame data to CSV files, allowing you to customize the output based on your requirements.
