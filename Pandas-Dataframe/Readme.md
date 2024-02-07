@@ -696,3 +696,63 @@ dFrame1 = dFrame1.append(dFrame2, ignore_index=True)
 This command appends `dFrame2` to `dFrame1` while ignoring row index labels.
 
 The `append()` method also supports appending a series or a dictionary to a DataFrame.
+
+
+## Attributes of Pandas DataFrames
+
+DataFrames in Pandas offer various attributes that provide useful information about the structure and content of the dataset. Below are some commonly used attributes of Pandas DataFrames:
+
+1. **`index`**: Returns the index (row labels) of the DataFrame.
+2. **`columns`**: Returns the column labels of the DataFrame.
+3. **`values`**: Returns the data as a 2D ndarray (NumPy array).
+4. **`dtypes`**: Returns the data types of each column in the DataFrame.
+5. **`shape`**: Returns a tuple representing the dimensionality of the DataFrame (rows, columns).
+6. **`size`**: Returns the number of elements in the DataFrame.
+7. **`empty`**: Returns `True` if the DataFrame is empty; otherwise, returns `False`.
+
+### Example: State of Forest Report 2017 Data
+
+Consider the following DataFrame `ForestAreaDF`, which contains data from the "State of Forest Report 2017" published by the Forest Survey of India:
+
+```python
+import pandas as pd
+
+ForestArea = {
+    'Assam': pd.Series([78438, 2797, 10192, 15116], index=['GeoArea', 'VeryDense', 'ModeratelyDense', 'OpenForest']),
+    'Kerala': pd.Series([38852, 1663, 9407, 9251], index=['GeoArea', 'VeryDense', 'ModeratelyDense', 'OpenForest']),
+    'Delhi': pd.Series([1483, 6.72, 56.24, 129.45], index=['GeoArea', 'VeryDense', 'ModeratelyDense', 'OpenForest'])
+}
+
+ForestAreaDF = pd.DataFrame(ForestArea)
+```
+
+The DataFrame `ForestAreaDF` contains data about the geographical area, very dense forest area, moderately dense forest area, and open forest area (all in square kilometers) in three states of India: Assam, Kerala, and Delhi.
+
+### Accessing Attributes
+
+```python
+# Accessing index attribute
+print("Index:", ForestAreaDF.index)
+
+# Accessing columns attribute
+print("Columns:", ForestAreaDF.columns)
+
+# Accessing values attribute
+print("Values:")
+print(ForestAreaDF.values)
+
+# Accessing dtypes attribute
+print("Data Types:")
+print(ForestAreaDF.dtypes)
+
+# Accessing shape attribute
+print("Shape:", ForestAreaDF.shape)
+
+# Accessing size attribute
+print("Size:", ForestAreaDF.size)
+
+# Checking if the DataFrame is empty
+print("Empty DataFrame?", ForestAreaDF.empty)
+```
+
+These attributes provide insights into the structure and content of the DataFrame, facilitating data analysis and manipulation.
