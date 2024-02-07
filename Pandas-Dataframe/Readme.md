@@ -851,3 +851,46 @@ Here are some additional attributes and methods of Pandas DataFrame:
     ```
 
 These attributes and methods provide convenient ways to manipulate and analyze data within Pandas DataFrames.
+
+### Importing and Exporting Data between CSV Files and DataFrames
+
+#### Importing a CSV File to a DataFrame
+
+To import data from a CSV file into a DataFrame, you can use the `read_csv()` function provided by Pandas. Here's how you can do it:
+
+Assuming we have a CSV file named `ResultData.csv` with the following data:
+
+```
+RollNo,Name,Eco,Maths
+1,Arnab,18,57
+2,Kritika,23,45
+3,Divyam,51,37
+4,Vivaan,40,60
+5,Aaroosh,18,27
+```
+
+You can load the data from the `ResultData.csv` file into a DataFrame named `marks` using the following code:
+
+```python
+import pandas as pd
+
+marks = pd.read_csv("C:/NCERT/ResultData.csv", sep=",", header=0)
+print(marks)
+```
+
+Explanation of parameters:
+- The first parameter of `read_csv()` is the path to the CSV file.
+- The `sep` parameter specifies the separator used in the CSV file. Here, it's a comma.
+- The `header` parameter specifies the row number to be used as column names. `header=0` implies that column names are inferred from the first line of the file.
+
+You can also specify column names explicitly using the `names` parameter while creating the DataFrame using the `read_csv()` function. Here's an example:
+
+```python
+marks1 = pd.read_csv("C:/NCERT/ResultData1.csv", sep=",", names=['RNo', 'StudentName', 'Sub1', 'Sub2'])
+print(marks1)
+```
+
+In this example, the CSV file `ResultData1.csv` is loaded into a DataFrame named `marks1`, and column names are explicitly specified using the `names` parameter.
+
+This method allows you to easily import data from CSV files into DataFrames for further analysis and manipulation.
+
