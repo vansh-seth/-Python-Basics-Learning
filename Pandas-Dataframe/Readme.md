@@ -808,3 +808,46 @@ Here is a summary of some attributes of Pandas DataFrame along with examples of 
 
 These attributes provide valuable information about the structure and content of the DataFrame, enabling users to perform data analysis and manipulation efficiently.
 
+
+Here are some additional attributes and methods of Pandas DataFrame:
+
+7. **DataFrame.T**: Transposes the DataFrame, swapping row indices and column labels.
+   ```python
+   >>> ForestAreaDF.T
+               GeoArea  VeryDense  ModeratelyDense  OpenForest
+   Assam       78438.0     2797.00         10192.00    15116.00
+   Kerala      38852.0     1663.00          9407.00     9251.00
+   Delhi        1483.0        6.72            56.24      129.45
+   ```
+
+8. **DataFrame.head(n)**: Displays the first n rows in the DataFrame.
+   ```python
+   >>> ForestAreaDF.head(2)
+               Assam  Kerala   Delhi
+   GeoArea     78438   38852  1483.00
+   VeryDense    2797    1663     6.72
+   ```
+
+   By default, if the parameter n is not specified, it gives the first 5 rows of the DataFrame.
+
+9. **DataFrame.tail(n)**: Displays the last n rows in the DataFrame.
+   ```python
+   >>> ForestAreaDF.tail(2)
+                  Assam  Kerala  Delhi
+   ModeratelyDense  10192    9407  56.24
+   OpenForest       15116    9251  129.45
+   ```
+
+   By default, if the parameter n is not specified, it gives the last 5 rows of the DataFrame.
+
+10. **DataFrame.empty**: Returns `True` if the DataFrame is empty and `False` otherwise.
+    ```python
+    >>> ForestAreaDF.empty
+    False
+
+    >>> df = pd.DataFrame()  # Create an empty DataFrame
+    >>> df.empty
+    True
+    ```
+
+These attributes and methods provide convenient ways to manipulate and analyze data within Pandas DataFrames.
