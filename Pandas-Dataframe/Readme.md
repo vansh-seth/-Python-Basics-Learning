@@ -756,3 +756,55 @@ print("Empty DataFrame?", ForestAreaDF.empty)
 ```
 
 These attributes provide insights into the structure and content of the DataFrame, facilitating data analysis and manipulation.
+
+
+Here is a summary of some attributes of Pandas DataFrame along with examples of their usage:
+
+1. **DataFrame.index**: Displays the row labels of the DataFrame.
+   ```python
+   >>> ForestAreaDF.index
+   Index(['GeoArea', 'VeryDense', 'ModeratelyDense', 'OpenForest'], dtype='object')
+   ```
+
+2. **DataFrame.columns**: Displays the column labels of the DataFrame.
+   ```python
+   >>> ForestAreaDF.columns
+   Index(['Assam', 'Kerala', 'Delhi'], dtype='object')
+   ```
+
+3. **DataFrame.dtypes**: Displays the data type of each column in the DataFrame.
+   ```python
+   >>> ForestAreaDF.dtypes
+   Assam    int64
+   Kerala   int64
+   Delhi    float64
+   dtype: object
+   ```
+
+4. **DataFrame.values**: Displays a NumPy ndarray containing all the values in the DataFrame, without the axes labels.
+   ```python
+   >>> ForestAreaDF.values
+   array([[7.8438e+04, 3.8852e+04, 1.4830e+03],
+          [2.7970e+03, 1.6630e+03, 6.7200e+00],
+          [1.0192e+04, 9.4070e+03, 5.6240e+01],
+          [1.5116e+04, 9.2510e+03, 1.2945e+02]])
+   ```
+
+5. **DataFrame.shape**: Displays a tuple representing the dimensionality of the DataFrame (rows, columns).
+   ```python
+   >>> ForestAreaDF.shape
+   (4, 3)
+   ```
+
+   This means `ForestAreaDF` has 4 rows and 3 columns.
+
+6. **DataFrame.size**: Displays the total number of elements in the DataFrame.
+   ```python
+   >>> ForestAreaDF.size
+   12
+   ```
+
+   This means `ForestAreaDF` has 12 values in total.
+
+These attributes provide valuable information about the structure and content of the DataFrame, enabling users to perform data analysis and manipulation efficiently.
+
