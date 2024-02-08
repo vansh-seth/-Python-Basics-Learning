@@ -234,3 +234,78 @@ c.pack()
 top.mainloop()
 ```
 
+# Python Tkinter Checkbutton Widget
+
+The Checkbutton widget in Tkinter is used to track the user's choices within the application. It provides a mechanism for implementing on/off selections, allowing users to make multiple selections from a set of options.
+
+## Checkbutton Widget Syntax
+
+The syntax to create a Checkbutton widget is as follows:
+
+```python
+w = Checkbutton(master, options)
+```
+
+Here's a list of possible options that can be configured:
+
+| SN  | Option             | Description                                                      |
+| --- | ------------------ | ---------------------------------------------------------------- |
+| 1   | activebackground   | Background color when the checkbutton is under the cursor.       |
+| 2   | activeforeground   | Foreground color when the checkbutton is under the cursor.       |
+| 3   | bg                 | Background color of the button.                                  |
+| 4   | bitmap             | Image (monochrome) displayed on the button.                      |
+| 5   | bd                 | Border size around the corner.                                   |
+| 6   | command            | Function called when the state of the checkbutton is changed.    |
+| 7   | cursor             | Cursor style when over the checkbutton.                          |
+| 8   | disableforeground | Color of the text of a disabled checkbutton.                    |
+| 9   | font               | Font of the checkbutton text.                                    |
+| 10  | fg                 | Foreground color (text color) of the checkbutton.                |
+| 11  | height             | Height of the checkbutton (number of lines).                     |
+| 12  | highlightcolor     | Color of the focus highlight when the checkbutton is focused.    |
+| 13  | image              | Image used to represent the checkbutton.                         |
+| 14  | justify            | Text justification if it contains multiple lines.                |
+| 15  | offvalue           | Value when the button is unchecked.                              |
+| 16  | onvalue            | Value when the button is checked.                                |
+| 17  | padx               | Horizontal padding of the checkbutton.                           |
+| 18  | pady               | Vertical padding of the checkbutton.                             |
+| 19  | relief             | Border type of the checkbutton.                                  |
+| 20  | selectcolor        | Color of the checkbutton when it is set.                         |
+| 21  | selectimage        | Image shown on the checkbutton when it is set.                   |
+| 22  | state              | State of the checkbutton (normal, DISABLED, ACTIVE).             |
+| 23  | underline          | Index of the character in the text to be underlined.             |
+| 24  | variable           | Associated variable tracking the state of the checkbutton.       |
+| 25  | width              | Width of the checkbutton (number of characters).                 |
+| 26  | wraplength         | Text wrapping length.                                            |
+
+## Checkbutton Widget Methods
+
+Here are the methods that can be called with Checkbuttons:
+
+1. `deselect()`: Turn off the checkbutton.
+2. `flash()`: Flash the checkbutton between active and normal colors.
+3. `invoke()`: Invoke the method associated with the checkbutton.
+4. `select()`: Turn on the checkbutton.
+5. `toggle()`: Toggle between different checkbuttons.
+
+## Example
+
+```python
+from tkinter import *
+
+top = Tk()
+top.geometry("200x200")
+
+checkvar1 = IntVar()
+checkvar2 = IntVar()
+checkvar3 = IntVar()
+
+chkbtn1 = Checkbutton(top, text="C", variable=checkvar1, onvalue=1, offvalue=0, height=2, width=10)
+chkbtn2 = Checkbutton(top, text="C++", variable=checkvar2, onvalue=1, offvalue=0, height=2, width=10)
+chkbtn3 = Checkbutton(top, text="Java", variable=checkvar3, onvalue=1, offvalue=0, height=2, width=10)
+
+chkbtn1.pack()
+chkbtn2.pack()
+chkbtn3.pack()
+
+top.mainloop()
+```
