@@ -91,3 +91,78 @@ widget.place(options)
 ```
 
 Options include `x`, `y`, `height`, `width`, `relx`, `rely`, `relheight`, `relwidth`, `anchor`, and `bordermode`.
+
+
+# Python Tkinter Button Widget
+
+The button widget in Tkinter allows developers to add various types of buttons to their Python applications. These buttons can be configured to meet specific requirements, including appearance and behavior. Additionally, methods or functions can be associated with buttons to execute tasks when they are clicked.
+
+## Button Widget Syntax
+
+The syntax to create a button widget is as follows:
+
+```python
+W = Button(parent, options)
+```
+
+Here's a list of possible options that can be configured:
+
+| SN  | Option             | Description                                                  |
+| --- | ------------------ | ------------------------------------------------------------ |
+| 1   | activebackground   | Background color when the mouse hovers over the button.      |
+| 2   | activeforeground   | Font color when the mouse hovers over the button.            |
+| 3   | Bd                 | Border width in pixels.                                      |
+| 4   | Bg                 | Background color of the button.                              |
+| 5   | Command            | Function called when the button is pressed.                  |
+| 6   | Fg                 | Foreground color of the button.                              |
+| 7   | Font               | Font of the button text.                                     |
+| 8   | Height             | Height of the button (in text lines or pixels for images).   |
+| 9   | Highlightcolor     | Color of the highlight when the button has focus.            |
+| 10  | Image              | Image displayed on the button.                               |
+| 11  | justify            | Text justification (LEFT, RIGHT, CENTER).                    |
+| 12  | Padx               | Additional padding in the horizontal direction.              |
+| 13  | Pady               | Additional padding in the vertical direction.                |
+| 14  | Relief             | Border type (SUNKEN, RAISED, GROOVE, RIDGE).                 |
+| 15  | State              | Button state (DISABLED, ACTIVE).                             |
+| 16  | Underline          | Set to underline button text.                                |
+| 17  | Width              | Width of the button (in letters or pixels).                  |
+| 18  | Wraplength         | Text wrap length.                                            |
+
+## Examples
+
+### Simple Button
+
+```python
+from tkinter import *
+
+top = Tk()
+top.geometry("200x100")
+b = Button(top, text="Simple")
+b.pack()
+top.mainloop()
+```
+
+### Button with Functions
+
+```python
+from tkinter import *
+from tkinter import messagebox
+
+top = Tk()
+top.geometry("200x200")
+
+def fun():
+    messagebox.showinfo("Hello", "Red Button clicked")
+
+b1 = Button(top, text="Red", command=fun, activeforeground="red", activebackground="pink", pady=10)
+b2 = Button(top, text="Blue", activeforeground="blue", activebackground="pink", pady=10)
+b3 = Button(top, text="Green", activeforeground="green", activebackground="pink", pady=10)
+b4 = Button(top, text="Yellow", activeforeground="yellow", activebackground="pink", pady=10)
+
+b1.pack(side=LEFT)
+b2.pack(side=RIGHT)
+b3.pack(side=TOP)
+b4.pack(side=BOTTOM)
+
+top.mainloop()
+```
