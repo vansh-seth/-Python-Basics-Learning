@@ -466,3 +466,60 @@ btn4.pack(side=RIGHT)
 top.mainloop()
 ```
 
+# Python Tkinter Label Widget
+
+The Label widget in Tkinter is used to display text or images within a container box. It's commonly used to provide information or messages to users about other widgets or functionalities within the Python application.
+
+## Label Widget Syntax
+
+The syntax to create a Label widget is as follows:
+
+```python
+w = Label(master, options)
+```
+
+Here's a list of possible options that can be configured:
+
+| SN  | Option         | Description                                                                                     |
+| --- | -------------- | ----------------------------------------------------------------------------------------------- |
+| 1   | anchor         | Specifies the position of the text within the widget. Default is CENTER.                        |
+| 2   | bg             | Background color displayed behind the widget.                                                   |
+| 3   | bitmap         | Sets a bitmap to the graphical object specified, allowing the label to represent graphics.      |
+| 4   | bd             | Border width in pixels. Default is 2 pixels.                                                    |
+| 5   | cursor         | Changes the mouse pointer to the specified cursor type (arrow, dot, etc.).                      |
+| 6   | font           | Font type of the text displayed inside the widget.                                              |
+| 7   | fg             | Foreground color of the text displayed inside the widget.                                        |
+| 8   | height         | Height of the widget.                                                                           |
+| 9   | image          | Image to be displayed as the label.                                                             |
+| 10  | justify        | Orientation of the text if it contains multiple lines (LEFT, RIGHT, CENTER).                    |
+| 11  | padx           | Horizontal padding of the text. Default value is 1.                                              |
+| 12  | pady           | Vertical padding of the text. Default value is 1.                                                |
+| 13  | relief         | Type of border. Default value is FLAT.                                                          |
+| 14  | text           | String variable containing one or more lines of text.                                             |
+| 15  | textvariable   | Control variable (StringVar) to access and modify the text displayed inside the widget.         |
+| 16  | underline      | Displays a line under the specified letter of the text.                                          |
+| 17  | width          | Width of the widget, specified in number of characters.                                          |
+| 18  | wraplength     | Breaks the text into multiple lines, specifying the number of characters for each line.         |
+
+## Example
+
+```python
+from tkinter import *
+
+top = Tk()
+top.geometry("400x250")
+
+# Creating labels
+uname = Label(top, text="Username").place(x=30, y=50)
+password = Label(top, text="Password").place(x=30, y=90)
+
+# Creating button
+sbmitbtn = Button(top, text="Submit", activebackground="pink", activeforeground="blue").place(x=30, y=120)
+
+# Creating entry fields
+e1 = Entry(top, width=20).place(x=100, y=50)
+e2 = Entry(top, width=20).place(x=100, y=90)
+
+top.mainloop()
+```
+
