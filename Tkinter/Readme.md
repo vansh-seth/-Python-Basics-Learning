@@ -166,3 +166,71 @@ b4.pack(side=BOTTOM)
 
 top.mainloop()
 ```
+
+# Python Tkinter Canvas Widget
+
+The canvas widget in Tkinter allows developers to add structured graphics, including graphs and plots, to their Python applications. It provides a versatile tool for creating visual elements dynamically.
+
+## Canvas Widget Syntax
+
+The syntax to create a canvas widget is as follows:
+
+```python
+w = Canvas(parent, options)
+```
+
+Here's a list of possible options that can be configured:
+
+| SN  | Option            | Description                                           |
+| --- | ----------------- | ----------------------------------------------------- |
+| 1   | bd                | Border width (default is 2).                          |
+| 2   | bg                | Background color of the canvas.                       |
+| 3   | confine           | Makes the canvas unscrollable outside the region.     |
+| 4   | cursor            | Cursor style on the canvas (arrow, circle, dot, etc). |
+| 5   | height            | Height of the canvas.                                 |
+| 6   | highlightcolor    | Color when the canvas is focused.                     |
+| 7   | relief            | Border type (SUNKEN, RAISED, GROOVE, RIDGE).          |
+| 8   | scrollregion      | Coordinates specifying the canvas area.               |
+| 9   | width             | Width of the canvas.                                  |
+| 10  | xscrollincrement  | Increment for horizontal scrolling.                  |
+| 11  | xscrollcommand    | Command for horizontal scrollbar.                     |
+| 12  | yscrollincrement  | Increment for vertical scrolling.                    |
+| 13  | yscrollcommand    | Command for vertical scrollbar.                       |
+
+## Examples
+
+### Simple Canvas
+
+```python
+from tkinter import *
+
+top = Tk()
+top.geometry("200x200")
+
+# Create a simple canvas
+c = Canvas(top, bg="pink", height=200)
+
+c.pack()
+
+top.mainloop()
+```
+
+### Creating an Arc on Canvas
+
+```python
+from tkinter import *
+
+top = Tk()
+top.geometry("200x200")
+
+# Create a simple canvas
+c = Canvas(top, bg="pink", height=200, width=200)
+
+# Create an arc
+arc = c.create_arc((5, 10, 150, 200), start=0, extent=150, fill="white")
+
+c.pack()
+
+top.mainloop()
+```
+
