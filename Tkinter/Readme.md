@@ -403,3 +403,66 @@ buttonCal = tk.Button(root, text="Calculate", command=call_result).grid(row=3, c
 root.mainloop()
 ```
 
+# Python Tkinter Frame Widget
+
+The Frame widget in Tkinter serves as a container to organize groups of other widgets within a rectangular area of the screen. It allows developers to group related widgets together for better organization and layout management in GUI applications.
+
+## Frame Widget Syntax
+
+The syntax to create a Frame widget is as follows:
+
+```python
+w = Frame(parent, options)
+```
+
+Here's a list of possible options that can be configured:
+
+| SN  | Option              | Description                                                 |
+| --- | ------------------- | ----------------------------------------------------------- |
+| 1   | bd                  | Border width.                                               |
+| 2   | bg                  | Background color of the widget.                             |
+| 3   | cursor              | Cursor style when over the frame (arrow, dot, etc).         |
+| 4   | height              | Height of the frame.                                        |
+| 5   | highlightbackground | Color of the background when the frame is under focus.      |
+| 6   | highlightcolor      | Color of the text when the frame is under focus.            |
+| 7   | highlightthickness  | Thickness around the border when the frame is under focus.   |
+| 8   | relief              | Border type (FLAT, RAISED, SUNKEN, etc).                    |
+| 9   | width               | Width of the frame.                                         |
+
+## Example
+
+```python
+from tkinter import *
+
+top = Tk()
+top.geometry("140x100")
+
+# Creating a main frame
+frame = Frame(top)
+frame.pack()
+
+# Creating frames on the left and right sides of the main frame
+leftframe = Frame(top)
+leftframe.pack(side=LEFT)
+
+rightframe = Frame(top)
+rightframe.pack(side=RIGHT)
+
+# Adding buttons to the main frame
+btn1 = Button(frame, text="Submit", fg="red", activebackground="red")
+btn1.pack(side=LEFT)
+
+btn2 = Button(frame, text="Remove", fg="brown", activebackground="brown")
+btn2.pack(side=RIGHT)
+
+# Adding buttons to the right frame
+btn3 = Button(rightframe, text="Add", fg="blue", activebackground="blue")
+btn3.pack(side=LEFT)
+
+# Adding buttons to the left frame
+btn4 = Button(leftframe, text="Modify", fg="black", activebackground="white")
+btn4.pack(side=RIGHT)
+
+top.mainloop()
+```
+
