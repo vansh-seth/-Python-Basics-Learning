@@ -309,3 +309,97 @@ chkbtn3.pack()
 
 top.mainloop()
 ```
+
+# Python Tkinter Entry Widget
+
+The Entry widget in Tkinter provides a single-line text box for users to input values into the application. It is commonly used to accept text strings from users and supports basic text entry functionalities.
+
+## Entry Widget Syntax
+
+The syntax to create an Entry widget is as follows:
+
+```python
+w = Entry(parent, options)
+```
+
+Here's a list of possible options that can be configured:
+
+| SN  | Option              | Description                                                        |
+| --- | ------------------- | ------------------------------------------------------------------ |
+| 1   | bg                  | Background color of the widget.                                    |
+| 2   | bd                  | Border width of the widget in pixels.                              |
+| 3   | cursor              | Cursor style when over the entry (arrow, dot, etc).                |
+| 4   | exportselection     | Controls whether text is copied to the clipboard automatically.    |
+| 5   | fg                  | Text color.                                                        |
+| 6   | font                | Font type of the text.                                             |
+| 7   | highlightbackground | Color displayed in the traversal highlight region when unfocused.  |
+| 8   | highlightcolor      | Color of the traversal highlight rectangle when focused.           |
+| 9   | highlightthickness  | Width of the highlight rectangle.                                  |
+| 10  | insertbackground    | Background color in the area covered by the insertion cursor.      |
+| 11  | insertborderwidth   | Width of the 3-D border around the insertion cursor.               |
+| 12  | insertofftime       | Time the insertion cursor remains "off" in each blink cycle.        |
+| 13  | insertontime        | Time the insertion cursor remains "on" in each blink cycle.         |
+| 14  | insertwidth         | Total width of the insertion cursor.                               |
+| 15  | justify             | Text organization (LEFT, RIGHT, CENTER).                            |
+| 16  | relief              | Border type (FLAT, RAISED, SUNKEN, etc).                           |
+| 17  | selectbackground    | Background color of selected text.                                 |
+| 18  | selectborderwidth   | Width of the border around selected text.                          |
+| 19  | selectforeground    | Text color of selected text.                                       |
+| 20  | show                | Show different text instead of the string (e.g., password).         |
+| 21  | textvariable        | StringVar instance to retrieve text from the entry.                 |
+| 22  | width               | Width of the displayed text or image.                               |
+| 23  | xscrollcommand      | Link to a horizontal scrollbar.                                    |
+
+## Entry Widget Methods
+
+Here are the methods that can be called with Entry widgets:
+
+1. `delete(first, last = none)`: Delete specified characters.
+2. `get()`: Retrieve the text inside the widget.
+3. `icursor(index)`: Change the insertion cursor position.
+4. `index(index)`: Place the cursor to the left of a character.
+5. `insert(index,s)`: Insert a string at a specified index.
+6. `select_adjust(index)`: Include the selection of a character.
+7. `select_clear()`: Clear the selection.
+8. `select_form(index)`: Set the anchor index position.
+9. `select_present()`: Check if text in the Entry is selected.
+10. `select_range(start,end)`: Select characters within a range.
+11. `select_to(index)`: Select characters from the beginning to a specified index.
+12. `xview(index)`: Link to a horizontal scrollbar.
+13. `xview_scroll(number,what)`: Make the entry scrollable horizontally.
+
+## Example: A Simple Calculator
+
+```python
+import tkinter as tk
+from functools import partial
+
+def call_result(label_result, n1, n2):
+    num1 = (n1.get())
+    num2 = (n2.get())
+    result = int(num1) + int(num2)
+    label_result.config(text="Result = %d" % result)
+    return
+
+root = tk.Tk()
+root.geometry('400x200+100+200')
+root.title('Calculator')
+
+number1 = tk.StringVar()
+number2 = tk.StringVar()
+
+labelNum1 = tk.Label(root, text="A").grid(row=1, column=0)
+labelNum2 = tk.Label(root, text="B").grid(row=2, column=0)
+labelResult = tk.Label(root)
+labelResult.grid(row=7, column=2)
+
+entryNum1 = tk.Entry(root, textvariable=number1).grid(row=1, column=2)
+entryNum2 = tk.Entry(root, textvariable=number2).grid(row=2, column=2)
+
+call_result = partial(call_result, labelResult, number1, number2)
+
+buttonCal = tk.Button(root, text="Calculate", command=call_result).grid(row=3, column=0)
+
+root.mainloop()
+```
+
