@@ -871,3 +871,95 @@ top.mainloop()
 ```
 
 This example creates a simple Message widget displaying the text "Welcome".
+
+
+Here's the information provided in a README.md format:
+
+# Python Tkinter Radiobutton
+
+The Radiobutton widget in Tkinter is used to implement one-of-many selection in a Python application. Users can choose only one option among several presented choices. Each Radiobutton is associated with a single variable, and selecting one Radiobutton changes the value of that variable.
+
+## Syntax
+
+```python
+w = Radiobutton(top, options)
+```
+
+## Options
+
+Here are the available options for the Radiobutton widget:
+
+| Option              | Description                                                  |
+|---------------------|--------------------------------------------------------------|
+| activebackground    | Background color when the widget has focus.                  |
+| activeforeground    | Font color when the widget has focus.                        |
+| anchor              | Position of the text within the widget.                      |
+| bg                  | Background color of the widget.                              |
+| bitmap              | Graphics or image displayed on the widget.                   |
+| borderwidth         | Border size.                                                 |
+| command             | Procedure called every time the state of the Radiobutton changes. |
+| cursor              | Cursor type when hovering over the widget.                   |
+| font                | Font type of the widget text.                                |
+| fg                  | Foreground color of the widget text.                         |
+| height              | Vertical dimension of the widget.                            |
+| highlightcolor      | Color of the focus highlight.                                |
+| highlightbackground | Background color of the focus highlight.                     |
+| image               | Image displayed on the Radiobutton instead of text.          |
+| justify             | Justification of multi-line text.                            |
+| padx                | Horizontal padding of the widget.                            |
+| pady                | Vertical padding of the widget.                              |
+| relief              | Border type.                                                 |
+| selectcolor         | Color of the Radiobutton when selected.                      |
+| selectimage         | Image displayed when the Radiobutton is selected.            |
+| state               | State of the Radiobutton (NORMAL or DISABLED).               |
+| text                | Text displayed on the Radiobutton.                           |
+| textvariable        | Control variable for the text displayed by the widget.       |
+| underline           | Index of the character to be underlined.                     |
+| value               | Value assigned to the control variable when the Radiobutton is selected. |
+| variable            | Control variable used to keep track of user's choices.       |
+| width               | Horizontal dimension of the widget.                          |
+| wraplength          | Number of characters per line for wrapping the text.         |
+
+## Methods
+
+The Radiobutton widget provides the following methods:
+
+| Method    | Description                                                  |
+|-----------|--------------------------------------------------------------|
+| deselect()| Turn off the Radiobutton.                                   |
+| flash()   | Flash the Radiobutton between active and normal colors.      |
+| invoke()  | Call any procedure associated when the state of a Radiobutton is changed. |
+| select()  | Select the Radiobutton.                                     |
+
+## Example
+
+```python
+from tkinter import *
+
+def selection():
+   selection = "You selected the option " + str(radio.get())
+   label.config(text = selection)
+
+top = Tk()
+top.geometry("300x150")
+radio = IntVar()
+lbl = Label(text = "Favourite programming language:")
+lbl.pack()
+R1 = Radiobutton(top, text="C", variable=radio, value=1,
+                  command=selection)
+R1.pack(anchor = W )
+
+R2 = Radiobutton(top, text="C++", variable=radio, value=2,
+                  command=selection)
+R2.pack(anchor = W )
+
+R3 = Radiobutton(top, text="Java", variable=radio, value=3,
+                  command=selection)
+R3.pack(anchor = W)
+
+label = Label(top)
+label.pack()
+top.mainloop()
+```
+
+This example creates Radiobuttons for selecting favorite programming languages and displays the selected option.
