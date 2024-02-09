@@ -630,3 +630,72 @@ btn.pack()
 
 top.mainloop()
 ```
+
+Certainly! Below is the information provided in a README.md format:
+
+# Python Tkinter Menubutton
+
+The `Menubutton` widget in Tkinter provides a drop-down menu displayed to the user at all times. It allows users to select appropriate choices within the application.
+
+## Syntax
+
+```python
+w = Menubutton(Top, options)
+```
+
+## Options
+
+Here are the available options for the Menubutton widget:
+
+| Option              | Description                                                  |
+|---------------------|--------------------------------------------------------------|
+| activebackground    | Background color of the widget when it's focused.            |
+| activeforeground    | Font color of the widget text when it's focused.             |
+| anchor              | Specifies the position of the widget content when it's given more space than needed. |
+| bg                  | Background color of the widget.                              |
+| bitmap              | Graphical content to be displayed on the widget.             |
+| bd                  | Size of the border. Default value is 2 pixels.               |
+| cursor              | Cursor type when the widget is focused.                      |
+| direction           | Direction of the menu display (LEFT, RIGHT, ABOVE).          |
+| disabledforeground  | Text color of the widget when it's disabled.                 |
+| fg                  | Normal foreground color of the widget.                       |
+| height              | Vertical dimension of the Menubutton.                        |
+| highlightcolor      | Highlight color shown when the widget is focused.            |
+| image               | Image displayed on the widget.                               |
+| justify             | Position of the text under the widget.                       |
+| menu                | Menu associated with the Menubutton.                         |
+| padx                | Horizontal padding of the widget.                            |
+| pady                | Vertical padding of the widget.                              |
+| relief              | Type of the border. Default value is RAISED.                 |
+| state               | State of the Mousebutton (ENABLED, DISABLED).                |
+| text                | Text shown with the widget.                                  |
+| textvariable        | Control variable of string type for controlling the text at runtime. |
+| underline           | Underline the text of the widget.                            |
+| width               | Width of the widget in characters.                           |
+| wraplength          | Wrap the text of the widget in a specified number of lines.  |
+
+## Example
+
+### Displaying a Menubutton with Checkbuttons
+
+```python
+from tkinter import *
+
+top = Tk()
+top.geometry("200x250")
+
+menubutton = Menubutton(top, text="Language", relief=FLAT)
+
+menubutton.grid()
+
+menubutton.menu = Menu(menubutton)
+
+menubutton["menu"] = menubutton.menu
+
+menubutton.menu.add_checkbutton(label="Hindi", variable=IntVar())
+menubutton.menu.add_checkbutton(label="English", variable=IntVar())
+
+menubutton.pack()
+
+top.mainloop()
+```
