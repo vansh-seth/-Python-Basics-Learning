@@ -699,3 +699,121 @@ menubutton.pack()
 
 top.mainloop()
 ```
+
+Here's the information provided in a README.md format:
+
+# Python Tkinter Menu
+
+The Menu widget in Tkinter allows you to create various types of menus including top-level, pull-down, and pop-up menus in a Python application.
+
+## Syntax
+
+```python
+w = Menu(top, options)
+```
+
+## Options
+
+Here are the available options for the Menu widget:
+
+| Option              | Description                                                  |
+|---------------------|--------------------------------------------------------------|
+| activebackground    | Background color when the widget is focused.                 |
+| activeborderwidth   | Width of the border when the mouse is over the widget.       |
+| activeforeground    | Font color when the widget has focus.                        |
+| bg                  | Background color of the widget.                              |
+| bd                  | Border width of the widget.                                  |
+| cursor              | Cursor type when hovering over the widget.                   |
+| disabledforeground  | Font color when the widget is disabled.                      |
+| font                | Font type of the text of the widget.                         |
+| fg                  | Foreground color of the widget.                              |
+| postcommand         | Function called when the mouse hovers over the menu.         |
+| relief              | Type of the border.                                          |
+| image               | Image displayed on the menu.                                 |
+| selectcolor         | Color used for selected checkbuttons or radiobuttons.        |
+| tearoff             | Start position of choices in the menu.                       |
+| title               | Title of the window.                                         |
+
+## Methods
+
+The Menu widget provides the following methods:
+
+| Method              | Description                                                  |
+|---------------------|--------------------------------------------------------------|
+| add_command(options)     | Add menu items to the menu.                                     |
+| add_radiobutton(options)  | Add radiobuttons to the menu.                                    |
+| add_checkbutton(options)  | Add checkbuttons to the menu.                                    |
+| add_cascade(options)      | Create a hierarchical menu by associating a menu with the parent menu. |
+| add_separator()           | Add a separator line to the menu.                                |
+| add(type, options)        | Add a specific menu item to the menu.                            |
+| delete(startindex, endindex) | Delete menu items within the specified range.                   |
+| entryconfig(index, options)  | Configure a menu item identified by the index.                  |
+| index(item)               | Get the index of a specified menu item.                          |
+| insert_separator(index)   | Insert a separator at the specified index.                       |
+| invoke(index)             | Invoke the associated action with the choice at the specified index. |
+| type(index)               | Get the type of the choice specified by the index.               |
+
+## Creating a Top-level Menu
+
+You can create a top-level menu by instantiating the Menu widget and adding menu items to it.
+
+### Example 1
+
+```python
+from tkinter import *
+
+top = Tk()
+
+def hello():
+    print("Hello!")
+
+menubar = Menu(top)
+menubar.add_command(label="Hello!", command=hello)
+menubar.add_command(label="Quit!", command=top.quit)
+
+top.config(menu=menubar)
+
+top.mainloop()
+```
+
+Clicking "Hello!" will print "Hello!" to the console, while clicking "Quit!" will exit the Python application.
+
+### Example 2
+
+```python
+from tkinter import Toplevel, Button, Tk, Menu
+
+top = Tk()
+menubar = Menu(top)
+
+file = Menu(menubar, tearoff=0)
+file.add_command(label="New")
+file.add_command(label="Open")
+file.add_command(label="Save")
+file.add_command(label="Save as...")
+file.add_command(label="Close")
+file.add_separator()
+file.add_command(label="Exit", command=top.quit)
+
+menubar.add_cascade(label="File", menu=file)
+
+edit = Menu(menubar, tearoff=0)
+edit.add_command(label="Undo")
+edit.add_separator()
+edit.add_command(label="Cut")
+edit.add_command(label="Copy")
+edit.add_command(label="Paste")
+edit.add_command(label="Delete")
+edit.add_command(label="Select All")
+
+menubar.add_cascade(label="Edit", menu=edit)
+
+help_menu = Menu(menubar, tearoff=0)
+help_menu.add_command(label="About")
+menubar.add_cascade(label="Help", menu=help_menu)
+
+top.config(menu=menubar)
+top.mainloop()
+```
+
+This creates a more elaborate menu structure with file, edit, and help options.
