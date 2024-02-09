@@ -817,3 +817,57 @@ top.mainloop()
 ```
 
 This creates a more elaborate menu structure with file, edit, and help options.
+
+
+Here's the information provided in a README.md format:
+
+# Python Tkinter Message
+
+The Message widget in Tkinter is used to display messages to the user regarding the behavior of the Python application. The message displayed by the Message widget cannot be edited and typically contains multiple lines of text.
+
+## Syntax
+
+```python
+w = Message(parent, options)
+```
+
+## Options
+
+Here are the available options for the Message widget:
+
+| Option       | Description                                                  |
+|--------------|--------------------------------------------------------------|
+| anchor       | Position of the text within the widget if there's extra space. Default is CENTER. |
+| bg           | Background color of the widget.                              |
+| bitmap       | Graphics or image displayed on the widget.                   |
+| bd           | Border size in pixels. Default is 2 pixels.                  |
+| cursor       | Cursor type when hovering over the widget.                   |
+| font         | Font type of the widget text.                                |
+| fg           | Font color of the widget text.                               |
+| height       | Vertical dimension of the message.                           |
+| image        | Static image displayed on the widget.                         |
+| justify      | Text alignment (LEFT, CENTER, RIGHT). Default is CENTER.     |
+| padx         | Horizontal padding of the widget.                            |
+| pady         | Vertical padding of the widget.                              |
+| relief       | Border type. Default is FLAT.                                |
+| text         | Text displayed by the widget.                                |
+| textvariable | Control variable for the text displayed by the widget.       |
+| underline    | Index of the letter to be underlined. Default is -1 (no underline). |
+| width        | Horizontal dimension in characters.                          |
+| wraplength   | Number of characters per line for wrapping the text.         |
+
+## Example
+
+```python
+from tkinter import *
+
+top = Tk()
+top.geometry("100x100")
+var = StringVar()
+msg = Message(top, text="Welcome")
+
+msg.pack()
+top.mainloop()
+```
+
+This example creates a simple Message widget displaying the text "Welcome".
