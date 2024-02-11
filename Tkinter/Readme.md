@@ -1037,3 +1037,63 @@ top.mainloop()
 
 This code creates a Tkinter application with a horizontal scale, a button, and a label. Users can select values from the scale, and clicking the button displays the selected value.
 
+
+
+# Python Tkinter Scrollbar Widget
+
+The Scrollbar widget in Tkinter is used to scroll down the content of other widgets such as Listbox, Text, and Canvas. Additionally, it can create horizontal scrollbars for the Entry widget.
+
+## Syntax
+```python
+w = Scrollbar(top, options)
+```
+
+Here are the options you can use with the Scrollbar widget:
+
+| **Option**            | **Description**                                                  |
+|-----------------------|------------------------------------------------------------------|
+| `activebackground`    | Background color of the widget when it has focus.                |
+| `bg`                  | Background color of the widget.                                   |
+| `bd`                  | Border width of the widget.                                       |
+| `command`             | Procedure associated with the scrollbar called when it's moved.  |
+| `cursor`              | Cursor type when hovering over the scrollbar.                     |
+| `elementborderwidth`  | Border width around the arrow heads and slider.                   |
+| `highlightbackground` | Focus highlight color when the widget doesn't have focus.        |
+| `highlightcolor`      | Focus highlight color when the widget has focus.                  |
+| `highlightthickness`  | Thickness of the focus highlight.                                 |
+| `jump`                | Control the behavior of scroll jump.                              |
+| `orient`              | Orientation of the scrollbar (HORIZONTAL or VERTICAL).            |
+| `repeatdelay`         | Duration before the slider starts moving repeatedly.              |
+| `repeatinterval`      | Interval between repeat movements.                                |
+| `takefocus`           | Whether to tab focus through the widget.                          |
+| `troughcolor`         | Color of the scrollbar trough.                                    |
+| `width`               | Width of the scrollbar.                                           |
+
+## Methods
+The Scrollbar widget provides the following methods:
+
+| **Method** | **Description**                                                                         |
+|------------|-----------------------------------------------------------------------------------------|
+| `get()`    | Returns the current position of the scrollbar.                                         |
+| `set(first, last)` | Connects the scrollbar to another widget and specifies the yscrollcommand or xscrollcommand. |
+
+## Example
+```python
+from tkinter import *
+
+top = Tk()
+sb = Scrollbar(top)
+sb.pack(side=RIGHT, fill=Y)
+
+mylist = Listbox(top, yscrollcommand=sb.set)
+
+for line in range(30):
+    mylist.insert(END, "Number " + str(line))
+
+mylist.pack(side=LEFT)
+sb.config(command=mylist.yview)
+
+mainloop()
+```
+
+This code creates a Tkinter application with a Listbox and a vertical scrollbar. Users can scroll through the list of items using the scrollbar.
