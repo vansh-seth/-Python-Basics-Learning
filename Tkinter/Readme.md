@@ -1185,3 +1185,68 @@ top.mainloop()
 ```
 
 This code creates a Tkinter application with a Text widget. Different parts of the text are tagged and configured with different background and foreground colors.
+
+
+# Python Tkinter Toplevel Widget
+
+The Toplevel widget in Tkinter is used to create and display top-level windows that are managed directly by the window manager. These windows may or may not have a parent window on top of them.
+
+Toplevel widgets are typically used to represent additional information, pop-ups, or groups of widgets on new windows. They come with title bars, borders, and other window decorations.
+
+## Syntax
+```python
+w = Toplevel(options)
+```
+
+Here are the options you can use with the Toplevel widget:
+
+| **Option**  | **Description**                                              |
+|-------------|--------------------------------------------------------------|
+| `bg`        | Background color of the window.                              |
+| `bd`        | Border size of the window.                                   |
+| `cursor`    | Cursor type when the mouse is in the window.                 |
+| `class_`    | Export selected text to the window manager.                  |
+| `font`      | Font type of the text inserted into the widget.              |
+| `fg`        | Foreground color of the widget.                              |
+| `height`    | Height of the window.                                        |
+| `relief`    | Type of the window.                                          |
+| `width`     | Width of the window.                                         |
+
+## Methods
+Here are some useful methods associated with the Toplevel widget:
+
+| **Method**     | **Description**                                             |
+|----------------|-------------------------------------------------------------|
+| `deiconify()` | Display the window.                                         |
+| `frame()`     | Show a system-dependent window identifier.                  |
+| `group(window)` | Add this window to the specified window group.             |
+| `iconify()`   | Convert the toplevel window into an icon.                   |
+| `protocol(name, function)` | Specify a function called for a specific protocol.     |
+| `state()`     | Get the current state of the window.                        |
+| `transient([master])` | Convert this window to a transient window.               |
+| `withdraw()`  | Delete the window without destroying it.                     |
+| `maxsize(width, height)` | Declare the maximum size for the window.               |
+| `minsize(width, height)` | Declare the minimum size for the window.               |
+| `positionfrom(who)` | Define the position controller.                         |
+| `resizable(width, height)` | Control whether the window can be resized.          |
+| `sizefrom(who)` | Define the size controller.                               |
+| `title(string)` | Define the title for the window.                            |
+
+## Example
+```python
+from tkinter import *
+
+root = Tk()
+root.geometry("200x200")
+
+def open():
+    top = Toplevel(root)
+    top.mainloop()
+
+btn = Button(root, text="Open", command=open)
+btn.place(x=75, y=50)
+
+root.mainloop()
+```
+
+This code creates a Tkinter application with a button. When the button is clicked, it opens a new top-level window using the Toplevel widget.
