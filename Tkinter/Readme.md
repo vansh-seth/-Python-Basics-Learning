@@ -963,3 +963,77 @@ top.mainloop()
 ```
 
 This example creates Radiobuttons for selecting favorite programming languages and displays the selected option.
+
+
+
+# Python Tkinter Scale Widget
+
+The Scale widget in Python's Tkinter library allows you to implement a graphical slider within your application. Users can slide through a range of values displayed on the slider and select one among them.
+
+## Syntax
+```python
+w = Scale(top, options)
+```
+
+Here's a list of possible options you can use with the Scale widget:
+
+| **Option**           | **Description**                                                                                          |
+|----------------------|----------------------------------------------------------------------------------------------------------|
+| `activebackground`   | Background color of the widget when it has focus.                                                        |
+| `bg`                 | Background color of the widget.                                                                          |
+| `bd`                 | Border size of the widget (default is 2 pixels).                                                         |
+| `command`            | Procedure called each time the slider moves.                                                             |
+| `cursor`             | Cursor type assigned to the widget.                                                                      |
+| `digits`             | Number of digits when the numeric scale is converted to a string.                                        |
+| `font`               | Font type of the widget text.                                                                            |
+| `fg`                 | Foreground color of the text.                                                                            |
+| `from_`              | One end of the widget range.                                                                             |
+| `highlightbackground`| Highlight color when the widget doesn't have focus.                                                      |
+| `highlightcolor`     | Highlight color when the widget has focus.                                                                |
+| `label`              | Text shown as a label with the scale.                                                                    |
+| `length`             | Length of the widget (X dimension if horizontal, Y dimension if vertical).                                |
+| `orient`             | Orientation of the scale (horizontal or vertical).                                                        |
+| `relief`             | Type of border (default is FLAT).                                                                        |
+| `repeatdelay`        | Duration before the slider starts moving repeatedly.                                                      |
+| `resolution`         | Smallest change made to the scale value.                                                                  |
+| `showvalue`          | Whether to show the value of the scale.                                                                   |
+| `sliderlength`       | Length of the slider window along the length of the scale.                                                |
+| `state`              | State of the scale widget (ACTIVE by default).                                                            |
+| `takefocus`          | Whether focus cycles through the scale widgets.                                                           |
+| `tickinterval`       | Display of scale values on multiples of the specified tick interval.                                      |
+| `to`                 | Float or integer specifying the other end of the range represented by the scale.                          |
+| `troughcolor`        | Color of the trough.                                                                                     |
+| `variable`           | Control variable for the scale.                                                                          |
+| `width`              | Width of the trough part of the widget.                                                                   |
+
+## Methods
+Here are some useful methods associated with the Scale widget:
+
+- `get()`: Get the current value of the scale.
+- `set(value)`: Set the value of the scale.
+
+## Example
+```python
+from tkinter import *
+
+def select():
+    sel = "Value = " + str(v.get())
+    label.config(text=sel)
+
+top = Tk()
+top.geometry("200x100")
+v = DoubleVar()
+scale = Scale(top, variable=v, from_=1, to=50, orient=HORIZONTAL)
+scale.pack(anchor=CENTER)
+
+btn = Button(top, text="Value", command=select)
+btn.pack(anchor=CENTER)
+
+label = Label(top)
+label.pack()
+
+top.mainloop()
+```
+
+This code creates a Tkinter application with a horizontal scale, a button, and a label. Users can select values from the scale, and clicking the button displays the selected value.
+
