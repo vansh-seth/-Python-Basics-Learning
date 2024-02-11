@@ -1252,3 +1252,68 @@ root.mainloop()
 This code creates a Tkinter application with a button. When the button is clicked, it opens a new top-level window using the Toplevel widget.
 
 
+# Python Tkinter Spinbox Widget
+
+The Spinbox widget in Tkinter provides a range of values from which the user can select one. It's an alternative to the Entry widget and is useful when users are provided with a fixed number of values to choose from.
+
+## Syntax
+```python
+w = Spinbox(top, options)
+```
+
+Here's a list of possible options you can use with the Spinbox widget:
+
+| **Option**            | **Description**                                                                     |
+|-----------------------|-------------------------------------------------------------------------------------|
+| `activebackground`    | Background color of the widget when it has focus.                                  |
+| `bg`                  | Background color of the widget.                                                    |
+| `bd`                  | Border width of the widget.                                                        |
+| `command`             | Associated callback with the widget, called each time the state of the widget is changed. |
+| `cursor`              | Cursor type when hovering over the widget.                                          |
+| `disabledbackground`  | Background color of the widget when it is disabled.                                 |
+| `disabledforeground`  | Foreground color of the widget when it is disabled.                                 |
+| `fg`                  | Normal foreground color of the widget.                                              |
+| `font`                | Font type of the widget content.                                                    |
+| `format`              | Format string used for the widget (no default value).                                |
+| `from_`               | Starting range of the widget.                                                        |
+| `justify`             | Justification of the multi-line widget content (default is LEFT).                    |
+| `relief`              | Type of the border (default is SUNKEN).                                             |
+| `repeatdelay`         | Control button auto-repeat (milliseconds).                                           |
+| `repeatinterval`      | Control button auto-repeat interval (milliseconds).                                  |
+| `state`               | State of the widget (NORMAL, DISABLED, or "readonly").                               |
+| `textvariable`        | Control variable used to control the behavior of the widget text.                    |
+| `to`                  | Maximum limit of the widget value.                                                   |
+| `validate`            | Controls how the widget value is validated.                                           |
+| `validatecommand`     | Associated function callback used for validation of the widget content.              |
+| `values`              | Tuple containing the values for this widget.                                          |
+| `vcmd`                | Validation command.                                                                  |
+| `width`               | Width of the widget.                                                                 |
+| `wrap`                | Wraps up the up and down button of the Spinbox.                                       |
+| `xscrollcommand`      | Set to the set() method of scrollbar to make the widget horizontally scrollable.     |
+
+## Methods
+Here are the methods associated with the Spinbox widget:
+
+| **Method**            | **Description**                                                                    |
+|-----------------------|------------------------------------------------------------------------------------|
+| `delete(start, end)`  | Delete characters present at the specified range.                                  |
+| `get(start, end)`     | Get characters present in the specified range.                                      |
+| `identify(x, y)`      | Identify the widget's element within the specified range.                           |
+| `index(index)`        | Get the absolute value of the given index.                                          |
+| `insert(index, string)` | Insert the string at the specified index.                                          |
+| `invoke(element)`     | Invoke the callback associated with the widget.                                      |
+
+## Example
+```python
+from tkinter import *
+
+top = Tk()
+top.geometry("200x200")
+
+spin = Spinbox(top, from_=0, to=25)
+spin.pack()
+
+top.mainloop()
+```
+
+This code creates a Tkinter application with a Spinbox widget that allows users to select values from 0 to 25.
