@@ -1250,3 +1250,5 @@ root.mainloop()
 ```
 
 This code creates a Tkinter application with a button. When the button is clicked, it opens a new top-level window using the Toplevel widget.
+
+
