@@ -1097,3 +1097,91 @@ mainloop()
 ```
 
 This code creates a Tkinter application with a Listbox and a vertical scrollbar. Users can scroll through the list of items using the scrollbar.
+
+
+# Python Tkinter Text Widget
+
+The Text widget in Tkinter is used to display multi-line formatted text with various styles and attributes. It serves as a text editor where users can input and view text content.
+
+## Syntax
+```python
+w = Text(top, options)
+```
+
+Here are the options you can use with the Text widget:
+
+| **Option**          | **Description**                                                   |
+|---------------------|-------------------------------------------------------------------|
+| `bg`                | Background color of the widget.                                   |
+| `bd`                | Border width of the widget.                                       |
+| `cursor`            | Cursor type when hovering over the widget.                        |
+| `exportselection`   | Whether the selected text is exported to the window manager.      |
+| `font`              | Font type of the text.                                            |
+| `fg`                | Text color of the widget.                                         |
+| `height`            | Vertical dimension of the widget in lines.                        |
+| `highlightbackground` | Highlight color when the widget doesn't have focus.              |
+| `highlightthickness` | Thickness of the focus highlight.                                 |
+| `highlightcolor`    | Highlight color when the widget has focus.                        |
+| `insertbackground`  | Color of the insertion cursor.                                    |
+| `insertborderwidth` | Width of the border around the cursor.                            |
+| `insertofftime`     | Time in milliseconds during which the insertion cursor is off.    |
+| `insertontime`      | Time in milliseconds during which the insertion cursor is on.     |
+| `insertwidth`       | Width of the insertion cursor.                                    |
+| `padx`              | Horizontal padding of the widget.                                 |
+| `pady`              | Vertical padding of the widget.                                   |
+| `relief`            | Type of the border.                                               |
+| `selectbackground`  | Background color of the selected text.                            |
+| `selectborderwidth` | Width of the border around the selected text.                     |
+| `spacing1`          | Vertical space above each line of text.                           |
+| `spacing2`          | Extra vertical space between displayed lines of text.             |
+| `spacing3`          | Vertical space below each line of text.                           |
+| `state`             | State of the widget (DISABLED makes it unresponsive).             |
+| `tabs`              | Control how the tab character is used to position the text.       |
+| `width`             | Width of the widget in characters.                                |
+| `wrap`              | Wrap lines (WORD or CHAR).                                        |
+| `xscrollcommand`    | Connect to horizontal scrollbar.                                  |
+| `yscrollcommand`    | Connect to vertical scrollbar.                                    |
+
+## Methods
+Here are some useful methods associated with the Text widget:
+
+| **Method**          | **Description**                                                  |
+|---------------------|-------------------------------------------------------------------|
+| `delete(start, end)`| Delete characters within the specified range.                    |
+| `get(start, end)`   | Get characters within the specified range.                       |
+| `index(index)`      | Get the absolute index of the specified index.                   |
+| `insert(index, string)` | Insert the specified string at the given index.                |
+| `see(index)`        | Check if text at the specified index is visible.                 |
+| **Mark Handling Methods** |                                                   |
+| `index(mark)`       | Get the index of the specified mark.                             |
+| `mark_gravity(mark, gravity)` | Get the gravity of the mark.                                  |
+| `mark_names()`      | Get all marks present in the Text widget.                        |
+| `mark_set(mark, index)` | Set a new position for the mark.                               |
+| `mark_unset(mark)`  | Remove the specified mark from the text.                         |
+| **Tag Handling Methods** |                                                    |
+| `tag_add(tagname, start, end)` | Tag the string within the specified range.                   |
+| `tag_config(tagname, **options)` | Configure tag properties.                                    |
+| `tag_delete(tagname)` | Delete a given tag.                                            |
+| `tag_remove(tagname, start, end)` | Remove a tag from the specified range.                      |
+
+## Example
+```python
+from tkinter import *
+
+top = Tk()
+text = Text(top)
+text.insert(INSERT, "Name.....")
+text.insert(END, "Salary.....")
+
+text.pack()
+
+text.tag_add("Write Here", "1.0", "1.4")
+text.tag_add("Click Here", "1.8", "1.13")
+
+text.tag_config("Write Here", background="yellow", foreground="black")
+text.tag_config("Click Here", background="black", foreground="white")
+
+top.mainloop()
+```
+
+This code creates a Tkinter application with a Text widget. Different parts of the text are tagged and configured with different background and foreground colors.
