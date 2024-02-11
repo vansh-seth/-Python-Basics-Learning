@@ -1388,3 +1388,61 @@ mainloop()
 ```
 
 This code creates a Tkinter application with a PanedWindow widget. It contains an Entry widget in the left pane and two Entry widgets and a Button widget in the right pane arranged vertically. Users can input values into the Entry widgets and click the button to add them.
+
+
+# Python Tkinter LabelFrame Widget
+
+The LabelFrame widget in Tkinter is used to draw a border around its child widgets, effectively grouping them together. It can also display a title or label to describe the group of widgets enclosed within it. 
+
+## Syntax
+```python
+w = LabelFrame(top, options)
+```
+
+Here's a list of options you can use with the LabelFrame widget:
+
+| **Option**           | **Description**                                               |
+|----------------------|---------------------------------------------------------------|
+| `bg`                 | Background color of the widget.                               |
+| `bd`                 | Size of the border shown around the indicator.                |
+| `Class`              | Default value of the class is LabelFrame.                     |
+| `colormap`           | Specify which colormap to use for this widget.                 |
+| `container`          | If set to true, the LabelFrame becomes the container widget.   |
+| `cursor`             | Cursor type when the mouse is over the widget.                 |
+| `fg`                 | Foreground color of the widget.                                |
+| `font`               | Font type of the widget text.                                  |
+| `height`             | Height of the widget.                                          |
+| `labelAnchor`        | Position of the label text within the widget.                  |
+| `labelwidget`        | Widget to be used for the label.                                |
+| `highlightbackground`| Color of the focus highlight border when the widget doesn't have the focus. |
+| `highlightcolor`     | Color of the focus highlight when the widget has the focus.    |
+| `highlightthickness` | Width of the focus highlight border.                            |
+| `padx`               | Horizontal padding of the widget.                              |
+| `pady`               | Vertical padding of the widget.                                |
+| `relief`             | Border style of the widget.                                    |
+| `text`               | String containing the label text.                              |
+| `width`              | Width of the frame.                                            |
+
+## Example
+```python
+from tkinter import *  
+  
+top = Tk()  
+top.geometry("300x200")  
+  
+labelframe1 = LabelFrame(top, text="Positive Comments")  
+labelframe1.pack(fill="both", expand="yes")  
+  
+toplabel = Label(labelframe1, text="Place to put the positive comments")  
+toplabel.pack()  
+  
+labelframe2 = LabelFrame(top, text="Negative Comments")  
+labelframe2.pack(fill="both", expand="yes")  
+  
+bottomlabel = Label(labelframe2, text="Place to put the negative comments")  
+bottomlabel.pack()  
+  
+top.mainloop()  
+```
+
+This code creates a Tkinter application with two LabelFrame widgets. Each LabelFrame contains a Label widget describing the purpose of the group of widgets enclosed within it - one for positive comments and the other for negative comments.
