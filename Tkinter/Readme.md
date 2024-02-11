@@ -1317,3 +1317,74 @@ top.mainloop()
 ```
 
 This code creates a Tkinter application with a Spinbox widget that allows users to select values from 0 to 25.
+
+
+# Python Tkinter PanedWindow Widget
+
+The PanedWindow widget in Tkinter acts as a container widget that holds one or more child widgets (panes) arranged horizontally or vertically. Users can resize the child panes by moving separator lines, known as sashes, using the mouse.
+
+## Syntax
+```python
+w = PanedWindow(master, options)
+```
+
+Here's a list of possible options you can use with the PanedWindow widget:
+
+| **Option**      | **Description**                                            |
+|-----------------|------------------------------------------------------------|
+| `bg`            | Background color of the widget when it doesn't have focus. |
+| `bd`            | 3D border size of the widget.                               |
+| `borderwidth`   | Border width of the widget.                                 |
+| `cursor`        | Cursor type when the mouse is over the window.              |
+| `handlepad`     | Distance between the handle and the end of the sash.        |
+| `handlesize`    | Size of the handle.                                         |
+| `height`        | Height of the widget.                                       |
+| `orient`        | Orientation of the panes (HORIZONTAL or VERTICAL).          |
+| `relief`        | Type of the border.                                         |
+| `sashpad`       | Padding around each sash.                                   |
+| `sashrelief`    | Type of the border around each sash.                        |
+| `sashwidth`     | Width of the sash.                                          |
+| `showhandle`    | Set to True to display the handles.                         |
+| `width`         | Width of the widget.                                        |
+
+## Methods
+Here are the methods associated with the PanedWindow widget:
+
+| **Method**          | **Description**                                 |
+|---------------------|-------------------------------------------------|
+| `add(child, options)` | Add a window to the parent window.            |
+| `get(start, end)`   | Get the text present at the specified range.  |
+| `config(options)`   | Configure the widget with the specified options. |
+
+## Example
+```python
+from tkinter import *
+
+def add():
+    a = int(e1.get())
+    b = int(e2.get())
+    leftdata = str(a + b)
+    left.insert(1, leftdata)
+
+w1 = PanedWindow()
+w1.pack(fill=BOTH, expand=1)
+
+left = Entry(w1, bd=5)
+w1.add(left)
+
+w2 = PanedWindow(w1, orient=VERTICAL)
+w1.add(w2)
+
+e1 = Entry(w2)
+e2 = Entry(w2)
+
+w2.add(e1)
+w2.add(e2)
+
+bottom = Button(w2, text="Add", command=add)
+w2.add(bottom)
+
+mainloop()
+```
+
+This code creates a Tkinter application with a PanedWindow widget. It contains an Entry widget in the left pane and two Entry widgets and a Button widget in the right pane arranged vertically. Users can input values into the Entry widgets and click the button to add them.
