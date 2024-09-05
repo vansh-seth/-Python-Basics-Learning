@@ -1,6 +1,5 @@
 # Python Basics
 ## Python Keywords and Identifiers
-
 ## Python Keywords
 
 Keywords are predefined, reserved words used in Python programming that have special meanings to the compiler. We cannot use a keyword as a variable name, function name, or any other identifier. They are used to define the syntax and structure of the Python language.
