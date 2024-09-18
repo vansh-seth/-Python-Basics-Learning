@@ -1,7 +1,6 @@
 # Python Closures
 Python closure is a nested function that allows us to access variables of the outer function even after the outer function is closed.
 ### Nested function in Python
-
 In Python, we can create a function inside another function. This is known as a nested function. For example,
 
 ```python
